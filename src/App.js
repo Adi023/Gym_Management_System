@@ -1,6 +1,6 @@
 import AllRoutes from "./components/AllRoutes";
 import Header from "./components/Header";
-
+import './App.css'
 
 function App() {
   return (

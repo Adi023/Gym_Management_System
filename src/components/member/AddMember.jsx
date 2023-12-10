@@ -9,6 +9,7 @@ export default function AddMember() {
     MemberServices.addMember(d);
     alert("Member Added Successfully")
   }
+  
   return (
     <div>AddMember
       <form onSubmit={handleSubmit(sendData)}>

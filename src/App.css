@@ -1,3 +1,22 @@
+
+
+  #home{
+    background-color: #61dafb;
+    height: 330px;
+    width: 360px;
+    display: inline-block;
+    padding: 25px;
+     /* margin-top:100px; */
+     margin: 50px;
+     /* text-align: center; */
+     position: relative;
+  border-radius: 30px 30px 30px 30px;
+  }
+
+
+
+
+
 /* .App {
   text-align: center;
 }
