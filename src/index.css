@@ -6,11 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-image: url("../src/components/images/background.jpg");
- 
-  background-repeat: no-repeat;
+  /* background-image: url("../src/components/images/background.jpg"); */
+ /* background-color: #545454; */
+  /* background-repeat: no-repeat;
   background-size: 100%;
-  margin-top: 15px;
+  margin-top: 15px; */
 }
 
 
@@ -20,7 +20,7 @@ code {
 }
 
 input[type=text] {
-  width: 25%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -39,7 +39,7 @@ label {
   padding: 12px 12px 12px 0;
   display: inline-block;
   text-align: left;
-  color: #000B49;
+  color:aliceblue;
   width: 160px;
 }
 

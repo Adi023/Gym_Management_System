@@ -1,20 +1,80 @@
+.card {
+  width: 190px;
+  height: 254px;
+  margin: 0 auto;
+  background: linear-gradient(0deg, #000, #272727);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}
 
 
-  #home{
-    background-color: #61dafb;
-    height: 330px;
-    width: 360px;
-    display: inline-block;
-    padding: 25px;
-     /* margin-top:100px; */
-     margin: 50px;
-     /* text-align: center; */
-     position: relative;
-  border-radius: 30px 30px 30px 30px;
-  }
+#home {
+  /* background-color: #010815; */
+  color: aliceblue;
+  height: 350px;
+  width: 360px;
+  display: inline-block;
+  padding-top: 2px;
+  padding-left: 15px;
+  /* padding: 25px; */
+  /* margin-top:100px; */
+  margin: 50px;
+  /* text-align: center; */
+  position: relative;
+  /* border-radius: 30px 30px 30px 30px; */
+  border-radius: 25px;
+  /* background: #01192a; */
+  background:#011522;
+  box-shadow: -10px -10px 10px #474747
+    /* 20px 20px 60px #616161; */
+}
 
 
-
+#fb{
+  align-self: center;
+  position: relative;
+  margin-left: 25%;
+  margin-top: 2%;
+  width:50%;
+  background:#011522;
+  box-shadow: -10px -10px 10px #474747;
+  border-radius: 25px;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: aliceblue;
+}
 
 
 /* .App {

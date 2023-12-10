@@ -11,8 +11,10 @@ export default function AddMember() {
   }
   
   return (
-    <div>AddMember
-      <form onSubmit={handleSubmit(sendData)}>
+    <div id='fb'>
+    <div style={{marginLeft:"15%" , position:'relative'}}>
+    <h2 style={{marginLeft:"15%" , position:'relative'}}>Add Member</h2>
+      <form onSubmit={handleSubmit(sendData)} style={{alignSelf:'center',position:'relative'}}>
         <label>ID : </label>
         <input type='text' {...register('member_id')} placeholder={"Enter ID"} required/><br/>
 
@@ -48,6 +50,7 @@ export default function AddMember() {
         {/* <button className='btn btn-primary mx-2'>Hi</button> */}
 
       </form>
+      </div>
     </div>
   )
 }
