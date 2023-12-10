@@ -12,7 +12,14 @@ body {
   background-size: 100%;
   margin-top: 15px; */
 }
-
+#homeback{
+  background-image: url("../src/components/images/background.jpg"); 
+ background-color: #545454;
+ background-repeat: no-repeat;
+ background-size: cover;
+  margin-top: 15px;
+  height: 650px;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
