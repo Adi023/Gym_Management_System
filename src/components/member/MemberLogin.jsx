@@ -11,7 +11,7 @@ export default function MemberLogin() {
       <label>ID :</label>
       <input type='text'  placeholder={"Enter ID"} required/><br/><br/>
       <label>Password :</label>
-      <input type='password'  placeholder={"Enter password"} required/><br/><br/>
+      <input type='password'  placeholder={"Enter Password"} required/><br/><br/>
       <label></label>
       <input type='submit'/>
     </form>

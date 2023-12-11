@@ -24,7 +24,7 @@ export default function AddAdmin() {
         <input type='text' {...register('admin_name')} placeholder={"Enter Name"} required/><br/>
 
         <label>Password : </label>
-        <input type='text' {...register('admin_password')} placeholder={"Enter Password"} required/><br/>
+        <input type='password' {...register('admin_password')} placeholder={"Enter Password"} required/><br/>
 
        
         <label></label>
