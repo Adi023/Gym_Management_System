@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import MemberServices from '../../services/MemberServices';
+import Member from '../Member';
 
 export default function AddMember() {
   const {register,handleSubmit}=useForm();
@@ -11,6 +12,8 @@ export default function AddMember() {
   }
   
   return (
+    <>
+      <Member />
     <div id='fb'>
     <div style={{marginLeft:"15%" , position:'relative'}}>
     <h2 style={{marginLeft:"15%" , position:'relative'}}>Add Member</h2>
@@ -52,5 +55,6 @@ export default function AddMember() {
       </form>
       </div>
     </div>
+    </>
   )
 }

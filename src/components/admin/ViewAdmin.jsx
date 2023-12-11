@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import AdminServices from '../../services/AdminServices';
+import Admin from '../Admin';
 
 export default function ViewAdmin() {
   const [data, setData] = useState([]);
@@ -21,6 +22,7 @@ export default function ViewAdmin() {
   }, []);
 
   return (
+    <><Admin/>
     <div>
     <h1>View Admin</h1>
 
@@ -52,5 +54,6 @@ export default function ViewAdmin() {
     </div>
 
   </div>
+  </>
   )
 }

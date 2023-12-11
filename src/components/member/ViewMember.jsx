@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import MemberServices from '../../services/MemberServices';
+import Member from '../Member';
 
 
 
@@ -23,6 +24,8 @@ export default function ViewMember() {
   }, []);
 
   return (
+    <>
+    <Member/>
     <div>
       <h1>ViewMember</h1>
 
@@ -62,5 +65,6 @@ export default function ViewMember() {
       </div>
 
     </div>
+    </>
   )
 }

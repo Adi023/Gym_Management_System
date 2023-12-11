@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import AdminServices from'../../services/AdminServices';
+import Admin from '../Admin';
 
 export default function AddAdmin() {
   const {register,handleSubmit}=useForm();
@@ -11,6 +12,7 @@ export default function AddAdmin() {
   }
 
   return (
+    <><Admin/>
     <div id='fb'>
     <div style={{marginLeft:"15%" , position:'relative'}}>
     <h2 style={{marginLeft:"15%" , position:'relative'}}>Add Admin</h2>
@@ -32,5 +34,6 @@ export default function AddAdmin() {
       </form>
       </div>
     </div>
+    </>
   )
 }
