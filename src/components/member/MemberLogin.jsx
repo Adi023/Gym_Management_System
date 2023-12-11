@@ -13,7 +13,7 @@ export default function MemberLogin() {
       <label>Password :</label>
       <input type='password'  placeholder={"Enter Password"} required/><br/><br/>
       <label></label>
-      <input type='submit'/>
+      <input type='submit' className='btn btn-success mx-2'/>
     </form>
     </div>
     </div>
