@@ -4,7 +4,7 @@ import Member from '../Member'
 export default function MemberLogin() {
   return (
     <><Member/>
-    <div id='fb'>
+    <div id='fb'  style={{marginTop:"7%"}}>
     <div style={{marginLeft:"15%" , position:'relative'}}>
     <h2 style={{marginLeft:"15%" , position:'relative'}}>Member Login</h2>
     <form style={{alignSelf:'center',position:'relative'}}>
