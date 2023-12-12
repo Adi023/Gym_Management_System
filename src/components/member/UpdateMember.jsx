@@ -1,20 +1,26 @@
-import React,{useState,useEffect} from 'react'
-import { useForm } from 'react-hook-form'
+import React,{useState,useEffect} from 'react';
+import { useForm } from 'react-hook-form';
 import MemberServices from '../../services/MemberServices';
 import Member from '../Member';
 
-export default function UpdateMember() {
-  const {register,handleSubmit}=useForm();
+export default function AddMember() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm();
 
-  const sendData=(d)=>{
-    MemberServices.addMember(d);
-    alert("Member Added Successfully")
-  }
-
+  const sendData = (data) => {
+    MemberServices.addMember(data);
+    alert('Member Added Successfully');
+    reset();
+  };
   const [data, setData] = useState([]);
-
+  var id=1;
   const viewMembers = () => {
-    MemberServices.viewMember().then(
+    
+    MemberServices.viewMemberByID(id) .then(
       (Response) => {
         console.log(Response.data);
         setData(Response.data);
@@ -29,48 +35,70 @@ export default function UpdateMember() {
   }, []);
 
   return (
-    <><Member/>
-    <div id='fb'>
-    <div style={{marginLeft:"15%" , position:'relative'}}>
-    <h2 style={{marginLeft:"15%" , position:'relative'}}>Update Member</h2>
-      <form onSubmit={handleSubmit(sendData)} style={{alignSelf:'center',position:'relative'}}>
-        <label>ID : </label>
-        <input type='text' {...register('member_id')} defaultValue={data.member_id}  placeholder={data.member_id} required/><br/>
+    <>
+      <Member />
+      <div id='fb'>
+        <div style={{ marginLeft: '15%', position: 'relative' }}>
+          <h2 style={{ marginLeft: '15%', position: 'relative' }}>Update Member</h2>
+          <form onSubmit={handleSubmit(sendData)} style={{ alignSelf: 'center', position: 'relative' }}>
+            <label>ID :</label>
+            <input type='text' {...register('member_id', { required: 'ID is required' })} placeholder={data.member_id} />
+            {errors.member_id && <p style={{ color: 'red' }}>{errors.member_id.message}</p>}
+            <br />
 
-        <label>Name : </label>
-        <input type='text' {...register('member_name')} defaultValue={data.member_name}  placeholder={data.member_name} required/><br/>
+            <label>Name :</label>
+            <input type='text' {...register('member_name', { required: 'Name is required' })} placeholder='Enter Name' />
+            {errors.member_name && <p style={{ color: 'red' }}>{errors.member_name.message}</p>}
+            <br />
 
-        <label>Password : </label>
-        <input type='text' {...register('member_password')} defaultValue={data.member_password}  placeholder={data.member_password} required/><br/>
+            <label>Password :</label>
+            <input type='password' {...register('member_password', { required: 'Password is required' })} placeholder='Enter Password' />
+            {errors.member_password && <p style={{ color: 'red' }}>{errors.member_password.message}</p>}
+            <br />
 
-        <label>Address : </label>
-        <input type='text' {...register('member_address')} defaultValue={data.member_address}  placeholder={data.member_address} required/><br/>
+            <label>Address :</label>
+            <input type='text' {...register('member_address', { required: 'Address is required' })} placeholder='Enter Address' />
+            {errors.member_address && <p style={{ color: 'red' }}>{errors.member_address.message}</p>}
+            <br />
 
-        <label>Mobile Number : </label>
-        <input type='text' {...register('member_mob_no')} defaultValue={data.member_mob_no}  placeholder={data.member_mob_no} required/><br/>
+            <label>Mobile Number :</label>
+            <input
+              type='tel'
+              {...register('member_mob_no', {
+                required: 'Mobile Number is required',
+                pattern: {
+                  value: /^[0-9]{10}$/,
+                  message: 'Please enter a valid 10-digit mobile number',
+                },
+              })}
+              placeholder='Enter Mobile Number'
+            />
+            {errors.member_mob_no && <p style={{ color: 'red' }}>{errors.member_mob_no.message}</p>}
+            <br />
 
-        <label>Email Id : </label>
-        <input type='text' {...register('member_email')} defaultValue={data.member_email}  placeholder={data.member_email} required/><br/>
+            <label>Email Id :</label>
+            <input type='email' {...register('member_email', { required: 'Email ID is required' })} placeholder='Enter Email-ID' />
+            {errors.member_email && <p style={{ color: 'red' }}>{errors.member_email.message}</p>}
+            <br />
 
-        <label>Gender : </label>
-        <input type='text' {...register('member_gender')} defaultValue={data.member_gender}  placeholder={data.member_gender} required/><br/>
+            {/* Add validations for other fields as needed */}
+            <label>Gender : </label>
+            <input type='text' {...register('member_gender')} placeholder={"Enter Gender"} required /><br />
 
-        <label>Date of Birth : </label>
-        <input type='text' {...register('member_DOB')} defaultValue={data.member_DOB}  placeholder={data.member_DOB} required/><br/>
+            <label>Date of Birth : </label>
+            <input type='date' {...register('member_DOB')} min={'1950-01-01'} placeholder={"Enter DOB"} required /><br />
 
-        <label>Date Of Joining : </label>
-        <input type='text' {...register('member_DOJoining')} defaultValue={data.member_DOJoining}  placeholder={data.member_DOJoining} required/><br/>
+            <label>Date Of Joining : </label>
+            <input type='date' {...register('member_DOJoining')} min={'2023-01-01'} placeholder={"Enter DOJoining"} required /><br />
 
-        <label>Active Status : </label>
-        <input type='text' {...register('member_status')} defaultValue={data.member_status}  placeholder={data.member_status} required/><br/>
+            <label>Active Status : </label>
+            <input type='text' {...register('member_status')} placeholder={"Enter Satus"} required /><br />
 
-        <label></label>
-        <input type='submit' className='btn btn-success mx-2'/>
-        {/* <button className='btn btn-primary mx-2'>Hi</button> */}
-
-      </form>
+            <label></label>
+            <input type='submit' className='btn btn-success mx-2' />
+          </form>
+        </div>
       </div>
-    </div>
     </>
-  )
+  );
 }
