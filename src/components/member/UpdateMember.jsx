@@ -1,9 +1,9 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import { useForm } from 'react-hook-form';
 import MemberServices from '../../services/MemberServices';
 import Member from '../Member';
 
-export default function AddMember() {
+export default function UpdateMember() {
   const {
     register,
     handleSubmit,
@@ -12,27 +12,28 @@ export default function AddMember() {
   } = useForm();
 
   const sendData = (data) => {
+    
     MemberServices.addMember(data);
+    setData(data);
     alert('Member Added Successfully');
     reset();
   };
   const [data, setData] = useState([]);
-  var id=1;
-  const viewMembers = () => {
-    
-    MemberServices.viewMemberByID(id) .then(
-      (Response) => {
-        console.log(Response.data);
-        setData(Response.data);
-      }, (Error) => {
-        console.log(Error);
-      }
+  // var id=1;
 
-    )
-  }
-  useEffect(() => {
-    viewMembers()
-  }, []);
+  // const viewMembers = () => {
+  //   MemberServices.viewMemberByID(id).then(
+  //     (Response) => {
+  //       console.log(Response.data);
+  //       setData(Response.data);
+  //     }, (Error) => {
+  //       console.log(Error);
+  //     }
+  //   )
+  // }
+  // useEffect(() => {
+  //   viewMembers()
+  // }, []);
 
   return (
     <>

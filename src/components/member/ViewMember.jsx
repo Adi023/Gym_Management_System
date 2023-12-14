@@ -34,8 +34,6 @@ export default function ViewMember() {
         {data.map((d) =>
         (
           <div id='home' key={d.member_id}>
-
-
             <div className="tools">
               <div className="circle">
                 <span className="red box"></span>

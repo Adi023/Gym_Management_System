@@ -41,15 +41,3 @@ export default function Header() {
 
 
 
-{/* <ul>
-<li><a href='/'>Home</a></li>
-<li><a href='/AdminLogin'>Admin</a></li>
-<li><a href='MemberLogin'>Member</a>
-  {/* <a href="javascript:void(0)" classNameName="dropbtn">Dropdown</a>
-  <div classNameName="dropdown-content">
-    <a href="/">Link 1</a>
-    <a href="/">Link 2</a>
-    <a href="/">Link 3</a>
-  </div> */}
-// </li>
-// </ul> */}

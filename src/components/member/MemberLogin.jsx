@@ -5,9 +5,9 @@ import Member from '../Member'
 export default function MemberLogin() {
   const {
     register,
-    handleSubmit,
+    // handleSubmit,
     formState: { errors },
-    reset
+    
   } = useForm();
   return (
     <><Member />
