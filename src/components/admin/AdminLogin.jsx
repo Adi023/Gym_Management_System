@@ -9,9 +9,9 @@ export default function AdminLogin() {
     <h2 style={{marginLeft:"15%" , position:'relative'}}>Admin Login</h2>
     <form style={{alignSelf:'center',position:'relative'}}>
       <label>ID :</label>
-      <input type='text'  placeholder={"Enter ID"} required/><br/><br/>
+      <input type='text'  placeholder={"Enter ID"} required/><br/>
       <label>Password :</label>
-      <input type='password'  placeholder={"Enter Password"} required/><br/><br/>
+      <input type='password'  placeholder={"Enter Password"} required/><br/>
       <label></label>
       <input type='submit' className='btn btn-success mx-2'/>
     </form>

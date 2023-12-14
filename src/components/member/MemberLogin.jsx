@@ -23,6 +23,7 @@ export default function MemberLogin() {
             <input type='password' {...register('member_password', { required: 'Password is required' })} placeholder='Enter Password' />
             {errors.member_password && <p style={{ color: 'red' }}>{errors.member_password.message}</p>}
             <br />
+            <label/>
             <input type='submit' className='btn btn-success mx-2' />
           </form>
         </div>

@@ -29,7 +29,7 @@ export default function AddAdmin() {
 
         <label>Password : </label>
         <input type='password' {...register('admin_password', { required: 'password is required' })} placeholder={"Enter Password"} />
-        {errors.admin_password && <p style={{ color: 'red' }}>{errors.admin_password.message}</p>}<br/><br/>
+        {errors.admin_password && <p style={{ color: 'red' }}>{errors.admin_password.message}</p>}<br/>
 
        
         <label></label>

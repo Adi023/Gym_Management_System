@@ -27,7 +27,7 @@ export default function AddMember() {
             <label>ID :</label>
             <input type='text' {...register('member_id', { required: 'ID is required' })} placeholder='Enter ID' />
             {errors.member_id && <p style={{ color: 'red' }}>{errors.member_id.message}</p>}
-            <br />
+            <br/>
 
             <label>Name :</label>
             <input type='text' {...register('member_name', { required: 'Name is required' })} placeholder='Enter Name' />
