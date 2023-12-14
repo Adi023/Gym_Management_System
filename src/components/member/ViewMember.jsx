@@ -16,7 +16,6 @@ export default function ViewMember() {
       }, (Error) => {
         console.log(Error);
       }
-
     )
   }
   useEffect(() => {
@@ -25,44 +24,40 @@ export default function ViewMember() {
 
   return (
     <>
-    <Member/>
-    <div>
-      <h1>ViewMember</h1>
-
+      <Member />
       <div>
-
-        {data.map((d) =>
-        (
-          <div id='home' key={d.member_id}>
-            <div className="tools">
-              <div className="circle">
-                <span className="red box"></span>
+        <h1>ViewMember</h1>
+        <div>
+          {data.map((d) =>
+          (
+            <div id='home' key={d.member_id}>
+              <div className="tools">
+                <div className="circle">
+                  <span className="red box"></span>
+                </div>
+                <div className="circle">
+                  <span className="yellow box"></span>
+                </div>
+                <div className="circle">
+                  <span className="green box"></span>
+                </div>
+                <div >
+                  <span>ID : {d.member_id}</span>
+                </div>
               </div>
-              <div className="circle">
-                <span className="yellow box"></span>
-              </div>
-              <div className="circle">
-                <span className="green box"></span>
-              </div>
-              <div >
-                <span>ID : {d.member_id}</span>
-              </div>
+              <h4>Name :  {d.member_name}</h4>
+              <h5>Address : {d.member_address}</h5>
+              <h5>Mobile No. :  {d.member_mob_no}</h5>
+              <h5>Email ID : {d.member_email}</h5>
+              <h5>Gender : {d.member_gender}</h5>
+              <h5>DOB : {d.member_DOB}</h5>
+              <h5>Date of Joining : {d.member_DOJoining}</h5>
+              <h5>Status : {d.member_status}</h5>
             </div>
+          ))}
+        </div>
 
-            <h4>Name :  {d.member_name}</h4>
-            <h5>Address : {d.member_address}</h5>
-            <h5>Mobile No. :  {d.member_mob_no}</h5>
-            <h5>Email ID : {d.member_email}</h5>
-            <h5>Gender : {d.member_gender}</h5>
-            <h5>DOB : {d.member_DOB}</h5>
-            <h5>Date of Joining : {d.member_DOJoining}</h5>
-            <h5>Status : {d.member_status}</h5>
-
-          </div>
-        ))}
       </div>
-
-    </div>
     </>
   )
 }
