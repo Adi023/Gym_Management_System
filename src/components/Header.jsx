@@ -29,7 +29,7 @@ export default function Header() {
           </Nav>
           <Form className="d-flex">
             <FormControl type="search" placeholder="Search" aria-label="Search" />
-            <Button variant="outline-success" type="submit">
+            <Button variant="outline-success" type="submit" style={{margin: "5px"}}>
               Search
             </Button>
           </Form>
