@@ -22,11 +22,13 @@ body {
   height: 100%;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+body, html {
+  overflow-x: hidden;
 }
-
 input {
   width: 50%;
   padding: 12px 20px;

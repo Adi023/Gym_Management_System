@@ -22,5 +22,5 @@ class adminServices{
         return http.delete("/admin/"+id)
     }
 }
-
-export default new adminServices();
+const myInstance = new adminServices();
+export default myInstance;

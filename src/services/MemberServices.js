@@ -22,4 +22,5 @@ class memberServices{
         return http.delete("/member/"+id)
     }
 }
-export default new memberServices();
+const myInstance = new memberServices();
+export default myInstance;

@@ -6,9 +6,8 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-boots
 export default function Header() {
   return (
     <>
-
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#"> G M S</Navbar.Brand>
+        <Navbar.Brand href="/"> G M S</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '100px' }}>
@@ -23,7 +22,7 @@ export default function Header() {
               <NavDropdown.Divider />
               <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
+            <Nav.Link href="/" disabled>
               Link
             </Nav.Link>
           </Nav>
