@@ -20,19 +20,19 @@ export default function Home() {
         <div className='col-12'>
           <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" >
-              <div class="carousel-item active "  style={{backgroundImage:`url(${background})`,height:'700px',backgroundRepeat:'no-repeat'}}>
+              <div class="carousel-item active "  style={{backgroundImage:`url(${background})`,height:'625px',backgroundRepeat:'no-repeat'}}>
               <div id="left" >
                   <h1>Gym <br/>Management <br/>System</h1>
               </div>
                 {/* <img src={background} class="d-block w-100" alt='not available' /> */}
               </div>
-              <div class="carousel-item" style={{backgroundImage:`url(${background2})`,height:'700px',backgroundRepeat:'no-repeat'}}>
+              <div class="carousel-item" style={{backgroundImage:`url(${background2})`,height:'625px',backgroundRepeat:'no-repeat'}}>
               <div id="left" >
                   <h1>Gym <br/>Management <br/>System</h1>
               </div>
                 {/* <img src={background2} class="d-block w-100" alt='not available' /> */}
               </div>
-              <div class="carousel-item" style={{backgroundImage:`url(${background3})`,height:'700px',backgroundRepeat:'no-repeat'}}>
+              <div class="carousel-item" style={{backgroundImage:`url(${background3})`,height:'625px',backgroundRepeat:'no-repeat'}}>
               <div id="left" >
                   <h1>Gym <br/>Management <br/>System</h1>
               </div>
