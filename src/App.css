@@ -61,6 +61,21 @@
   color: aliceblue;
 }
 
+  #left h1 {
+    font-size: 90px;
+    line-height: 100px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 150px;
+    color: rgb(35, 244, 12);
+    /* font: 800 40px Arial; */
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+  }
+
+
 /* 
 .App {
   text-align: center;
