@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 
 
@@ -7,7 +8,7 @@ export default function Header() {
   return (
     <>
       <Navbar bg="black" variant="dark" expand="lg" >
-        <Navbar.Brand href="/"><i class='fas fa-dumbbell' style={{fontsize:'48px',color:'red'}}></i> G M S</Navbar.Brand>
+        <Navbar.Brand href="/"><i className='fas fa-dumbbell' style={{fontSize:'28px',color:' rgb(153, 225, 20)'}}>GMS</i></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '100px',height:'100px' }}>
