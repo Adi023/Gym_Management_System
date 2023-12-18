@@ -23,7 +23,7 @@ export default function Home() {
             <div className="carousel-inner" >
               <div className="carousel-item active " >
                 <img src={background} className="d-block w-100 " alt='not available' />
-                <div class="card-img-overlay">
+                <div className="card-img-overlay">
                   <div id="left" >
                     <h1>Gym <br />Management <br />System</h1>
                   </div>
@@ -31,7 +31,7 @@ export default function Home() {
               </div>
               <div className="carousel-item">
                 <img src={background2} className="d-block w-100"  alt='not available' />
-                <div class="card-img-overlay">
+                <div className="card-img-overlay">
                   <div id="left" >
                     <h1>Gym <br />Management <br />System</h1>
                   </div>
@@ -39,7 +39,7 @@ export default function Home() {
               </div>
               <div className="carousel-item">
                 <img src={background3} className="d-block w-100 " alt='not available' />
-                <div class="card-img-overlay">
+                <div className="card-img-overlay">
                   <div id="left" >
                     <h1>Gym <br />Management <br />System</h1>
                   </div>
@@ -66,30 +66,30 @@ export default function Home() {
         boxShadow: ' 20px 20px 60px #d9d9d9,-20px -20px 60px #ffffff', padding: '20px', margin: '30px'
       }}>
 
-        <div class="card" style={{ width: '450px', marginBottom: '20px' }}>
-          <img src={background3} class="card-img-top" alt='Image Not Available' />
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div className="card" style={{ width: '450px', marginBottom: '20px' }}>
+          <img src={background3} className="card-img-top" alt='Image Not Available' />
+          <div className="card-body">
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <a href="#" className="card-link">Card link</a>
+            <a href="#" className="card-link">Another link</a>
           </div>
         </div>
-        <div class="card" style={{ width: '450px', marginBottom: '20px' }}>
-          <img src={background3} class="card-img-top" alt='Image Not Available' />
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div className="card" style={{ width: '450px', marginBottom: '20px' }}>
+          <img src={background3} className="card-img-top" alt='Image Not Available' />
+          <div className="card-body">
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <a href="#" className="card-link">Card link</a>
+            <a href="#" className="card-link">Another link</a>
           </div>
         </div>
-        <div class="card" style={{ width: '450px', marginBottom: '20px' }}>
-          <img src={background3} class="card-img-top" alt='Image Not Available' />
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+        <div className="card" style={{ width: '450px', marginBottom: '20px' }}>
+          <img src={background3} className="card-img-top" alt='Image Not Available' />
+          <div className="card-body">
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" className="card-link">Card link</a>
+            <a href="#" className="card-link">Another link</a>
           </div>
         </div>
       </div>
@@ -99,16 +99,16 @@ export default function Home() {
         background: '#ffffff',
         boxShadow: ' 20px 20px 60px #d9d9d9,-20px -20px 60px #ffffff', padding: '20px', margin: '30px'
       }}>
-        <div class="card text-center w-100">
-          <div class="card-header">
+        <div className="card text-center w-100">
+          <div className="card-header">
             Featured
           </div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div className="card-body">
+            <h5 className="card-title">Special title treatment</h5>
+            <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" className="btn btn-primary">Go somewhere</a>
           </div>
-          <div class="card-footer text-muted">
+          <div className="card-footer text-muted">
             2 days ago
           </div>
         </div>
