@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Gym_Management_System/static/css/main.66437f87.css",
-    "main.js": "/Gym_Management_System/static/js/main.14300aba.js",
+    "main.css": "/Gym_Management_System/static/css/main.fa2b4cb6.css",
+    "main.js": "/Gym_Management_System/static/js/main.69796098.js",
     "static/js/787.f0136d4d.chunk.js": "/Gym_Management_System/static/js/787.f0136d4d.chunk.js",
     "static/media/back2.jpg": "/Gym_Management_System/static/media/back2.e1ed3464432dfd7fc940.jpg",
     "static/media/back3.jpg": "/Gym_Management_System/static/media/back3.5536b5752ce13fc440ae.jpg",
@@ -16,12 +16,12 @@
     "static/media/fa-v4compatibility.ttf": "/Gym_Management_System/static/media/fa-v4compatibility.2eb7b3ef25042305f3ff.ttf",
     "static/media/fa-v4compatibility.woff2": "/Gym_Management_System/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
     "index.html": "/Gym_Management_System/index.html",
-    "main.66437f87.css.map": "/Gym_Management_System/static/css/main.66437f87.css.map",
-    "main.14300aba.js.map": "/Gym_Management_System/static/js/main.14300aba.js.map",
+    "main.fa2b4cb6.css.map": "/Gym_Management_System/static/css/main.fa2b4cb6.css.map",
+    "main.69796098.js.map": "/Gym_Management_System/static/js/main.69796098.js.map",
     "787.f0136d4d.chunk.js.map": "/Gym_Management_System/static/js/787.f0136d4d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.66437f87.css",
-    "static/js/main.14300aba.js"
+    "static/css/main.fa2b4cb6.css",
+    "static/js/main.69796098.js"
   ]
 }
