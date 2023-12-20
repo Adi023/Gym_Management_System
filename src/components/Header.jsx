@@ -23,11 +23,11 @@ export default function Header() {
       <Navbar  className={showNavbar ? 'fixed-top' : ''} bg="black" variant="dark" expand="lg" >
         {/* <Navbar.Brand href="/"><i className='fas fa-dumbbell' style={{ fontSize: '28px', color: ' rgb(153, 225, 20)' }}>GMS</i></Navbar.Brand> */}
         <Navbar.Brand href="/">
-          <img src={logo} alt="Logo" width="100" height="100" />
+          <img src={logo} alt="Logo" width="100" height="60" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '100px', height: '100px' }}>
+          <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '200px', height: '60px' }}>
             <Nav.Link href="/" active>
               Home
             </Nav.Link>
