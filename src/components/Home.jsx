@@ -112,7 +112,7 @@ export default function Home() {
             2 days ago
           </div>
         </div>
-      </div>
+      </div> 
       <Footer/>
     </>
 
