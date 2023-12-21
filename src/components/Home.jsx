@@ -22,7 +22,7 @@ export default function Home() {
           <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner" >
               <div className="carousel-item active " >
-                <img src={background} className="d-block w-100 " alt='not available' />
+                <img src={background} className="d-block w-100 img-fluid" style={{height:'500px'}} alt='not available' />
                 <div className="card-img-overlay">
                   <div id="left" >
                     <h1>Gym <br />Management <br />System</h1>
@@ -30,7 +30,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={background2} className="d-block w-100" alt='not available' />
+                <img src={background2} className="d-block w-100 img-fluid" style={{height:'500px'}} alt='not available' />
                 <div className="card-img-overlay">
                   <div id="left" >
                     <h1>Gym <br />Management <br />System</h1>
@@ -38,7 +38,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={background3} className="d-block w-100 " alt='not available' />
+                <img src={background3} className="d-block w-100 img-fluid" style={{height:'500px'}} alt='not available' />
                 <div className="card-img-overlay">
                   <div id="left" >
                     <h1>Gym <br />Management <br />System</h1>
@@ -56,6 +56,7 @@ export default function Home() {
               <span aria-hidden="true"></span>
               <span className="visually-hidden">Next</span>
             </button>
+            
           </div>
         </div>
       </div>

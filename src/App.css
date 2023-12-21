@@ -62,25 +62,13 @@
 }
 
   #left h1 {
-    font-size: 90px;
+    font-size: 70px;
     line-height: 100px;
     font-weight: 500;
     text-transform: uppercase;
     text-align: left;
     margin-left: 30px;
-    margin-top: 150px;
-    color: rgb(153, 225, 20);
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px;
-  }
-  #left h1 {
-    font-size: 90px;
-    line-height: 100px;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-align: left;
-    margin-left: 30px;
-    margin-top: 50px;
+    margin-top: 20px;
     color: rgb(153, 225, 20);
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px;
