@@ -33,7 +33,7 @@ export default function Header() {
               HOME
             </Nav.Link>
             <Nav.Link href="/">ABOUT US</Nav.Link>
-            <Nav.Link href="/">CONTACT US</Nav.Link>
+            <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
             <NavDropdown title="LOGIN" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/AdminLogin">ADMIN LOGIN</NavDropdown.Item>
               <NavDropdown.Item href="/MemberLogin">MEMBER LOGIN</NavDropdown.Item>
