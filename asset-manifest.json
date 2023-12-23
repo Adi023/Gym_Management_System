@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Gym_Management_System/static/css/main.2088a09f.css",
-    "main.js": "/Gym_Management_System/static/js/main.ef049ad7.js",
+    "main.css": "/Gym_Management_System/static/css/main.6b3d6e1f.css",
+    "main.js": "/Gym_Management_System/static/js/main.7bd830fa.js",
     "static/js/787.f0136d4d.chunk.js": "/Gym_Management_System/static/js/787.f0136d4d.chunk.js",
     "static/media/back2.jpg": "/Gym_Management_System/static/media/back2.e1ed3464432dfd7fc940.jpg",
     "static/media/back3.jpg": "/Gym_Management_System/static/media/back3.5536b5752ce13fc440ae.jpg",
@@ -10,6 +10,7 @@
     "static/media/fa-solid-900.woff2": "/Gym_Management_System/static/media/fa-solid-900.fb8184add5a3101ad0a3.woff2",
     "static/media/fa-brands-400.woff2": "/Gym_Management_System/static/media/fa-brands-400.8d3cabfc66809162fb4d.woff2",
     "static/media/fa-regular-400.ttf": "/Gym_Management_System/static/media/fa-regular-400.adc51aab4d771ab65f81.ttf",
+    "static/media/logo.png": "/Gym_Management_System/static/media/logo.911075f9faedb9b9130a.png",
     "static/media/back5.jpg": "/Gym_Management_System/static/media/back5.76555506e8513de403e9.jpg",
     "static/media/logo1.png": "/Gym_Management_System/static/media/logo1.d4ca23be6eb7cb95a007.png",
     "static/media/back4.jpg": "/Gym_Management_System/static/media/back4.e74c4e2aad5e481eb0bd.jpg",
@@ -17,12 +18,12 @@
     "static/media/fa-v4compatibility.ttf": "/Gym_Management_System/static/media/fa-v4compatibility.2eb7b3ef25042305f3ff.ttf",
     "static/media/fa-v4compatibility.woff2": "/Gym_Management_System/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
     "index.html": "/Gym_Management_System/index.html",
-    "main.2088a09f.css.map": "/Gym_Management_System/static/css/main.2088a09f.css.map",
-    "main.ef049ad7.js.map": "/Gym_Management_System/static/js/main.ef049ad7.js.map",
+    "main.6b3d6e1f.css.map": "/Gym_Management_System/static/css/main.6b3d6e1f.css.map",
+    "main.7bd830fa.js.map": "/Gym_Management_System/static/js/main.7bd830fa.js.map",
     "787.f0136d4d.chunk.js.map": "/Gym_Management_System/static/js/787.f0136d4d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2088a09f.css",
-    "static/js/main.ef049ad7.js"
+    "static/css/main.6b3d6e1f.css",
+    "static/js/main.7bd830fa.js"
   ]
 }
