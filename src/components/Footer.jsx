@@ -1,7 +1,6 @@
 import React from 'react'
 
-export default function
-    () {
+export default function Footer () {
     return (
         <div>
             {/* <!-- Footer --> */}
@@ -16,22 +15,22 @@ export default function
 
                     {/* <!-- Right --> */}
                     <div>
-                        <a href="" className="me-4 text-reset">
+                        <a href="/" className="me-4 text-reset">
                             <i className="fab fa-facebook-f"></i>
                         </a>
-                        <a href="" className="me-4 text-reset">
+                        <a href="/" className="me-4 text-reset">
                             <i className="fab fa-twitter"></i>
                         </a>
-                        <a href="" className="me-4 text-reset">
+                        <a href="/" className="me-4 text-reset">
                             <i className="fab fa-google"></i>
                         </a>
-                        <a href="" className="me-4 text-reset">
+                        <a href="/" className="me-4 text-reset">
                             <i className="fab fa-instagram"></i>
                         </a>
-                        <a href="" className="me-4 text-reset">
+                        <a href="/" className="me-4 text-reset">
                             <i className="fab fa-linkedin"></i>
                         </a>
-                        <a href="" className="me-4 text-reset">
+                        <a href="/" className="me-4 text-reset">
                             <i className="fab fa-github"></i>
                         </a>
                     </div>
@@ -106,7 +105,7 @@ export default function
                                 <p><i className="fas fa-home me-3"></i> India </p>
                                 <p>
                                     <i className="fas fa-envelope me-3"></i>
-                                    info@example.com
+                                    info@gms.com
                                 </p>
                                 <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
                                 <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
