@@ -72,39 +72,43 @@ export default function Home() {
       </div>
 
       {/* Triple Cards */}
-      <div  style={{
+      <div className='container py-4' style={{
         display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between',
         background: '#ffffff',
-        boxShadow: ' 20px 20px 60px #d9d9d9,-20px -20px 60px #ffffff', padding: '20px', margin: '30px'
+        boxShadow: ' 20px 20px 60px #d9d9d9,-20px -20px 60px #ffffff'
       }}>
 
-        <div className="card" style={{ width: '450px', marginBottom: '20px' }}>
+        <div className="card" style={{ width: '400px', marginBottom: '20px' }}>
           <img src={card1} className="card-img-top" alt=' Not Available' />
           <div className="card-body">
-            <p className="card-text">"Forge your strength with the finest trainers in town. Unleash your best self at our gym, where excellence meets expertise."</p>
+            <p className="card-text">"Forge your strength with the finest trainers in town. 
+            Unleash your best self at our gym, where excellence meets expertise."</p>
             <a href="/" className="card-link">Card link</a>
             <a href="/" className="card-link">Another link</a>
           </div>
         </div>
-        <div className="card" style={{ width: '450px', marginBottom: '20px' }}>
+        <div className="card" style={{ width: '400px', marginBottom: '20px' }}>
           <img src={card2} className="card-img-top" alt=' Not Available' />
           <div className="card-body">
-            <p className="card-text">"Elevate your workout with precision-crafted gym equipment. Unleash your full potential with gear designed for performance and results."</p>
+            <p className="card-text">"Elevate your workout with precision-crafted gym equipment. 
+            Unleash your full potential with gear designed for performance and results."</p>
 
             <a href="/" className="card-link">Card link</a>
             <a href="/" className="card-link">Another link</a>
           </div>
         </div>
-        <div className="card" style={{ width: '450px', marginBottom: '20px' }}>
+        <div className="card" style={{ width: '400px', marginBottom: '20px' }}>
           <img src={card3} className="card-img-top" alt=' Not Available' />
           <div className="card-body">
-            <p className="card-text">"Beyond the weights, discover balance and serenity. Elevate your fitness journey with a blend of strength and tranquility through our diverse range of activities, including invigorating yoga sessions."</p>
+            <p className="card-text">"Beyond the weights, discover balance and serenity. 
+            Elevate your fitness journey with a blend of strength and tranquility through our diverse range of activities, 
+            including invigorating yoga sessions."</p>
 
             <a href="/" className="card-link">Card link</a>
             <a href="/" className="card-link">Another link</a>
           </div>
         </div>
-        {/* <div className="card" style={{ width: '450px', marginBottom: '20px' }}>
+        {/* <div className="card" style={{ width: '400px', marginBottom: '20px' }}>
           <img src={background3} className="card-img-top" alt=' Not Available' />
           <div className="card-body">
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -112,7 +116,7 @@ export default function Home() {
             <a href="/" className="card-link">Another link</a>
           </div>
         </div> */}
-      </div>
+      </div><br/>
       {/* single info card with image */}
       <div className='container py-4' style={{
         display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between',
@@ -207,9 +211,9 @@ export default function Home() {
             <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <a href="/" className="btn btn-primary">Go somewhere</a>
           </div>
-          <div className="card-footer text-muted">
+          {/* <div className="card-footer text-muted">
             2 days ago
-          </div>
+          </div> */}
         </div>
       </div><br/>
 
