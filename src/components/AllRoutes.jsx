@@ -22,6 +22,7 @@ import Admin from './Admin'
 import Header from './Header'
 import Home from './Home'
 import ContactUs from './ContactUs';
+import AboutUs from './AboutUs';
 
 export default function AllRoutes() {
   return (
@@ -48,6 +49,7 @@ export default function AllRoutes() {
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="Header" element={<Header></Header>}></Route>
             <Route path="ContactUs" element={<ContactUs></ContactUs>}></Route>
+            <Route path="AboutUs" element={<AboutUs></AboutUs>}></Route>
     </Routes>
     </div>
     </Router>
