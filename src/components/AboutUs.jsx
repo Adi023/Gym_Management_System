@@ -10,7 +10,6 @@ export default function AboutUs() {
                 <div className='card-img-overlay' style={{ marginTop: '250px' }}>
                     <h1 className="text-center" style={{ color: "white" }}>About<span style={{ color: '#00ca4e' }}> GMS</span></h1><br /><br /><br />
                 </div>
-
             </div>
             <br /><br /><br />
             <div className='container py-4 ' style={{
@@ -27,7 +26,6 @@ export default function AboutUs() {
                     Our Staff, Trainers & Group Exercise Instructors are committed to offering our members a great fitness experience. Whether you’re a mom looking to get back into shape, a marathon runner trying to shave a few minutes off your personal best or just trying to stay healthy we would love to help you realize your potential and meet your goals!
                 </p>
             </div>
-
             <br /><br />
             <Footer />
         </div>
