@@ -1,6 +1,6 @@
 import React from 'react'
 // import {BrowserRouter as Route,Router,Routes} from 'react-router-dom'
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 //Member imports
 import AddMember from './member/AddMember';
@@ -27,32 +27,32 @@ import AboutUs from './AboutUs';
 export default function AllRoutes() {
   return (
     <>
-    <Router>
+      <Router>
         <div>
-    <Routes>
-        {/*Member Routes */}
-        <Route path="AddMember" element={<AddMember></AddMember>}></Route>
+          <Routes>
+            {/*Member Routes */}
+            <Route path="AddMember" element={<AddMember></AddMember>}></Route>
             <Route path="Member" element={<Member></Member>}></Route>
             <Route path="UpdateMember" element={<UpdateMember></UpdateMember>}></Route>
             <Route path="ViewMember" element={<ViewMember></ViewMember>}></Route>
             <Route path="ViewMemberById" element={<ViewMemberById></ViewMemberById>}></Route>
             <Route path="MemberLogin" element={<MemberLogin></MemberLogin>}></Route>
 
-         {/*Admin Routes*/}
+            {/*Admin Routes*/}
             <Route path="Admin" element={<Admin></Admin>}></Route>
             <Route path="AddAdmin" element={<AddAdmin></AddAdmin>}></Route>
             <Route path="AdminLogin" element={<AdminLogin></AdminLogin>}></Route>
             <Route path="UpdateAdmin" element={<UpdateAdmin></UpdateAdmin>}></Route>
             <Route path="ViewAdmin" element={<ViewAdmin></ViewAdmin>}></Route>
 
-         {/*Other Routes*/}
+            {/*Other Routes*/}
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="Header" element={<Header></Header>}></Route>
             <Route path="ContactUs" element={<ContactUs></ContactUs>}></Route>
             <Route path="AboutUs" element={<AboutUs></AboutUs>}></Route>
-    </Routes>
-    </div>
-    </Router>
+          </Routes>
+        </div>
+      </Router>
     </>
   )
 }
