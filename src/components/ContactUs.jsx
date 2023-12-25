@@ -1,6 +1,6 @@
 import React from 'react'
-import back from '../../src/components/images/meningym.jpg'
 import conta from '../../src/components/images/contactus.png'
+import contaside from '../../src/components/images/contactusside.jpg'
 import Footer from './Footer'
 
 
@@ -24,8 +24,8 @@ export default function ContactUs() {
       }}>
         <div className="card mb-3 w-100" style={{ flexWrap: 'wrap', justifyContent: 'space-between' }}>
           <div className="row no-gutters">
-            <div className="col-md-5 m-1">
-              <img src={back} className="img-fluid rounded-start" alt="..." />
+            <div className="col-md-4 m-1">
+              <img src={contaside} className="img-fluid rounded-start" alt="..." />
             </div>
             <div className="col-md-6" >
               <div className="card-body " >
