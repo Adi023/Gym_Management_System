@@ -17,6 +17,7 @@ import AdminLogin from './admin/AdminLogin'
 import UpdateAdmin from './admin/UpdateAdmin'
 import ViewAdmin from './admin/ViewAdmin'
 import Admin from './Admin'
+import AdminDashBoard from './admin/AdminDashBoard';
 
 //Other imports
 import Header from './Header'
@@ -44,6 +45,7 @@ export default function AllRoutes() {
             <Route path="AdminLogin" element={<AdminLogin></AdminLogin>}></Route>
             <Route path="UpdateAdmin" element={<UpdateAdmin></UpdateAdmin>}></Route>
             <Route path="ViewAdmin" element={<ViewAdmin></ViewAdmin>}></Route>
+            <Route path="AdminDashBoard" element={<AdminDashBoard></AdminDashBoard>}></Route>
 
             {/*Other Routes*/}
             <Route path="/" element={<Home></Home>}></Route>

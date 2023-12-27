@@ -44,6 +44,18 @@
   background:#011522;
   box-shadow: -10px -10px 10px #474747
 }
+#adash{
+  color: aliceblue;
+  height: 160px;
+  width: 170px;
+  display: inline-block;
+  padding: 20px;
+  margin: 30px;
+  position: relative;
+  border-radius: 25px;
+  background:#011522;
+  box-shadow: -10px -10px 10px #474747
+}
 
 
 #fb{

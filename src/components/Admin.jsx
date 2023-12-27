@@ -21,6 +21,9 @@ export default function Admin() {
           <a className="nav-link" href="AdminLogin">AdminLogin</a>
         </li>
         <li className="nav-item">
+          <a className="nav-link" href="AdminDashBoard">Admin Dashboard</a>
+        </li>
+        <li className="nav-item">
           <a className="nav-link disabled" aria-disabled="true" href='/'>Disabled</a>
         </li>
       </ul>
