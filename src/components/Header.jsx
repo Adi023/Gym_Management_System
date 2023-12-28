@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <>
       <Navbar className={showNavbar ? 'fixed-top' : ''} bg="black" variant="dark" expand="lg" >
-        {/* <Navbar.Brand href="/"><i className='fas fa-dumbbell' style={{ fontSize: '28px', color: ' rgb(153, 225, 20)' }}>GMS</i></Navbar.Brand> */}
+        {/* bg="rgba(0, 0, 0, 0.7)" <Navbar.Brand href="/"><i className='fas fa-dumbbell' style={{ fontSize: '28px', color: ' rgb(153, 225, 20)' }}>GMS</i></Navbar.Brand> */}
         <Navbar.Brand href="/" >
           <img src={logo} alt="Logo" width="60" height="60" style={{ borderRadius: '50px', marginLeft: '30px' }} />
           <h5 style={{ fontSize: '20px', color: ' rgb(153, 225, 20)', marginLeft: '38px' }}>GMS</h5>
