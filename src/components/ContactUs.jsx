@@ -45,7 +45,7 @@ export default function ContactUs() {
                     <i className="fas fa-envelope me-3"></i>Email: info@gms.com</p>
                 </div>
 
-                <div style={{ display: 'inline-block', position: 'relative' }}>
+                <div style={{ display: 'inline-block', position: 'relative' }}><br/>
                   <p className="card-text"><i className="fa fa-info-circle me-3"></i>Additional Information :<br />
                     We are open <br />Monday - Saturday,<br /> 10AM - 5PM <br />and closed on sunday sorry for that.<br /><br />
                     <i className="fas fa-phone me-3"></i> Contact : +91 1234567890</p>
