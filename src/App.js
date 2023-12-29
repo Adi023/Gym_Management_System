@@ -8,7 +8,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading for 2 seconds
+    // Simulate loading for 1 seconds
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
@@ -19,8 +19,7 @@ function App() {
       {isLoading ? (
         <Loading />
       ) : (
-        // Your application content goes here
-        <>
+       <>
           <Header />
           <AllRoutes />
         </>
