@@ -36,7 +36,7 @@ export default function Home() {
                 <img src={background} className="d-block w-100 img-fluid" style={{ height: '550px' }} alt='not available' />
                 <div className="card-img-overlay">
                   <div id="left" >
-                    <h1>Gym <br />Management <br />System</h1>
+                    <h1>Gym <br/>Management <br/>System</h1>
                   </div>
                 </div>
               </div>
@@ -44,7 +44,7 @@ export default function Home() {
                 <img src={background2} className="d-block w-100 img-fluid" style={{ height: '550px' }} alt='not available' />
                 <div className="card-img-overlay">
                   <div id="left" >
-                    <h1>Gym <br />Management <br />System</h1>
+                    <h1>Gym <br/>Management <br/>System</h1>
                   </div>
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default function Home() {
                 <img src={background3} className="d-block w-100 img-fluid" style={{ height: '550px' }} alt='not available' />
                 <div className="card-img-overlay">
                   <div id="left" >
-                    <h1>Gym <br />Management <br />System</h1>
+                    <h1>Gym <br/>Management <br/>System</h1>
                   </div>
                 </div>
               </div>
