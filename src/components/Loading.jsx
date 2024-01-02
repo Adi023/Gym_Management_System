@@ -5,7 +5,7 @@ const GymLoader = () => {
   return (
     <div className="loading-container text-center">
       <img src={gymloader} alt="Loading..." className="loading-gif img-fluid" />
-    </div>
+    </div>   
   );
 }
 
