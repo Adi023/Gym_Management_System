@@ -14,7 +14,7 @@ import yoga from '../components/images/yoga.jpg'
 
 
 
-import './Home.css'
+
 import Footer from './Footer'
 
 export default function Home() {
@@ -217,11 +217,6 @@ export default function Home() {
           </div> */}
         </div>
       </div><br />
-
-
-
-
-
 
       {/* Footer area */}
       <Footer />

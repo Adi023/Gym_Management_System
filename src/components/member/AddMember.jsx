@@ -27,7 +27,7 @@ export default function AddMember() {
             <label>ID :</label>
             <input type='text' {...register('member_id', { required: 'ID is required' })} placeholder='Enter ID' />
             {errors.member_id && <p style={{ color: 'red' }}>{errors.member_id.message}</p>}
-            <br/>
+            <br />
 
             <label>Name :</label>
             <input type='text' {...register('member_name', { required: 'Name is required' })} placeholder='Enter Name' />
@@ -65,8 +65,16 @@ export default function AddMember() {
             <br />
 
             {/* Add validations for other fields as needed */}
-            <label>Gender : </label>
-            <input type='text' {...register('member_gender')} placeholder={"Enter Gender"} required /><br />
+            {/* <label>Gender : </label>
+            <input type='text' {...register('member_gender')} placeholder={"Enter Gender"} required /><br /> */}
+
+            
+              <label for="exampleFormControlSelect2">Gender : </label>
+              <select  >
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
 
             <label>Date of Birth : </label>
             <input type='date' {...register('member_DOB')} min={'1950-01-01'} placeholder={"Enter DOB"} required /><br />
