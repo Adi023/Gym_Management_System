@@ -99,7 +99,7 @@ export default function Home() {
           </div>
         </div>
         <div className="card" style={{ width: '400px', marginBottom: '20px' }}>
-          <img src={yoga} className="card-img-top" alt=' Not Available' />
+          <img src={yoga} className="card-img-top" alt=' Not Available'/>
           <div className="card-body">
             <p className="card-text">"Beyond the weights, discover balance and serenity.
               Elevate your fitness journey with a blend of strength and tranquility through our diverse range of activities,
