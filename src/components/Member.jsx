@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './Header.css'
+// import './Header.css'
 
 export default function Member() {
   return (
