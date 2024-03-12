@@ -35,8 +35,8 @@ export default function Header() {
             <Nav.Link href="/AboutUs">ABOUT US</Nav.Link>
             <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
             <NavDropdown title="LOGIN" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/AdminLogin">ADMIN LOGIN</NavDropdown.Item>
-              <NavDropdown.Item href="/MemberLogin">MEMBER LOGIN</NavDropdown.Item>
+              <NavDropdown.Item href="/login">LOGIN</NavDropdown.Item>
+              <NavDropdown.Item href="/register">Register</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
             </NavDropdown>
@@ -44,12 +44,12 @@ export default function Header() {
               LINK
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <FormControl type="search" placeholder="Search" aria-label="Search" />
             <Button variant="outline-success" type="submit" style={{ margin: "5px" }}>
               Search
             </Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Navbar>
     </>
