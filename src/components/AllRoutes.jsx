@@ -24,6 +24,8 @@ import Header from './Header'
 import Home from './Home'
 import ContactUs from './ContactUs';
 import AboutUs from './AboutUs';
+import UserLogin from './user/UserLogin';
+import AddUser from './user/AddUser';
 
 export default function AllRoutes() {
   return (
@@ -52,6 +54,11 @@ export default function AllRoutes() {
             <Route path="Header" element={<Header></Header>}></Route>
             <Route path="ContactUs" element={<ContactUs></ContactUs>}></Route>
             <Route path="AboutUs" element={<AboutUs></AboutUs>}></Route>
+
+            {/*User Routes*/}
+            <Route path="/login" element={<UserLogin></UserLogin>}></Route>
+            <Route path='/register' element={<AddUser></AddUser>}></Route>
+
           </Routes>
         </div>
       </Router>
