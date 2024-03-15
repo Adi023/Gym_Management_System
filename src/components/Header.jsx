@@ -7,7 +7,7 @@ export default function Header() {
   const [showNavbar, setShowNavbar] = useState(false);
 
   const handleScroll = () => {
-    setShowNavbar(window.scrollY > 100);
+    setShowNavbar(window.scrollY > 50);
   };
 
   useEffect(() => {
@@ -37,6 +37,7 @@ export default function Header() {
             <NavDropdown title="LOGIN" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/login">LOGIN</NavDropdown.Item>
               <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+              <NavDropdown.Item href="/viewUsers">View Users</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
             </NavDropdown>
