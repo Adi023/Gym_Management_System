@@ -14,8 +14,9 @@ export default function ViewAllUsers() {
   const fetchData = async () => {
     try {
       const responseData = await UserServices.viewUsers();
-      setData(responseData.content);
-      setTotalPages(responseData.totalPages);
+      setData(responseData.data.content);
+      setTotalPages(responseData.data.totalPages);
+      console.log(responseData)
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -24,6 +25,7 @@ export default function ViewAllUsers() {
   const goToPage = (page) => {
     setCurrentPage(page);
   };
+  
 
   return (
     <div>
@@ -31,11 +33,22 @@ export default function ViewAllUsers() {
       {data && data.length > 0 ? (
         <div>
           {data.map((d) => (
-            <div id='home' key={d.userId}>
+            <div id='home' key={d.userId} >
               <div>
                 <span>ID : {d.userId}</span>
               </div>
               <h3>Name : {d.name}</h3>
+              <h3>Email : {d.email}</h3>
+              <h3>Password : {d.password}</h3>
+              <h3>Mobile : {d.mobile}</h3>
+              <h3>Address : {d.address}</h3>
+              <h3>City : {d.cityId.cityName}</h3>
+              <h3>Date Of Joining : {d.date_of_joining}</h3>
+              <h3>Date Of Birth : {d.dob}</h3>
+              <h3>Active : {d.active}</h3>
+              <h3>Gender : {d.gender}</h3>
+              <h3>BloodGroup : {d.bloodGroup}</h3>
+              <h3>Role : {d.roleId.roleName}</h3>
               {/* Render other data fields */}
             </div>
           ))}
