@@ -25,7 +25,7 @@ export default function ViewAllUsers() {
   const goToPage = (page) => {
     setCurrentPage(page);
   };
-  
+
 
   return (
     <div>
@@ -45,7 +45,7 @@ export default function ViewAllUsers() {
               <h3>City : {d.cityId.cityName}</h3>
               <h3>Date Of Joining : {d.date_of_joining}</h3>
               <h3>Date Of Birth : {d.dob}</h3>
-              <h3>Active : {d.active}</h3>
+              <h3>{d.active ? (<h3>Status: Active</h3>) : (<h3>Status: Inactive</h3>)}</h3>
               <h3>Gender : {d.gender}</h3>
               <h3>BloodGroup : {d.bloodGroup}</h3>
               <h3>Role : {d.roleId.roleName}</h3>
