@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UserServices from '../../services/UserServices';
 
+
 export default function ViewAllUsers() {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,38 +29,46 @@ export default function ViewAllUsers() {
 
 
   return (
-    <div>
+    <div className='container'>
       <h1>ViewAllUsers</h1>
-      {data && data.length > 0 ? (
-        <div>
+      <table className="table  table-hover" >
+        <thead class="table-dark" >
+          <tr >
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            {/* <th scope="col">Password</th> */}
+            <th scope="col">Mobile</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Date Of Joining</th>
+            <th scope="col">Date Of Birth</th>
+            <th scope="col">Status</th>
+            <th scope="col">Gender</th>
+            <th scope="col">BloodGroup</th>
+            <th  scope="col">Role</th>
+          </tr>
+        </thead>
+        <tbody>
           {data.map((d) => (
-            <div id='home' key={d.userId} >
-              <div>
-                <span>ID : {d.userId}</span>
-              </div>
-              <h3>Name : {d.name}</h3>
-              <h3>Email : {d.email}</h3>
-              <h3>Password : {d.password}</h3>
-              <h3>Mobile : {d.mobile}</h3>
-              <h3>Address : {d.address}</h3>
-              <h3>City : {d.cityId.cityName}</h3>
-              <h3>Date Of Joining : {d.date_of_joining}</h3>
-              <h3>Date Of Birth : {d.dob}</h3>
-              <h3>{d.active ? (<h3>Status : Active</h3>) : (<h3>Status : Inactive</h3>)}</h3>
-              <h3>Gender : {d.gender}</h3>
-              <h3>BloodGroup : {d.bloodGroup}</h3>
-              <h3>Role : {d.roleId.roleName}</h3>
-            </div>
+            <tr key={d.userId}>
+              <th scope="row">{d.name}</th>
+              <td>{d.email}</td>
+              {/* <td>{d.password}</td> */}
+              <td>{d.mobile}</td>
+              <td>{d.address}</td>
+              <td>{d.cityId.cityName}</td>
+              <td>{d.date_of_joining}</td>
+              <td>{d.dob}</td>
+              <td>{d.active ? 'Active' : 'Inactive'}</td>
+              <td className="text-center ">{d.gender}</td>
+              <td  className="text-center ">{d.bloodGroup}</td>
+              <td>{d.roleId.roleName}</td>
+            </tr>
           ))}
-          <div>
-            {Array.from({ length: totalPages || 0 }, (_, index) => index + 1).map(page => (
-              <button key={page} onClick={() => goToPage(page)}>{page}</button>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <p>No data available</p>
-      )}
+        </tbody>
+      </table>
+
+
     </div>
   );
 }
