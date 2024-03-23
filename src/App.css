@@ -139,7 +139,10 @@ box-shadow:  20px 20px 60px #a8a8a8,
              -20px -20px 60px #ffffff;
 }
   
-  
+.custom-thead {
+  vertical-align: middle;
+  border-color: inherit;
+}
 
 /* 
 .App {
