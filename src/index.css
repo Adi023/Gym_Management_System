@@ -14,6 +14,10 @@ body {
   margin-top: 15px; */
 }
 
+.custom-thead {
+  vertical-align: middle;
+  border-color: inherit;
+}
 
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
