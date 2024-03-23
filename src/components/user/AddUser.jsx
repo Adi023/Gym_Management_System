@@ -61,7 +61,7 @@ export default function AddUser() {
   }, []);
 
   return (
-    <div style={{ marginLeft: '25%', position: 'relative' }}>
+    <div  style={{ marginLeft: '25%', position: 'relative' }}>
     <h2 style={{ marginLeft: '25%', position: 'relative' }}>Sign UP</h2>
       <form onSubmit={handleSubmit(sendData)}>
         <label>User Id</label>
