@@ -49,7 +49,6 @@ export default function ViewAllUsers() {
               <h3>Gender : {d.gender}</h3>
               <h3>BloodGroup : {d.bloodGroup}</h3>
               <h3>Role : {d.roleId.roleName}</h3>
-              {/* Render other data fields */}
             </div>
           ))}
           <div>
