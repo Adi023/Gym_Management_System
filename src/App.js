@@ -6,7 +6,7 @@ import Loading from "./components/Loading";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
+ 
   useEffect(() => {
     // Simulate loading for 1 seconds
     setTimeout(() => {
@@ -24,6 +24,8 @@ function App() {
           <AllRoutes />
         </>
       )}
+
+
     </div>
   );
 }
