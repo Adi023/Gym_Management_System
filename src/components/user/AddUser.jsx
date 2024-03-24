@@ -64,16 +64,22 @@ export default function AddUser() {
     <div  style={{ marginLeft: '25%', position: 'relative' }}>
     <h2 style={{ marginLeft: '25%', position: 'relative' }}>Sign UP</h2>
       <form onSubmit={handleSubmit(sendData)}>
-        <label>User Id</label>
-        <input type="text" {...register('userId', { required: 'User Id Is Required' })} placeholder={"User Id"} />
+
+      <div className="form-row">
+     
+      {/* <div className="form-group col-md-6"> */}
+        <label for="exampleInputEmail1">User Id</label>
+        <input type="text"  {...register('userId', { required: 'User Id Is Required' })} placeholder={"User Id"} />
         {errors.userId && <p style={{ color: 'red' }}>{errors.userId.message}</p>}
         <br />
+      {/* </div> */}
 
-        <label>Name</label>
+      {/* <div className="form-group col-md-6"> */}
+        <label for="inputPassword4">Name</label>
         <input type="text" {...register('name', { required: 'Name Is Required' })} placeholder={"Name"} />
         {errors.name && <p style={{ color: 'red' }}>{errors.name.message}</p>}
         <br />
-
+      {/* </div> */}
         <label>Email</label>
         <input type="email" {...register('email', { required: 'Email Is Required' })}
         // value={email}
@@ -188,7 +194,9 @@ export default function AddUser() {
         <label></label>
         <input type="submit" value={"Register"} placeholder={"Register"} /><br/>
         <label></label>
-        <input type="reset" value={"reset"} placeholder={"Register"} />
+        <input type="reset" value={"Reset"} placeholder={"Reset"} />
+
+        </div>
       </form>
 
     </div>
