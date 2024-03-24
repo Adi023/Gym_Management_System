@@ -27,6 +27,7 @@ import AboutUs from './AboutUs';
 import UserLogin from './user/UserLogin';
 import AddUser from './user/AddUser';
 import ViewAllUsers from './user/ViewAllUsers';
+import Login from './Login';
 
 export default function AllRoutes() {
   return (
@@ -57,9 +58,11 @@ export default function AllRoutes() {
             <Route path="AboutUs" element={<AboutUs></AboutUs>}></Route>
 
             {/*User Routes*/}
-            <Route path="/login" element={<UserLogin></UserLogin>}></Route>
+            <Route path="/userlogin" element={<UserLogin></UserLogin>}></Route>
             <Route path='/register' element={<AddUser></AddUser>}></Route>
             <Route path='/viewUsers' element={<ViewAllUsers></ViewAllUsers>}></Route>
+            <Route path='/login' element={<Login></Login>}></Route>
+
 
           </Routes>
         </div>
