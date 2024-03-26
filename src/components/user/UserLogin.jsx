@@ -5,7 +5,7 @@ export default function UserLogin({ onLogin }) {
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     // Assuming you have a function to validate credentials and retrieve user role
     console.log(username +' '+password);
     const role = validateLogin(username, password);
