@@ -25,7 +25,7 @@ const Dashboard = ({ role }) => {
         dashboardContent = (
             <div>
               <h2>Welcome Manager!</h2>
-              {/* User-specific content */}
+              {/* Manager-specific content */}
             </div>
           );
           break;
@@ -33,7 +33,7 @@ const Dashboard = ({ role }) => {
             dashboardContent = (
                 <div>
                   <h2>Welcome Employee!</h2>
-                  {/* User-specific content */}
+                  {/* Employee-specific content */}
                 </div>
               );
               break;
