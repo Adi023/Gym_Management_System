@@ -3,7 +3,7 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-boots
 import '@fortawesome/fontawesome-free/css/all.css';
 import logo from '../../src/components/images/logo1.png'
 
-export default function Header() {
+export default function Header({role}) {
   const [showNavbar, setShowNavbar] = useState(false);
 
   const handleScroll = () => {
@@ -16,6 +16,35 @@ export default function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+let navContent;
+
+switch (role) {
+  case 'user':
+    navContent = (
+      <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '200px', height: '60px' }}>
+      <Nav.Link href="/" active>HOME</Nav.Link>
+      <Nav.Link href="/AboutUs">ABOUT US</Nav.Link>
+      <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
+    </Nav>
+    );
+    break;
+
+  default:
+    navContent=(
+      <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '200px', height: '60px' }}>
+            <Nav.Link href="/" active>HOME</Nav.Link>
+            <Nav.Link href="/AboutUs">ABOUT US</Nav.Link>
+            <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
+            <NavDropdown title="LOGIN" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/login">LOGIN</NavDropdown.Item>
+              <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+              <NavDropdown.Item href="/viewUsers">View Users</NavDropdown.Item>
+              {/* <NavDropdown.Divider /> */}
+            </NavDropdown>
+          </Nav>
+    );
+    break;
+}
 
   return (
     <>
@@ -28,29 +57,9 @@ export default function Header() {
 
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '200px', height: '60px' }}>
-            <Nav.Link href="/" active>
-              HOME
-            </Nav.Link>
-            <Nav.Link href="/AboutUs">ABOUT US</Nav.Link>
-            <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
-            <NavDropdown title="LOGIN" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/login">LOGIN</NavDropdown.Item>
-              <NavDropdown.Item href="/register">Register</NavDropdown.Item>
-              <NavDropdown.Item href="/viewUsers">View Users</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#">Something else here</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="/" disabled>
-              LINK
-            </Nav.Link>
-          </Nav>
-          {/* <Form className="d-flex">
-            <FormControl type="search" placeholder="Search" aria-label="Search" />
-            <Button variant="outline-success" type="submit" style={{ margin: "5px" }}>
-              Search
-            </Button>
-          </Form> */}
+
+          {navContent}
+      
         </Navbar.Collapse>
       </Navbar>
     </>
