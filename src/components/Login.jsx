@@ -15,6 +15,11 @@ export default function Login() {
         <Dashboard role={role} />
       ) : (
         <UserLogin onLogin={handleLogin} />
-      )}</div>
+      )}
+      
+      {/* {role?(
+        <Header role={role}/>
+      ):(<Header/>)} */}
+      </div>
   )
 }
