@@ -19,7 +19,25 @@ export default function Header({role}) {
 let navContent;
 
 switch (role) {
-  case 'user':
+
+
+    case 'default' :
+      navContent=(
+        <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '200px', height: '60px' }}>
+              <Nav.Link href="/" active>HOME</Nav.Link>
+              <Nav.Link href="/AboutUs">ABOUT US</Nav.Link>
+              <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
+              <NavDropdown title="LOGIN" id="navbarScrollingDropdown">
+                <NavDropdown.Item href="/login">LOGIN</NavDropdown.Item>
+                <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+                <NavDropdown.Item href="/viewUsers">View Users</NavDropdown.Item>
+                {/* <NavDropdown.Divider /> */}
+              </NavDropdown>
+            </Nav>
+      );
+      break;
+
+      case 'user':
     navContent = (
       <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '200px', height: '60px' }}>
       <Nav.Link href="/" active>HOME</Nav.Link>
