@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { setRole } from '../../redux/actions';
 
 export default function UserLogin({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const dispatch = useDispatch();
+
   const handleLogin = (e) => {
+    
     e.preventDefault();
     // Assuming you have a function to validate credentials and retrieve user role
     console.log(username +' '+password);
     const role = validateLogin(username, password);
     console.log(role);
+    
     if (role) {
       // Call onLogin callback with user role
       onLogin(role);
+      dispatch(setRole(role));
     } else {
       alert('Invalid username or password');
     }
@@ -30,7 +37,7 @@ export default function UserLogin({ onLogin }) {
     } else if (username === 'employee' && password === 'employee') {
       return 'employee';
     } else {
-      return null;
+      return 'default';
     }
   };
   
