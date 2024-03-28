@@ -16,15 +16,8 @@ function App() {
     }, 1000);
   }, []);
 
-  // const [role, setRole] = useState(null);
-
-  // const handleLogin = (userRole) => {
-  //   setRole(userRole);
-  //   console.log(userRole+"App.js");
-  // };
-  // const [role, setRole] = useState(null);
-
   const role = useSelector(state => state.role);
+  console.log(role+"app");
 
   return (
 
