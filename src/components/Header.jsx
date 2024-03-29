@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/all.css';
 import logo from '../../src/components/images/logo1.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { resetRole } from '../redux/actions';
+import { useNavigate } from 'react-router-dom';
+// import { useNavigate  } from 'react-router-dom';
 
-export default function Header({role}) {
+export default function Header() {
   const [showNavbar, setShowNavbar] = useState(false);
+
+  const role = useSelector(state => state.role);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleResetRole = () => {
+    dispatch(resetRole());
+    navigate('/');
+  };
 
   const handleScroll = () => {
     setShowNavbar(window.scrollY > 50);
@@ -20,8 +34,7 @@ let navContent;
 
 switch (role) {
 
-
-    case 'default' :
+    case 'admin' :
       navContent=(
         <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '200px', height: '60px' }}>
               <Nav.Link href="/" active>HOME</Nav.Link>
@@ -29,10 +42,10 @@ switch (role) {
               <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
               <NavDropdown title="LOGIN" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="/login">LOGIN</NavDropdown.Item>
-                <NavDropdown.Item href="/register">Register</NavDropdown.Item>
                 <NavDropdown.Item href="/viewUsers">View Users</NavDropdown.Item>
                 {/* <NavDropdown.Divider /> */}
               </NavDropdown>
+              <h1>Welcome Admin</h1>
             </Nav>
       );
       break;
@@ -43,6 +56,9 @@ switch (role) {
       <Nav.Link href="/" active>HOME</Nav.Link>
       <Nav.Link href="/AboutUs">ABOUT US</Nav.Link>
       <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
+      <Nav.Link href="/register">REGISTER</Nav.Link>
+      <button onClick={handleResetRole}>Reset Role</button>
+      <h1>Welcome User ..!!</h1>
     </Nav>
     );
     break;
@@ -56,7 +72,6 @@ switch (role) {
             <NavDropdown title="LOGIN" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/login">LOGIN</NavDropdown.Item>
               <NavDropdown.Item href="/register">Register</NavDropdown.Item>
-              <NavDropdown.Item href="/viewUsers">View Users</NavDropdown.Item>
               {/* <NavDropdown.Divider /> */}
             </NavDropdown>
           </Nav>
