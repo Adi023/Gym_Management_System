@@ -1,6 +1,8 @@
 import React from 'react'
 // import {BrowserRouter as Route,Router,Routes} from 'react-router-dom'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// import { BrowserRouter as  Routes, Route, Router } from 'react-router-dom'
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //Member imports
 import AddMember from './member/AddMember';
@@ -29,11 +31,12 @@ import AddUser from './user/AddUser';
 import ViewAllUsers from './user/ViewAllUsers';
 import Login from './Login';
 
+
 export default function AllRoutes() {
   return (
     <>
-      <Router>
         <div>
+        {/* <Router> */}
           <Routes>
             {/*Member Routes */}
             <Route path="AddMember" element={<AddMember></AddMember>}></Route>
@@ -65,8 +68,9 @@ export default function AllRoutes() {
 
 
           </Routes>
+       {/* </Router> */}
         </div>
-      </Router>
+      
     </>
   )
 }
