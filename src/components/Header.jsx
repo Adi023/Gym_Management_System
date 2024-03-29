@@ -45,6 +45,7 @@ switch (role) {
                 <NavDropdown.Item href="/viewUsers">View Users</NavDropdown.Item>
                 {/* <NavDropdown.Divider /> */}
               </NavDropdown>
+              <button onClick={handleResetRole}>Logout</button>
               <h1>Welcome Admin</h1>
             </Nav>
       );
@@ -57,7 +58,7 @@ switch (role) {
       <Nav.Link href="/AboutUs">ABOUT US</Nav.Link>
       <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
       <Nav.Link href="/register">REGISTER</Nav.Link>
-      <button onClick={handleResetRole}>Reset Role</button>
+      <button onClick={handleResetRole}>Logout</button>
       <h1>Welcome User ..!!</h1>
     </Nav>
     );
