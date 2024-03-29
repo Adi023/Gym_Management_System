@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   const role = useSelector(state => state.role);
-  console.log(role+"app");
+  // console.log(role+"app");
 
   return (
 
