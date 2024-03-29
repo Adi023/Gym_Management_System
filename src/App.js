@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom';
 import AllRoutes from "./components/AllRoutes";
 import Header from "./components/Header";
 import './App.css'
@@ -27,8 +28,11 @@ function App() {
         <Loading />
       ) : (
        <>
-          <Header role={role}/>
+        {/* <Router> */}
+          {/* Header should be included inside Router to access routing functionality */}
+          <Header role={role} />
           <AllRoutes />
+        {/* </Router> */}
         </>
       )}
     </div>
