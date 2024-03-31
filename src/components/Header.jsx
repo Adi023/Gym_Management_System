@@ -59,10 +59,23 @@ switch (role) {
       <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
       <Nav.Link href="/register">REGISTER</Nav.Link>
       <button onClick={handleResetRole}>Logout</button>
-      <h1>Welcome User ..!!</h1>
+      <h1>Welcome User..!!</h1>
     </Nav>
     );
     break;
+
+    case 'manager':
+      navContent = (
+        <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '200px', height: '60px' }}>
+        <Nav.Link href="/" active>HOME</Nav.Link>
+        <Nav.Link href="/AboutUs">ABOUT US</Nav.Link>
+        <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
+        <Nav.Link href="/register">REGISTER</Nav.Link>
+        <button onClick={handleResetRole}>Logout</button>
+        <h1>Welcome Manager..!!</h1>
+      </Nav>
+      );
+      break;
 
   default:
     navContent=(
