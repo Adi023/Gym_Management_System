@@ -38,7 +38,7 @@ export default function UserLogin({onLogin}) {
     } else {
       return 'default';
     }
-  };
+  }
   
   return (
     <div style={{padding:"70px"}}>
