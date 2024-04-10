@@ -79,7 +79,7 @@ export default function Home() {
         boxShadow: ' 20px 20px 60px #d9d9d9,-20px -20px 60px #ffffff'
       }}>
 
-        <div className="card" style={{ width: '400px', marginBottom: '20px' }}>
+        <div className="card" style={{ width: '360px', marginBottom: '20px' }}>
           <img src={card1} className="card-img-top" alt=' Not Available' />
           <div className="card-body">
             <p className="card-text">"Forge your strength with the finest trainers in town.
@@ -88,7 +88,7 @@ export default function Home() {
             <a href="/" className="card-link">Another link</a>
           </div>
         </div>
-        <div className="card" style={{ width: '400px', marginBottom: '20px' }}>
+        <div className="card" style={{ width: '360px', marginBottom: '20px' }}>
           <img src={card2} className="card-img-top" alt=' Not Available' />
           <div className="card-body">
             <p className="card-text">"Elevate your workout with precision-crafted gym equipment.
@@ -98,7 +98,7 @@ export default function Home() {
             <a href="/" className="card-link">Another link</a>
           </div>
         </div>
-        <div className="card" style={{ width: '400px', marginBottom: '20px' }}>
+        <div className="card" style={{ width: '360px', marginBottom: '20px' }}>
           <img src={yoga} className="card-img-top" alt=' Not Available'/>
           <div className="card-body">
             <p className="card-text">"Beyond the weights, discover balance and serenity.
