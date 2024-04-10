@@ -30,6 +30,7 @@ import UserLogin from './user/UserLogin';
 import AddUser from './user/AddUser';
 import ViewAllUsers from './user/ViewAllUsers';
 import Login from './Login';
+import Dashboard from './user/Dashboard';
 
 
 export default function AllRoutes() {
@@ -65,6 +66,7 @@ export default function AllRoutes() {
             <Route path='/register' element={<AddUser></AddUser>}></Route>
             <Route path='/viewUsers' element={<ViewAllUsers></ViewAllUsers>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
+            <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
 
 
           </Routes>
