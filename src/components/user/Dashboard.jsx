@@ -1,15 +1,20 @@
 // Dashboard.js
 import React from 'react';
-import Login from '../Login';
+import SideBar from '../SideBar';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-const Dashboard = ({ role }) => {
+const Dashboard = ({role}) => {
   let dashboardContent;
+  const navigate = useNavigate();
 
-  switch (role) {
+  const reduxRole = useSelector(state => state.role);
+  switch (role||reduxRole) {
     case 'admin':
       dashboardContent = (
         <div>
-          <h2>Welcome Admin!</h2>
+          {/* <h2>Welcome Admin!</h2> */}
+          <SideBar/>
           {/* Admin-specific content */}
         </div>
       );
@@ -18,7 +23,7 @@ const Dashboard = ({ role }) => {
       dashboardContent = (
         <div>
           <h2>Welcome User!</h2>
-          {/* User-specific content */}
+          <SideBar/>
         </div>
       );
       break;
@@ -26,7 +31,7 @@ const Dashboard = ({ role }) => {
         dashboardContent = (
             <div>
               <h2>Welcome Manager!</h2>
-              {/* Manager-specific content */}
+              <SideBar/>
             </div>
           );
           break;
@@ -34,16 +39,13 @@ const Dashboard = ({ role }) => {
             dashboardContent = (
                 <div>
                   <h2>Welcome Employee!</h2>
-                  {/* Employee-specific content */}
+                  <SideBar/>
                 </div>
               );
               break;
     default:
-      dashboardContent = (
-        <div>
-         <h2>Default</h2>
-        </div>
-      );
+      navigate('/');
+      break;
   }
 
   return <div>{dashboardContent}</div>;
