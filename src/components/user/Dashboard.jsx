@@ -1,5 +1,6 @@
 // Dashboard.js
 import React from 'react';
+import Login from '../Login';
 
 const Dashboard = ({ role }) => {
   let dashboardContent;
@@ -40,7 +41,7 @@ const Dashboard = ({ role }) => {
     default:
       dashboardContent = (
         <div>
-          <h2>Unknown role</h2>
+         <h2>Default</h2>
         </div>
       );
   }
