@@ -59,7 +59,7 @@ export default function SideBar() {
                     <li>
                         <a href="/submenu3" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                             <i className="fs-4 bi-grid"></i> <span className="ms-1 d-none d-sm-inline">Products</span> </a>
-                            <ul className="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                           <ul className="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li className="w-100">
                                 <a href="/" className="nav-link px-0"> <span className="d-none d-sm-inline">Product</span> 1</a>
                             </li>
@@ -97,9 +97,9 @@ export default function SideBar() {
                 </div>
             </div>
         </div>
-        <div className="col py-3">
+        {/* <div className="col py-3">
             Content area...
-        </div>
+        </div> */}
     </div>
 </div>
     </div>
