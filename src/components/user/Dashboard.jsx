@@ -1,5 +1,5 @@
 // Dashboard.js
-import React from 'react';
+import React, { useEffect} from 'react'
 import SideBar from '../SideBar';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,17 @@ const Dashboard = ({role}) => {
   const navigate = useNavigate();
 
   const reduxRole = useSelector(state => state.role);
+
+  console.log(role+" "+reduxRole);
+
+  
+  useEffect(() => {
+    // Check if the role is 'default' and navigate to the home page
+    if (reduxRole === 'default') {
+      navigate('/');
+    }
+  }, [reduxRole, navigate]); 
+
   switch (role||reduxRole) {
     case 'admin':
       dashboardContent = (
@@ -43,8 +54,12 @@ const Dashboard = ({role}) => {
                 </div>
               );
               break;
+              // case 'default' :
+              //   navigate('/');
+              // break;
     default:
       navigate('/');
+     
       break;
   }
 
