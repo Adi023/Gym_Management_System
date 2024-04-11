@@ -1,25 +1,22 @@
 import React, { useState } from 'react'
 import Dashboard from './user/Dashboard';
 import UserLogin from './user/UserLogin';
+import { useSelector } from 'react-redux';
 
 export default function Login() {
 
     const [role, setRole] = useState();
-   
-    
+    const reduxRole = useSelector(state => state.role);
+    // console.log(reduxRole+" HI " +role);
+
     const handleLogin = (userRole) => {
       setRole(userRole);
-      // localStorage.setItem('role', userRole);
-
+      // console.log("hi"+userRole);
     };
-    
-    // useEffect(() => {
-    //   const storedRole = localStorage.getItem('role');
-    //   if (storedRole) {
-    //     setRole(storedRole);
-    //   }
-    // }, []);
-    
+    if (role===undefined && reduxRole!=="default") {
+      setRole(reduxRole);
+    }
+
 
   return (
     <div>{role? (
