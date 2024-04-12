@@ -5,10 +5,11 @@ import Header from "./components/Header";
 import './App.css'
 import Loading from "./components/Loading";
 import { useSelector } from "react-redux";
+import SideBar from "./components/SideBar";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
- 
+  let appjsContent;
   useEffect(() => {
     // Simulate loading for 1 seconds
     // handleLogin();
@@ -20,19 +21,38 @@ function App() {
   const role = useSelector(state => state.role);
   // console.log(role+"app");
 
+  switch (role) {
+    case 'admin' || 'user' || 'manager':
+      appjsContent= (
+        <div className="d-flex">
+        <div className="sidebar">
+          <SideBar />
+        </div>
+        
+          <div className="content">
+            <AllRoutes />
+          </div>
+       
+      </div>
+      )
+      break;
+    default:
+      appjsContent=(
+        <AllRoutes/>
+      )
+      break;
+  }
   return (
 
-    
+
     <div className="App">
       {isLoading ? (
         <Loading />
       ) : (
-       <>
-        {/* <Router> */}
+        <>
           {/* Header should be included inside Router to access routing functionality */}
           <Header role={role} />
-          <AllRoutes />
-        {/* </Router> */}
+          {appjsContent}
         </>
       )}
     </div>

@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/all.css';
 import logo from '../../src/components/images/logo1.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { resetRole } from '../redux/actions';
 import { useNavigate } from 'react-router-dom';
+import Dashboard from './user/Dashboard';
 // import { useNavigate  } from 'react-router-dom';
 
 export default function Header() {
-  const [showNavbar, setShowNavbar] = useState(false);
-
+  // const [showNavbar, setShowNavbar] = useState(false);
+  // className={showNavbar ? 'fixed-top' : ''}
   const role = useSelector(state => state.role);
 
   const dispatch = useDispatch();
@@ -17,17 +18,18 @@ export default function Header() {
 
   const handleResetRole = () => {
     dispatch(resetRole());
+    localStorage.removeItem('role');
     navigate('/');
   };
 
-  const handleScroll = () => {
-    setShowNavbar(window.scrollY > 50);
-  };
+  // const handleScroll = () => {
+  //   setShowNavbar(window.scrollY > 150);
+  // };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    // window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      // window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 let navContent;
@@ -54,10 +56,10 @@ switch (role) {
       case 'user':
     navContent = (
       <Nav className="me-auto my-2 my-lg-0 navbar-nav-scroll" style={{ '--bs-scroll-height': '200px', height: '60px' }}>
-      <Nav.Link href="/" active>HOME</Nav.Link>
+      {/* <Nav.Link href="/" active>HOME</Nav.Link>
       <Nav.Link href="/AboutUs">ABOUT US</Nav.Link>
       <Nav.Link href="/ContactUs">CONTACT US</Nav.Link>
-      <Nav.Link href="/register">REGISTER</Nav.Link>
+      <Nav.Link href="/register">REGISTER</Nav.Link> */}
       <button onClick={handleResetRole}>Logout</button>
       <h1>Welcome User..!!</h1>
     </Nav>
@@ -95,7 +97,7 @@ switch (role) {
 
   return (
     <>
-      <Navbar className={showNavbar ? 'fixed-top' : ''} bg="black" variant="dark" expand="lg" >
+      <Navbar  bg="black" variant="dark" expand="lg" >
         {/* bg="rgba(0, 0, 0, 0.7)" <Navbar.Brand href="/"><i className='fas fa-dumbbell' style={{ fontSize: '28px', color: ' rgb(153, 225, 20)' }}>GMS</i></Navbar.Brand> */}
         <Navbar.Brand href="/" >
           <img src={logo} alt="Logo" width="60" height="60" style={{ borderRadius: '50px', marginLeft: '30px' }} />
@@ -109,6 +111,7 @@ switch (role) {
       
         </Navbar.Collapse>
       </Navbar>
+      
     </>
   );
 }

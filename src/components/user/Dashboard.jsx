@@ -1,14 +1,31 @@
 // Dashboard.js
-import React from 'react';
+import React, { useEffect} from 'react'
+import SideBar from '../SideBar';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-const Dashboard = ({ role }) => {
+const Dashboard = ({role}) => {
   let dashboardContent;
+  const navigate = useNavigate();
 
-  switch (role) {
+  const reduxRole = useSelector(state => state.role);
+
+  console.log(role+" "+reduxRole);
+
+  
+  useEffect(() => {
+    // Check if the role is 'default' and navigate to the home page
+    if (reduxRole === 'default') {
+      navigate('/');
+    }
+  }, [reduxRole, navigate]); 
+
+  switch (role||reduxRole) {
     case 'admin':
       dashboardContent = (
         <div>
-          <h2>Welcome Admin!</h2>
+          {/* <h2>Welcome Admin!</h2> */}
+          {/* <SideBar/> */}
           {/* Admin-specific content */}
         </div>
       );
@@ -17,7 +34,7 @@ const Dashboard = ({ role }) => {
       dashboardContent = (
         <div>
           <h2>Welcome User!</h2>
-          {/* User-specific content */}
+          {/* <SideBar/> */}
         </div>
       );
       break;
@@ -25,7 +42,7 @@ const Dashboard = ({ role }) => {
         dashboardContent = (
             <div>
               <h2>Welcome Manager!</h2>
-              {/* Manager-specific content */}
+              <SideBar/>
             </div>
           );
           break;
@@ -33,16 +50,17 @@ const Dashboard = ({ role }) => {
             dashboardContent = (
                 <div>
                   <h2>Welcome Employee!</h2>
-                  {/* Employee-specific content */}
+                  <SideBar/>
                 </div>
               );
               break;
+              // case 'default' :
+              //   navigate('/');
+              // break;
     default:
-      dashboardContent = (
-        <div>
-          <h2>Unknown role</h2>
-        </div>
-      );
+      navigate('/');
+     
+      break;
   }
 
   return <div>{dashboardContent}</div>;

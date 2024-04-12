@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { setRole } from '../../redux/actions';
+import {  useNavigate } from 'react-router-dom';
 
 export default function UserLogin({onLogin}) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     
@@ -36,7 +38,7 @@ export default function UserLogin({onLogin}) {
     } else if (username === 'employee' && password === 'employee') {
       return 'employee';
     } else {
-      return 'default';
+      navigate('/login');
     }
   }
   
