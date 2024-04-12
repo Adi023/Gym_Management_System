@@ -150,3 +150,50 @@
 } */
 
 
+.d-flex {
+  display: flex;
+}
+
+.sidebar {
+  /* position: fixed; */
+  top: 120px;
+  left: 0;
+  bottom: 0;
+  /* width: 150px; */
+  /* Add any additional styling as needed */
+ 
+}
+
+
+
+.content {
+  /* padding: 20px; */
+  /* Add any additional styling as needed */
+  /* padding-left: 150px;  */
+  /* Ensure content doesn't overlap with sidebar */
+  height: 100vh;
+  flex: 1;
+  width: max-content;
+  /* Set content area height to fill the viewport */
+  overflow-y: auto; /* Enable vertical scrolling for content */
+  overflow-x: auto;
+  position: relative; /* Ensure z-index works correctly */
+}
+
+/* Add scrollbar to children content */
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.custom-icon {
+  color:rgb(153, 225, 20); /* Change color to your desired color */
+}
