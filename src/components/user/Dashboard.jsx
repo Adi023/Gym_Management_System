@@ -25,7 +25,7 @@ const Dashboard = ({role}) => {
       dashboardContent = (
         <div>
           {/* <h2>Welcome Admin!</h2> */}
-          <SideBar/>
+          {/* <SideBar/> */}
           {/* Admin-specific content */}
         </div>
       );
@@ -34,7 +34,7 @@ const Dashboard = ({role}) => {
       dashboardContent = (
         <div>
           <h2>Welcome User!</h2>
-          <SideBar/>
+          {/* <SideBar/> */}
         </div>
       );
       break;
