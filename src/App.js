@@ -22,7 +22,10 @@ function App() {
   // console.log(role+"app");
 
   switch (role) {
-    case 'admin' || 'user' || 'manager':
+      case 'admin':
+      case 'user':
+      case 'manager':
+      case 'employee':
       appjsContent= (
         <div className="d-flex">
         <div className="sidebar">
