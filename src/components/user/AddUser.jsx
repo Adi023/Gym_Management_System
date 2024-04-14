@@ -14,14 +14,14 @@ export default function AddUser() {
 
   const [minDate, setMinDate] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  // const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordsMatch, setPasswordsMatch] = useState(true);
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
   const [isValidEmail, setIsValidEmail] = useState(true);
 
   const handleEmailChange = (e) => {
     const { value } = e.target;
-    setEmail(value);
+    // setEmail(value);
     setIsValidEmail(validateEmail(value));
   };
 
@@ -38,7 +38,7 @@ export default function AddUser() {
   };
 
   const handleConfirmPasswordChange = (e) => {
-    setConfirmPassword(e.target.value);
+    // setConfirmPassword(e.target.value);
     setPasswordsMatch(e.target.value === password);
   };
 
@@ -61,7 +61,7 @@ export default function AddUser() {
   }, []);
 
   return (
-    <div  style={{ marginLeft: '25%', position: 'relative' }}>
+    <div className="signup-container">
     <h2 style={{ marginLeft: '25%', position: 'relative' }}>Sign UP</h2>
       <form onSubmit={handleSubmit(sendData)}>
 
@@ -151,9 +151,9 @@ export default function AddUser() {
         {/* <label>Active</label> */}
         <input type="hidden" {...register('active', { required: 'active is required' })} placeholder={"Active"} defaultValue={true}/>
         {errors.active && <p style={{ color: 'red' }}>{errors.active.message}</p>}
-        <br />
+        {/* <br /> */}
 
-        <label>Gender</label>
+        {/* <label>Gender</label>
         <input type="radio" value="Male"
           style={{ width: 'auto',marginTop:"8px",marginBottom:"8px" }}
           {...register('gender', { required: 'Gender is required' })} />
@@ -169,7 +169,16 @@ export default function AddUser() {
           {...register('gender', { required: 'Gender is required' })} />
         <label>Other</label>
         {errors.gender && <p style={{ color: 'red' }}>{errors.gender.message}</p>}
-        <br /><br/>
+        <br /><br/> */}
+        <label>Gender</label>
+        <select  {...register('gender', { required: 'Gender is required' })} >
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Others">Others</option>
+        </select>
+        {errors.gender && <p style={{ color: 'red' }}>{errors.gender.message}</p>}
+        <br />
         
         <label>Blood Group</label>
         <select {...register('bloodGroup', { required: 'Blood Group is required' })}>
@@ -189,10 +198,11 @@ export default function AddUser() {
         {/* <label>Role</label> */}
         <input type="hidden" {...register('role_Id', { required: 'Role Id is required' })} placeholder={"USER"} defaultValue={10} />
         {errors.role_Id && <p style={{ color: 'red' }}>{errors.role_Id.message}</p>}
-        <br />
+        {/* <br /> */}
 
         <label></label>
-        <input type="submit" value={"Register"} placeholder={"Register"} /><br/>
+        <input type="submit" value={"Register"} placeholder={"Register"} />
+        <br/>
         <label></label>
         <input type="reset" value={"Reset"} placeholder={"Reset"} />
 
