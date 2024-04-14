@@ -24,9 +24,9 @@ const Dashboard = ({role}) => {
     case 'admin':
       dashboardContent = (
         <div>
-          {/* <h2>Welcome Admin!</h2> */}
-          {/* <SideBar/> */}
-          {/* Admin-specific content */}
+          <h2>Welcome Admin!</h2>
+        
+          
         </div>
       );
       break;
@@ -34,7 +34,7 @@ const Dashboard = ({role}) => {
       dashboardContent = (
         <div>
           <h2>Welcome User!</h2>
-          {/* <SideBar/> */}
+          
         </div>
       );
       break;
@@ -42,7 +42,7 @@ const Dashboard = ({role}) => {
         dashboardContent = (
             <div>
               <h2>Welcome Manager!</h2>
-              <SideBar/>
+              
             </div>
           );
           break;
@@ -50,13 +50,11 @@ const Dashboard = ({role}) => {
             dashboardContent = (
                 <div>
                   <h2>Welcome Employee!</h2>
-                  <SideBar/>
+                 
                 </div>
               );
               break;
-              // case 'default' :
-              //   navigate('/');
-              // break;
+  
     default:
       navigate('/');
      
