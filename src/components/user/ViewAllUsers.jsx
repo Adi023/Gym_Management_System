@@ -1,138 +1,116 @@
 import React, { useEffect, useState } from 'react';
 import UserServices from '../../services/UserServices';
-import { Col, Container, Pagination, PaginationItem, PaginationLink, Row } from 'reactstrap'
+import { Col, Container, Pagination, PaginationItem, PaginationLink, Row } from 'reactstrap';
 
 export default function ViewAllUsers() {
   const [data, setData] = useState([]);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [totalPages, setTotalPages] = useState(0);
-
   const [postContent, setPostContent] = useState({
     content: [],
     totalPages: '',
     totalElement: '',
     pageSize: '',
     lastPage: false,
-    pageNumber:''
-  })
+    pageNumber: 0
+  });
 
   useEffect(() => {
     fetchData();
-    console.log('Data:', data);
   }, []);
-  // currentPage
 
   const fetchData = async () => {
     try {
-      const responseData = await UserServices.viewUsers();
+      const responseData = await UserServices.viewUsers(postContent.pageNumber);
       setData(responseData.data.content);
-      setPostContent(data);
-      // setTotalPages(responseData.data.totalPages);
-      console.log(responseData)
+      setPostContent(responseData.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
 
-  // const goToPage = (page) => {
-  //   setCurrentPage(page);
-  // };
-
+  const handlePageChange = async (page) => {
+    try {
+      const responseData = await UserServices.viewUsers(page);
+      setData(responseData.data.content);
+      setPostContent(responseData.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   return (
     <div className='container'>
-      
-      <Row><Col md={
-        {
-          size:15,
-          offset:0
-        }
-      }>
-        <h1>ViewAllUsers({postContent?.totalElement})</h1>
-      <table className="table  table-hover" >
-        <thead className="table-dark" >
-          <tr >
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            {/* <th scope="col">Password</th> */}
-            <th scope="col">Mobile</th>
-            <th scope="col">Address</th>
-            <th scope="col">City</th>
-            <th scope="col">Date Of Joining</th>
-            <th scope="col">Date Of Birth</th>
-            <th scope="col">Status</th>
-            <th scope="col">Gender</th>
-            <th scope="col">BloodGroup</th>
-            <th scope="col">Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((d) => (
-            <tr key={d.userId}>
-              <th scope="row">{d.userId}</th>
-              <th scope="row">{d.name}</th>
-              <td>{d.email}</td>
-              {/* <td>{d.password}</td> */}
-              <td>{d.mobile}</td>
-              <td>{d.address}</td>
-              <td>{d.cityId.cityName}</td>
-              <td>{d.date_of_joining}</td>
-              <td>{d.dob}</td>
-              <td>{d.active ? 'Active' : 'Inactive'}</td>
-              <td className="text-center ">{d.gender}</td>
-              <td className="text-center ">{d.bloodGroup}</td>
-              <td>{d.roleId.roleName}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <Container className='mt-5'>
-        <Pagination aria-label="Page navigation example" size="lg">
-          {/* <PaginationItem>
-            <PaginationLink first href="1">
-              First
-            </PaginationLink>
-          </PaginationItem> */}
-
-          <PaginationItem disabled={postContent.pageNumber=0}>
-            <PaginationLink href="#" previous >
-              Previous
-            </PaginationLink>
-          </PaginationItem>
-
-          <PaginationItem>
-            <PaginationLink href="#">
-
-              {
-                [...Array(postContent.totalPages)].map((item,index)=>(
-                  <PaginationItem active={index===postContent.pageNumber} key={index}>
-                    <PaginationLink>
-                      {index+1}
-                    </PaginationLink>
-                  </PaginationItem>
-                ))
-              }
-
-            </PaginationLink>
-          </PaginationItem>
-
-          <PaginationItem>
-            <PaginationLink href="#" next>
-              Next
-            </PaginationLink>
-          </PaginationItem>
-
-          <PaginationItem>
-            <PaginationLink href='2' last>
-              Last
-            </PaginationLink>
-          </PaginationItem>
-
-        </Pagination>
-
-      </Container>
-      </Col></Row>
+      <Row>
+        <Col md={{ size: 10, offset: 1 }}>
+          <h1>ViewAllUsers ({postContent.totalElement})</h1>
+          <table className="table table-hover">
+          <thead className="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">Date Of Joining</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Status</th>
+                <th scope="col">Gender</th>
+                <th scope="col">BloodGroup</th>
+                <th scope="col">Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((d) => (
+                <tr key={d.userId}>
+                  <td>{d.userId}</td>
+                  <td>{d.name}</td>
+                  <td>{d.email}</td>
+                  <td>{d.mobile}</td>
+                  <td>{d.address}</td>
+                  <td>{d.cityId.cityName}</td>
+                  <td>{d.date_of_joining}</td>
+                  <td>{d.dob}</td>
+                  <td>{d.active ? 'Active' : 'Inactive'}</td>
+                  <td>{d.gender}</td>
+                  <td>{d.bloodGroup}</td>
+                  <td>{d.roleId.roleName}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <Container className='mt-3'>
+            <Pagination aria-label="Page navigation example" size="lg">
+              <PaginationItem>
+                <PaginationLink onClick={() => handlePageChange(0)} disabled={postContent.pageNumber === 0}>
+                  First
+                </PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink onClick={() => handlePageChange(postContent.pageNumber - 1)} previous disabled={postContent.pageNumber === 0}>
+                  Previous
+                </PaginationLink>
+              </PaginationItem>
+              {[...Array(postContent.totalPages)].map((_, index) => (
+                <PaginationItem key={index} active={index === postContent.pageNumber}>
+                  <PaginationLink onClick={() => handlePageChange(index)}>
+                    {index + 1}
+                  </PaginationLink>
+                </PaginationItem>
+              ))}
+              <PaginationItem>
+                <PaginationLink onClick={() => handlePageChange(postContent.pageNumber + 1)} next disabled={postContent.pageNumber === postContent.totalPages - 1}>
+                  Next
+                </PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink onClick={() => handlePageChange(postContent.totalPages - 1)} disabled={postContent.pageNumber === postContent.totalPages - 1}>
+                  Last
+                </PaginationLink>
+              </PaginationItem>
+            </Pagination>
+          </Container>
+        </Col>
+      </Row>
     </div>
   );
 }
