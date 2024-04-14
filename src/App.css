@@ -123,7 +123,7 @@
   height: auto;
 }
 
-#login{
+/* #login{
   align-self: center;
   position: relative;
   margin-left: 25%;
@@ -131,13 +131,33 @@
   margin-bottom: 50px;
   width:50%;
   height: 50vh;
-  border: solid #011522;
   padding: 55px;
-  border-radius: 50px;
   background: #ffffff;
   box-shadow:  20px 20px 60px #a8a8a8,
              -20px -20px 60px #ffffff;
+} */
+
+#login {
+  align-self: center;
+  position: relative;
+  margin: 2% auto 50px auto; /* Center the login div vertically and horizontally */
+  width: 90%; /* Adjust width for responsiveness */
+  max-width: 600px; /* Set maximum width to prevent it from becoming too wide on larger screens */
+  height: auto; /* Allow height to adjust based on content */
+  padding: 3vw; /* Use viewport units for padding */
+  background: #ffffff;
+  box-shadow:  10px 10px 30px #a8a8a8,
+             -10px -10px 30px #ffffff;
 }
+
+/* Adjust box shadow for smaller screens */
+@media (max-width: 768px) {
+  #login {
+    box-shadow:  5px 5px 20px #a8a8a8,
+               -5px -5px 20px #ffffff;
+  }
+}
+
   
 .custom-thead {
   vertical-align: middle;
@@ -148,7 +168,18 @@
 .App {
   text-align: center;
 } */
+.navHeight{
+  bs-scroll-height: 200px;
+   height: 60px;
 
+  @media (max-width: 991px) {
+    height: 120px; /* Decrease width for smaller screens */
+  }
+  
+  @media (max-width: 576px) {
+    height: 180px; /* Further decrease width for extra small screens */
+  }
+}
 
 .d-flex {
   display: flex;
@@ -159,9 +190,31 @@
   top: 120px;
   left: 0;
   bottom: 0;
-  /* width: 150px; */
-  /* Add any additional styling as needed */
  
+}
+
+/* signup page css */
+.signup-container {
+  margin: 2% auto 50px auto;
+  width: 80%;
+  max-width: 800px;
+  padding: 3% 3% 3% 10vw;
+  background: #ffffff;
+  box-shadow: 10px 10px 30px #a8a8a8, -10px -10px 30px #ffffff;
+}
+
+.signup-heading {
+  margin-bottom: 2rem; 
+}
+
+/* Adjust styles for smaller screens */
+@media (max-width: 768px) {
+  .signup-container {
+    box-shadow: 5px 5px 20px #a8a8a8, -5px -5px 20px #ffffff;
+  }
+  .signup-heading {
+    margin-left: 10%;
+  }
 }
 
 
