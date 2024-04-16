@@ -21,6 +21,10 @@ import ViewAdmin from './admin/ViewAdmin'
 import Admin from './Admin'
 import AdminDashBoard from './admin/AdminDashBoard';
 
+//Attendance imports
+import AttendanceHome from './attendance/AttendanceHome';
+import WeeklyAttendance from './attendance/WeeklyAttendance'
+
 //Other imports
 import Header from './Header'
 import Home from './Home'
@@ -68,7 +72,9 @@ export default function AllRoutes() {
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
 
-
+            {/* Attendance Routes */}
+            <Route path='/attendance' element={<AttendanceHome></AttendanceHome>}></Route>
+            <Route path='/weeklyAttendance' element={<WeeklyAttendance/>}></Route>
           </Routes>
        {/* </Router> */}
         </div>
