@@ -24,6 +24,9 @@ import AdminDashBoard from './admin/AdminDashBoard';
 //Attendance imports
 import AttendanceHome from './attendance/AttendanceHome';
 import WeeklyAttendance from './attendance/WeeklyAttendance'
+import MarkAttendance from './attendance/MarkAttendance'
+import ViewAttendance from './attendance/ViewAttendance'
+
 
 //Other imports
 import Header from './Header'
@@ -75,6 +78,8 @@ export default function AllRoutes() {
             {/* Attendance Routes */}
             <Route path='/attendance' element={<AttendanceHome></AttendanceHome>}></Route>
             <Route path='/weeklyAttendance' element={<WeeklyAttendance/>}></Route>
+            <Route path='/markAttendance' element={<MarkAttendance/>}></Route>
+            <Route path='/viewAttendance' element={<ViewAttendance/>}></Route>
           </Routes>
        {/* </Router> */}
         </div>
