@@ -1,20 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { resetRole } from '../redux/actions';
+import ConfirmationModal from './ConfirmationModal';
 
 export default function SideBar() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const [showConfirmation, setShowConfirmation] = useState(false);
+
     const handleResetRole = () => {
+        setShowConfirmation(true);
+    };
+
+    const confirmResetRole = () => {
+        // Execute the reset role logic
         dispatch(resetRole());
         localStorage.removeItem('role');
         navigate('/');
+        setShowConfirmation(false);
+    };
+
+    const cancelResetRole = () => {
+        setShowConfirmation(false);
     };
 
     return (
         <div >
+            <ConfirmationModal
+                show={showConfirmation}
+                onHide={cancelResetRole}
+                onConfirm={confirmResetRole}
+                message="Are you sure you want to Sign Out?"
+            />
             <div className="container-fluid">
                 <div className="row flex-nowrap">
                     <div className=" sidewidth  px-0 bg-black" >
@@ -36,7 +55,7 @@ export default function SideBar() {
                                         <span className="custom-icon ms-1 d-none d-sm-inline">User</span>
                                     </Link>
                                     <ul className="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                        <li  className="w-100">
+                                        <li className="w-100">
                                             <Link to="/register" className="nav-link px-0 custom-icon">
                                                 <i className=" bi bi-person-add "></i>
                                                 <span className="custom-icon d-none d-sm-inline"> Add</span></Link>
@@ -52,8 +71,8 @@ export default function SideBar() {
                                 {/* Attendance Fields */}
                                 <li>
                                     <Link to="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                                        <i className="fs-4 bi-table custom-icon" ></i> 
-                                        <span className="custom-icon ms-1 d-none d-sm-inline">Attendance</span>    
+                                        <i className="fs-4 bi-table custom-icon" ></i>
+                                        <span className="custom-icon ms-1 d-none d-sm-inline">Attendance</span>
                                     </Link>
                                     <ul className="collapse  nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                                         <li className="w-100">
@@ -112,7 +131,7 @@ export default function SideBar() {
                                     <li>
                                         <hr className="dropdown-divider" />
                                     </li>
-                                    <li><Link className="dropdown-item" to="/" onClick={handleResetRole}>Sign out</Link></li>
+                                    <li><Link className="dropdown-item" onClick={handleResetRole}>Sign out</Link></li>
                                 </ul>
                             </div>
                         </div>
