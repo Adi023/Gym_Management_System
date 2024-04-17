@@ -10,9 +10,9 @@ const WeeklyAttendance = ({ attendanceData }) => {
     // console.log("Weekly vvvv "+ attendanceData)
 
 
-    useEffect(() => {
-        console.log("First useeffect")
-    });
+    // useEffect(() => {
+    //     console.log("First useeffect")
+    // });
     
     // useEffect(() => {
     //     console.log("Weekly useeffect 1 "+attendanceData)
