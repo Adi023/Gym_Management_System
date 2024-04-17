@@ -10,6 +10,7 @@ import SideBar from "./components/SideBar";
 import { useNavigate } from "react-router-dom";
 import { resetRole } from "./redux/actions";
 import { Button, Modal } from "react-bootstrap";
+import ConfirmationModal from "./components/ConfirmationModal";
 
 function App() {
   
@@ -26,24 +27,23 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [showModal, setShowModal] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const handleResetRole = () => {
-    setShowModal(true); // Show confirmation modal
-  };
+    const handleResetRole = () => {
+        setShowConfirmation(true);
+    };
 
-  const confirmSignOut = () => {
-    // Dispatch resetRole action and remove role from localStorage
-    dispatch(resetRole());
-    localStorage.removeItem('role');
-    navigate('/');
+    const confirmResetRole = () => {
+        // Execute the reset role logic
+        dispatch(resetRole());
+        localStorage.removeItem('role');
+        navigate('/');
+        setShowConfirmation(false);
+    };
 
-    setShowModal(false); // Hide modal after sign out
-  };
-
-  const cancelSignOut = () => {
-    setShowModal(false); // Hide modal if sign out is canceled
-  };
+    const cancelResetRole = () => {
+        setShowConfirmation(false);
+    };
 
   const role = useSelector(state => state.role);
   // console.log(role+"app");
@@ -85,20 +85,12 @@ function App() {
           {appjsContent}
         </>
       )}
-      <Modal show={showModal} onHide={cancelSignOut}>
-        <Modal.Header closeButton>
-          <Modal.Title>Confirm Sign Out</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Are you sure you want to sign out?</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={cancelSignOut}>
-            Cancel
-          </Button>
-          <Button variant="success" onClick={confirmSignOut}>
-            Sign Out
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <ConfirmationModal
+                show={showConfirmation}
+                onHide={cancelResetRole}
+                onConfirm={confirmResetRole}
+                message="Are you sure you want to Sign Out?"
+            />
     </div>
   );
 }
