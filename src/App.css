@@ -1,4 +1,3 @@
-
 .tools {
   display: flex;
   align-items: center;
@@ -41,10 +40,11 @@
   margin: 50px;
   position: relative;
   border-radius: 25px;
-  background:#011522;
+  background: #011522;
   box-shadow: -10px -10px 10px #474747
 }
-#adash{
+
+#adash {
   color: aliceblue;
   height: 160px;
   width: 170px;
@@ -53,19 +53,19 @@
   margin: 30px;
   position: relative;
   border-radius: 25px;
-  background:#011522;
+  background: #011522;
   box-shadow: -10px -10px 10px #474747
 }
 
 
-#fb{
+#fb {
   align-self: center;
   position: relative;
   margin-left: 25%;
   margin-top: 2%;
   margin-bottom: 50px;
-  width:50%;
-  background:#011522;
+  width: 50%;
+  background: #011522;
   box-shadow: -10px -10px 10px #474747;
   border-radius: 25px;
   align-items: center;
@@ -75,36 +75,36 @@
 
 
 
+#left h1 {
+  font-size: 70px;
+  line-height: 100px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 20px;
+  color: rgb(153, 225, 20);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+}
+
+@media (max-width: 768px) {
   #left h1 {
-    font-size: 70px;
-    line-height: 100px;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-align: left;
-    margin-left: 30px;
-    margin-top: 20px;
-    color: rgb(153, 225, 20);
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 1px;
+    font-size: 60px;
+    line-height: 70px;
+    margin-left: 15px;
+    margin-top: 80px;
   }
-  
-  @media (max-width: 768px) {
-    #left h1 {
-      font-size: 60px;
-      line-height: 70px;
-      margin-left: 15px;
-      margin-top: 80px;
-    }
+}
+
+@media (max-width: 576px) {
+  #left h1 {
+    font-size: 20px;
+    line-height: 25px;
+    margin-left: 10px;
+    margin-top: 25px;
   }
-  
-  @media (max-width: 576px) {
-    #left h1 {
-      font-size: 20px;
-      line-height: 25px;
-      margin-left: 10px;
-      margin-top: 25px;
-    }
-  }
+}
 
 /* GymLoader.css SKIP_PREFLIGHT_CHECK=true*/
 
@@ -123,42 +123,34 @@
   height: auto;
 }
 
-/* #login{
-  align-self: center;
-  position: relative;
-  margin-left: 25%;
-  margin-top: 2%;
-  margin-bottom: 50px;
-  width:50%;
-  height: 50vh;
-  padding: 55px;
-  background: #ffffff;
-  box-shadow:  20px 20px 60px #a8a8a8,
-             -20px -20px 60px #ffffff;
-} */
 
 #login {
   align-self: center;
   position: relative;
-  margin: 2% auto 50px auto; /* Center the login div vertically and horizontally */
-  width: 90%; /* Adjust width for responsiveness */
-  max-width: 600px; /* Set maximum width to prevent it from becoming too wide on larger screens */
-  height: auto; /* Allow height to adjust based on content */
-  padding: 3vw; /* Use viewport units for padding */
+  margin: 2% auto 50px auto;
+  /* Center the login div vertically and horizontally */
+  width: 90%;
+  /* Adjust width for responsiveness */
+  max-width: 600px;
+  /* Set maximum width to prevent it from becoming too wide on larger screens */
+  height: auto;
+  /* Allow height to adjust based on content */
+  padding: 3vw;
+  /* Use viewport units for padding */
   background: #ffffff;
-  box-shadow:  10px 10px 30px #a8a8a8,
-             -10px -10px 30px #ffffff;
+  box-shadow: 10px 10px 30px #a8a8a8,
+    -10px -10px 30px #ffffff;
 }
 
 /* Adjust box shadow for smaller screens */
 @media (max-width: 768px) {
   #login {
-    box-shadow:  5px 5px 20px #a8a8a8,
-               -5px -5px 20px #ffffff;
+    box-shadow: 5px 5px 20px #a8a8a8,
+      -5px -5px 20px #ffffff;
   }
 }
 
-  
+
 .custom-thead {
   vertical-align: middle;
   border-color: inherit;
@@ -168,16 +160,18 @@
 .App {
   text-align: center;
 } */
-.navHeight{
+.navHeight {
   bs-scroll-height: 200px;
-   height: 60px;
+  height: 60px;
 
   @media (max-width: 991px) {
-    height: 120px; /* Decrease width for smaller screens */
+    height: 120px;
+    /* Decrease width for smaller screens */
   }
-  
+
   @media (max-width: 576px) {
-    height: 180px; /* Further decrease width for extra small screens */
+    height: 180px;
+    /* Further decrease width for extra small screens */
   }
 }
 
@@ -190,7 +184,14 @@
   top: 120px;
   left: 0;
   bottom: 0;
- 
+}
+
+.sidewidth{
+  width: 145px;
+
+  @media (max-width: 768px) {
+    width: auto;
+  }
 }
 
 /* signup page css */
@@ -204,7 +205,7 @@
 }
 
 .signup-heading {
-  margin-bottom: 2rem; 
+  margin-bottom: 2rem;
 }
 
 /* Adjust styles for smaller screens */
@@ -212,18 +213,20 @@
   .signup-container {
     box-shadow: 5px 5px 20px #a8a8a8, -5px -5px 20px #ffffff;
   }
+
   .signup-heading {
     margin-left: 10%;
   }
 }
 
-.content-top{
+.content-top {
   height: auto;
   position: fixed;
   flex: 1;
   width: max-content;
   /* Set content area height to fill the viewport */
-  overflow-y: auto; /* Enable vertical scrolling for content */
+  overflow-y: auto;
+  /* Enable vertical scrolling for content */
   overflow-x: auto;
 }
 
@@ -236,9 +239,11 @@
   flex: 1;
   width: max-content;
   /* Set content area height to fill the viewport */
-  overflow-y: auto; /* Enable vertical scrolling for content */
+  overflow-y: auto;
+  /* Enable vertical scrolling for content */
   overflow-x: auto;
-  position: relative; /* Ensure z-index works correctly */
+  position: relative;
+  /* Ensure z-index works correctly */
 }
 
 /* Add scrollbar to children content */
@@ -256,5 +261,6 @@
 }
 
 .custom-icon {
-  color:rgb(153, 225, 20); /* Change color to your desired color */
+  color: rgb(153, 225, 20);
+  /* Change color to your desired color */
 }
