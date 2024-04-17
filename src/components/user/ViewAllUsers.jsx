@@ -15,7 +15,7 @@ export default function ViewAllUsers() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   const fetchData = async () => {
     try {
