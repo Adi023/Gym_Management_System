@@ -264,3 +264,10 @@
   color: rgb(153, 225, 20);
   /* Change color to your desired color */
 }
+
+.divcard {
+  display: flex;
+  flex-wrap: wrap;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
