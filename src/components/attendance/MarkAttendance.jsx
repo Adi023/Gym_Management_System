@@ -9,7 +9,7 @@ export default function MarkAttendance() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const today = new Date().toISOString().split('T')[0];
 
-  const present=true;
+  const present = true;
 
   const sendData = (d) => {
     dataUser.forEach((user) => {
@@ -18,33 +18,33 @@ export default function MarkAttendance() {
         console.log("User ID from Attendance Data: " + attendance.userId);
         // Perform operations using user and attendance data here
 
-        if((user.userId===attendance.userId)&&(user.userId===d.userId)){
+        if ((user.userId === attendance.userId) && (user.userId === d.userId)) {
 
-          if(attendance.attendanceDate===d.today){
-            console.log(attendance.attendanceDate+d.today)
+          if (attendance.attendanceDate === d.today) {
+            console.log(attendance.attendanceDate + d.today)
             alert("Attendance is Already Marked");
           }
-          else{
+          else {
             AttendanceServices.addAttendance(d);
             console.log(d);
             alert("Added Successfully");
           }
-    
-        }else{
+
+        } else {
           AttendanceServices.addAttendance(d);
           console.log(d);
           alert("Added Successfully");
         }
       });
     });
-    console.log(d+dataUser.userId)
-   
+    console.log(d + dataUser.userId)
+
   }
 
   const fetchData = async () => {
     try {
       const userData = await UserServices.viewUsers();
-      const attendanceData =await AttendanceServices.viewAttendanceData();
+      const attendanceData = await AttendanceServices.viewAttendanceData();
       setUserData(userData.data.content);
       console.log(userData.data.content)
       setAttendanceData(attendanceData.data.content);
@@ -57,8 +57,8 @@ export default function MarkAttendance() {
 
   useEffect(() => {
     fetchData();
-  },[]);
-  
+  }, []);
+
   return (
 
     <>
@@ -67,26 +67,26 @@ export default function MarkAttendance() {
       </div>
       <br />
 
-      <div className='signup-container py-4 px-4 divcard'>
-      <form >
-  {dataUser.map((user) => (
-    <div key={user.userId} className="mb-3 form-row">
-    <label>Attendance ID</label>
-    <input type='text' {...register('attendanceId', { required: 'Attendance Id Is Required' })} placeholder={"AttendanceId"}/>
-    <label>User Id</label>
-    <input type='text' {...register(`userId-${user.userId}`, { required: 'User Id Is Required' })} placeholder={"User Id"} defaultValue={user.userId} readOnly />
-      <label>Status</label>
-    <input type='text' {...register('present', { required: 'Status Is Required' })} placeholder={"Status"} defaultValue={present}/>
-    <label>Attendance Date</label>
-    <input type='text'{...register('attendanceDate', { required: 'attendanceDate Is Required' })} placeholder={"Attendance Date"} defaultValue={today}/>
-    <label></label>
-      {/* <button type="button" className="btn btn-primary" onClick={handleSubmit(onSubmit)}>Submit</button> */}
-      <button type="button" className="btn btn-primary" onClick={() => sendData(user.userId)}>Submit</button>
-    </div>
-  ))}
-  
-</form>
-
+      <div className="signup-container">
+        <form onSubmit={handleSubmit(sendData)}>
+          <div className="form-row">
+            <label>Attendance ID</label>
+            <input type='text' {...register('attendanceId', { required: 'Attendance Id Is Required' })} placeholder={"AttendanceId"} /> <br />
+            <label>User Id</label>
+            <input type='text' {...register(`userId`, { required: 'User Id Is Required' })} placeholder={"User Id"} /> <br />
+            <label>Status</label>
+            {/* <input type='text' {...register('present', { required: 'Status Is Required' })} placeholder={"Status"} defaultValue={present}/> <br /> */}
+            <select {...register('present', { required: 'Status Is Required' })} placeholder={"Status"}>
+              <option value="">Select Status</option>
+              <option value="true">Present</option>
+              <option value="false">Absent</option>
+            </select><br />
+            <label>Attendance Date</label>
+            <input type='text'{...register('attendanceDate', { required: 'attendanceDate Is Required' })} placeholder={"Attendance Date"} defaultValue={today} readOnly/> <br />
+            <label></label>
+            <input type='submit'></input>
+          </div>
+        </form>
       </div>
     </>
   )
