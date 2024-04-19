@@ -38,6 +38,7 @@ import AddUser from './user/AddUser';
 import ViewAllUsers from './user/ViewAllUsers';
 import Login from './Login';
 import Dashboard from './user/Dashboard';
+import ViewSingleUser from './user/ViewSingleUser';
 
 
 export default function AllRoutes() {
@@ -47,12 +48,12 @@ export default function AllRoutes() {
         {/* <Router> */}
           <Routes>
             {/*Member Routes */}
-            <Route path="AddMember" element={<AddMember></AddMember>}></Route>
+            {/* <Route path="AddMember" element={<AddMember></AddMember>}></Route>
             <Route path="Member" element={<Member></Member>}></Route>
             <Route path="UpdateMember" element={<UpdateMember></UpdateMember>}></Route>
             <Route path="ViewMember" element={<ViewMember></ViewMember>}></Route>
             <Route path="ViewMemberById" element={<ViewMemberById></ViewMemberById>}></Route>
-            <Route path="MemberLogin" element={<MemberLogin></MemberLogin>}></Route>
+            <Route path="MemberLogin" element={<MemberLogin></MemberLogin>}></Route> */}
 
             {/*Admin Routes*/}
             <Route path="Admin" element={<Admin></Admin>}></Route>
@@ -72,6 +73,7 @@ export default function AllRoutes() {
             <Route path="/userlogin" element={<UserLogin></UserLogin>}></Route>
             <Route path='/register' element={<AddUser></AddUser>}></Route>
             <Route path='/viewUsers' element={<ViewAllUsers></ViewAllUsers>}></Route>
+            <Route path='/viewSingleUser' element={<ViewSingleUser></ViewSingleUser>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
             <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
 
