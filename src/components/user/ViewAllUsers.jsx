@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UserServices from '../../services/UserServices';
 import { Col, Container, Pagination, PaginationItem, PaginationLink, Row } from 'reactstrap';
+import ErrorPage from '../ErrorPage';
 
 export default function ViewAllUsers() {
   const [data, setData] = useState([]);
@@ -15,11 +16,21 @@ export default function ViewAllUsers() {
 
   useEffect(() => {
     fetchData();
+    
   });
 
   const fetchData = async () => {
     try {
-      const responseData = await UserServices.viewUsers(postContent.pageNumber);
+      const responseData = await UserServices.viewUsers(postContent.pageNumber).then(() => {
+        console.log(responseData);
+        alert("User Fetched Successfully");
+      })
+      .catch(error => {
+        console.error("Error Fetching user:", error);
+        // Render ErrorPage or handle error in another way
+        // alert('Error happened');
+        return <ErrorPage />;
+      });
       setData(responseData.data.content);
       setPostContent(responseData.data);
     } catch (error) {
