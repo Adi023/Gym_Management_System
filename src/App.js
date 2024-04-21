@@ -9,8 +9,21 @@ import SideBar from "./components/SideBar";
 // import { Nav, Navbar } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { resetRole } from "./redux/actions";
-import { Button, Modal } from "react-bootstrap";
 import ConfirmationModal from "./components/ConfirmationModal";
+import ErrorBoundary from './ErrorBoundary'; // Adjust the path as needed
+import AxiosErrorHandler from "./components/AxiosErrorHandler";
+// import { ErrorBoundary } from 'react-error-boundary'
+
+function MyFallbackComponent({ error, resetErrorBoundary }) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre>{error.message}</pre>
+      <button onClick={resetErrorBoundary}>Try again</button>
+    </div>
+  )
+}
+
 
 function App() {
   
@@ -62,7 +75,11 @@ function App() {
             <nav className="navbar navbar-expand-sm bg-black navbar-dark mr-3 justify-content-end">
               <button onClick={handleResetRole} className="btn btn-success ml-auto mr-3">SIGN OUT </button>
             </nav>
-            <AllRoutes />
+            <ErrorBoundary>
+      <AxiosErrorHandler>           <AllRoutes />
+      </AxiosErrorHandler>
+ 
+           </ErrorBoundary>
           </div>
         </div>
       )
@@ -71,7 +88,16 @@ function App() {
       appjsContent = (
         <>
           <Header role={role} />
-          <AllRoutes />
+          <ErrorBoundary
+      FallbackComponent={MyFallbackComponent}
+      onReset={() => {
+        // reset the state of your app here
+      }}
+      resetKeys={['someKey']}
+    >
+            <AllRoutes />
+          </ErrorBoundary>
+         
         </>
       )
       break;
