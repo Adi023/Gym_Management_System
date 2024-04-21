@@ -3,15 +3,16 @@ import React from 'react'
 // import { BrowserRouter as  Routes, Route, Router } from 'react-router-dom'
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import  ErrorBoundary from '../ErrorBoundary'
+// //Member imports
+// import AddMember from './member/AddMember';
+// import UpdateMember from './member/UpdateMember';
+// import ViewMember from './member/ViewMember';
+// import ViewMemberById from './member/ViewMemberById';
+// import MemberLogin from './member/MemberLogin';
+// import Member from './Member'
 
-//Member imports
-import AddMember from './member/AddMember';
-import UpdateMember from './member/UpdateMember';
-import ViewMember from './member/ViewMember';
-import ViewMemberById from './member/ViewMemberById';
-import MemberLogin from './member/MemberLogin';
-import Member from './Member'
-
+import ErrorPage from './ErrorPage';
 
 //Admin imports
 import AddAdmin from './admin/AddAdmin'
@@ -46,6 +47,7 @@ export default function AllRoutes() {
     <>
         <div>
         {/* <Router> */}
+        <ErrorBoundary>
           <Routes>
             {/*Member Routes */}
             {/* <Route path="AddMember" element={<AddMember></AddMember>}></Route>
@@ -54,6 +56,10 @@ export default function AllRoutes() {
             <Route path="ViewMember" element={<ViewMember></ViewMember>}></Route>
             <Route path="ViewMemberById" element={<ViewMemberById></ViewMemberById>}></Route>
             <Route path="MemberLogin" element={<MemberLogin></MemberLogin>}></Route> */}
+
+             {/* Error */}
+             <Route path='/ErrorBoundary' element={<ErrorBoundary/>}></Route>
+             <Route path='/ErrorPage' element={<ErrorPage/>}></Route>
 
             {/*Admin Routes*/}
             <Route path="Admin" element={<Admin></Admin>}></Route>
@@ -82,7 +88,12 @@ export default function AllRoutes() {
             <Route path='/weeklyAttendance' element={<WeeklyAttendance/>}></Route>
             <Route path='/markAttendance' element={<MarkAttendance/>}></Route>
             <Route path='/viewAttendance' element={<ViewAttendance/>}></Route>
+
+
+           
+            
           </Routes>
+          </ErrorBoundary>
        {/* </Router> */}
         </div>
       
