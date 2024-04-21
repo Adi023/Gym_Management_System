@@ -9,6 +9,14 @@ class AttendanceServices{
     viewAttendanceData(){
        return httpCommon.get("/attendance");
     }
+
+    viewAttendaceByAttendanceDate(date){
+        return httpCommon.get("/attendance/date/"+date)
+    }
+
+    updateAttendance(userId, d){
+        return httpCommon.put(`/attendance/${userId}`,d)
+    }
 }
 
 const myInstance = new AttendanceServices();
