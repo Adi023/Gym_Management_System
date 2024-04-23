@@ -186,7 +186,7 @@
   bottom: 0;
 }
 
-.sidewidth{
+.sidewidth {
   width: auto;
 
   @media (max-width: 768px) {
@@ -271,9 +271,55 @@
   background: #ffffff;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 }
+
 .divcardProfile {
- 
- 
+
+
   background: #ffffff;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+
+
+
+@media only screen and (max-width: 950px) {
+  table {
+    border: 0;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table,
+  table tbody,
+  table tr,
+  table td {
+  display: block;
+    border: 1px solid #dddddd;
+  }
+
+  table td {
+    border: none;
+    position: relative;
+    /* padding-left: 60%; */
+    /* padding-bottom: 15px; */
+    width: 100%;
+    /* height: 40px; */
+  }
+
+  table td::before {
+    content: attr(data-label);
+    /* position: absolute; */
+    left: 0;
+    width: 40%;
+    padding-left: 10px;
+    font-weight: bold;
+  }
+
+  table tr {
+    margin: 25px
+  }
+
+
 }
