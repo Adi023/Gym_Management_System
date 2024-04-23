@@ -9,8 +9,10 @@ class UserServices{
         return httpCommon.get("/user");
     }
 
-    viewAllUsers(pageNumber,pageSize){
-        return httpCommon.get(`/user/pageNumber=${pageNumber}&pageSize=${pageSize}`);
+    viewAllUsers(pageNumber,pageSize,sortBy,sortDir){
+        // console.log(`Sort By: ${sortBy}, Sort Dir: ${sortDir}`);
+        return httpCommon.get(`/user/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
+
     }
 
     getUserById(userId){
