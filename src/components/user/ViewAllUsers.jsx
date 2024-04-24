@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import UserServices from '../../services/UserServices';
 import { Container, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-// import ErrorPage from '../ErrorPage';
+
 
 export default function ViewAllUsers() {
-  // const [data, setData] = useState([]);
   const [pageSize, setPageSize] = useState(5);
-  const [sortBy, setSortBy] = useState('name'); // Initial value 'name'
-  const [sortDir, setSortDir] = useState('asc'); // Initial value 'asc'
+  const [sortBy, setSortBy] = useState('name');
+  const [sortDir, setSortDir] = useState('asc');
   const [searchTerm, setSearchTerm] = useState("")
   const [postContent, setPostContent] = useState({
     content: [],
@@ -41,18 +40,40 @@ export default function ViewAllUsers() {
     }
   };
 
+  const handleSortChange = (e) => {
+    setSortDir(e); // Update the sorting direction
+    handlePageChange(); // Call handlePageChange to update the page or perform sorting
+  }
+
+  const handleSortBy = (e) => {
+    setSortBy(e);
+    handlePageChange();
+  }
+
   return (
     <div className='container'>
-      <div className="row mb-3">
-        <div className="col-md-6 d-flex align-items-center">
-          <div className="d-flex align-items-center mx-4 ">
-            <label htmlFor="searchInput" >Search:</label>
-            <input type="text" id="searchInput" className="form-control" placeholder="Enter Name, User Id, or Email" onChange={event => { setSearchTerm(event.target.value) }} />
-          </div>
+      {/* <label htmlFor="searchInput" className="col">Search:</label>
+      <input type="text" id="searchInput" className="form-control"
+        placeholder="Enter Name, User Id, or Email" onChange={event => { setSearchTerm(event.target.value) }} />
+      <br /> */}
 
-          <div className="d-flex align-items-center mx-4">
-            <label htmlFor="pageSizeInput" >Page Size:</label>
-            <input type='number' id="pageSizeInput" className="form-control" value={pageSize} placeholder='Enter page size' onChange={(e) => {
+      <div className="row m-0 p-0">
+        <div className="col  col-md-4 ms-auto m-0 p-0" style={{ width: '550px' }}>
+
+          <label htmlFor="searchInput" className="col-auto">Search:</label>
+          <input type="text" id="searchInput" className="col col-auto p-0"
+            style={{ width: '260px', marginRight: '15px' }}
+            placeholder="Enter Name, User Id, or Email" onChange={event => { setSearchTerm(event.target.value) }} />
+
+          <label htmlFor="pageSizeInput" className=' col-auto' >Page Size:</label>
+          <input
+            type="number"
+            id="pageSizeInput"
+            className=" col col-auto m-0 p-0"
+            style={{ width: '100px' }}
+            value={pageSize}
+            placeholder="Enter page size"
+            onChange={(e) => {
               const pageSize = parseInt(e.target.value.trim());
               if (pageSize > 0 && pageSize <= postContent.totalElements) {
                 setPageSize(pageSize);
@@ -61,61 +82,40 @@ export default function ViewAllUsers() {
                   setPageSize('');
                 } else {
                   setPageSize('');
-                  alert("Enter Valid Page Size")
+                  alert("Enter Valid Page Size");
                 }
               }
-            }} />
-          </div>
-          {/* </div>
+            }}
+          />
+        </div>
 
-  <div className="col-md-6"> */}
-          <div className="d-flex align-items-center mx-4">
-            <label htmlFor="sortBySelect" >Sort By:</label>
-            <select id="sortBySelect" className="form-control" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-              <option value="userId">User Id</option>
-              <option value="name">Name</option>
-              <option value="email">Email</option>
-              <option value="mobile">Mobile</option>
-              <option value="dob">DOB</option>
-              <option value="active">Active</option>
-              <option value="gender">Gender</option>
-              <option value="bloodGroup">Blood Group</option>
-              <option value="dateOfJoining">Date of Joining</option>
-            </select>
-          </div>
-
-          <div className="d-flex align-items-center mx-4">
-            <label htmlFor="sortDirSelect" >Sort Direction:</label>
-            <select id="sortDirSelect" className="form-control" value={sortDir} onChange={(e) => setSortDir(e.target.value)}>
-              <option value="asc">Ascending</option>
-              <option value="desc">Descending</option>
-            </select>
-          </div>
-
-          <div className="d-flex align-items-center">
-            <button className='btn btn-primary' onClick={() => handlePageChange()}>Sort</button>
-          </div>
+        <div className="col-auto m-0 p-0" >
+          <button className="btn m-0 p-0" onClick={() => handleSortChange('asc')}>
+            <i className="bi bi-sort-up fa-2x"></i>
+          </button>
+          <button className="btn m-0 p-0" onClick={() => handleSortChange('desc')}>
+            <i className="bi bi-sort-down-alt fa-2x"></i>
+          </button>
         </div>
       </div>
-
 
       <div className="table-responsive" >
         {/* className="table-responsive" */}
         <table className="table table-hover">
           <thead className="table-dark">
             <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Mobile</th>
-              <th scope="col">Address</th>
-              <th scope="col">City</th>
-              <th scope="col">Date Of Joining</th>
-              <th scope="col">Date Of Birth</th>
-              <th scope="col">Status</th>
-              <th scope="col">Gender</th>
-              <th scope="col">BloodGroup</th>
-              <th scope="col">Role</th>
+              <th scope="col" onClick={() => handleSortBy('userId')}>ID</th>
+              <th scope="col" onClick={() => handleSortBy('name')}>Name</th>
+              <th scope="col" onClick={() => handleSortBy('email')}>Email</th>
+              <th scope="col" onClick={() => handleSortBy('mobile')}>Mobile</th>
+              <th scope="col" onClick={() => handleSortBy('address')}>Address</th>
+              <th scope="col" onClick={() => handleSortBy('cityId')}>City</th>
+              <th scope="col" onClick={() => handleSortBy('dateOfJoining')}>Date Of Joining</th>
+              <th scope="col" onClick={() => handleSortBy('dob')}>Date Of Birth</th>
+              <th scope="col" onClick={() => handleSortBy('active')}>Status</th>
+              <th scope="col" onClick={() => handleSortBy('gender')}>Gender</th>
+              <th scope="col" onClick={() => handleSortBy('bloodGroup')}>BloodGroup</th>
+              <th scope="col" onClick={() => handleSortBy('roleId')}>Role</th>
             </tr>
           </thead>
           <tbody>
@@ -185,8 +185,6 @@ export default function ViewAllUsers() {
           </PaginationItem>
         </Pagination>
       </Container>
-      {/* </Col> */}
-      {/* </Row> */}
     </div>
   );
 }
