@@ -44,54 +44,61 @@ export default function ViewAllUsers() {
   return (
     <div className='container'>
       <div className="row mb-3">
-        {/* <div className="col-md-6">
-      <input type="text" placeholder="Search..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-    </div> */}
-        <div >
-          {/* <input type="text" placeholder='Enter  Name or User Id or Email' onChange={event => { setSearchTerm(event.target.value) }} /> */}
-        </div> <br />
-        <div className="col-md-6">
-          {/* add  page size */}
-          <h2>Total Users {postContent.totalElements}</h2> 
-          <input type="text" placeholder='Enter  Name or User Id or Email' onChange={event => { setSearchTerm(event.target.value) }} />
-          <input type='number'
-          value={pageSize}
-          placeholder='Enter page size ' 
-          onChange={(e) => {
-            const pageSize = parseInt(e.target.value.trim());
-            if ( pageSize > 0 && pageSize<=postContent.totalElements) {
-              setPageSize(pageSize);
-            } else{
-              if(pageSize === ' ' ){
-                setPageSize('');
-              }else{
-                setPageSize('');
-                alert("Enter Valid Page Size")
-              }
-             
-            }
-          }} />
+        <div className="col-md-6 d-flex align-items-center">
+          <div className="d-flex align-items-center mx-4 ">
+            <label htmlFor="searchInput" >Search:</label>
+            <input type="text" id="searchInput" className="form-control" placeholder="Enter Name, User Id, or Email" onChange={event => { setSearchTerm(event.target.value) }} />
+          </div>
 
-          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-            <option value="userId">User Id</option>
-            <option value="name">Name</option>
-            <option value="email">Email</option>
-            <option value="mobile">mobile</option>
-            <option value="dob">dob</option>
-            <option value="active">active</option>
-            <option value="gender">gender</option>
-            <option value="bloodGroup">BloodGroup</option>
-            <option value="dateOfJoining">Date of Joining</option>
-            {/* Add more options as needed */}
-          </select>
-          <select value={sortDir} onChange={(e) => setSortDir(e.target.value)}>
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
-          </select>
-          <button className='btn btn-primary' onClick={() => handlePageChange()}>Apply</button>
+          <div className="d-flex align-items-center mx-4">
+            <label htmlFor="pageSizeInput" >Page Size:</label>
+            <input type='number' id="pageSizeInput" className="form-control" value={pageSize} placeholder='Enter page size' onChange={(e) => {
+              const pageSize = parseInt(e.target.value.trim());
+              if (pageSize > 0 && pageSize <= postContent.totalElements) {
+                setPageSize(pageSize);
+              } else {
+                if (pageSize === ' ') {
+                  setPageSize('');
+                } else {
+                  setPageSize('');
+                  alert("Enter Valid Page Size")
+                }
+              }
+            }} />
+          </div>
+          {/* </div>
+
+  <div className="col-md-6"> */}
+          <div className="d-flex align-items-center mx-4">
+            <label htmlFor="sortBySelect" >Sort By:</label>
+            <select id="sortBySelect" className="form-control" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+              <option value="userId">User Id</option>
+              <option value="name">Name</option>
+              <option value="email">Email</option>
+              <option value="mobile">Mobile</option>
+              <option value="dob">DOB</option>
+              <option value="active">Active</option>
+              <option value="gender">Gender</option>
+              <option value="bloodGroup">Blood Group</option>
+              <option value="dateOfJoining">Date of Joining</option>
+            </select>
+          </div>
+
+          <div className="d-flex align-items-center mx-4">
+            <label htmlFor="sortDirSelect" >Sort Direction:</label>
+            <select id="sortDirSelect" className="form-control" value={sortDir} onChange={(e) => setSortDir(e.target.value)}>
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </div>
+
+          <div className="d-flex align-items-center">
+            <button className='btn btn-primary' onClick={() => handlePageChange()}>Sort</button>
+          </div>
         </div>
       </div>
-  
+
+
       <div className="table-responsive" >
         {/* className="table-responsive" */}
         <table className="table table-hover">
