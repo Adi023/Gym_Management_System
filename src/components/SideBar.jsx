@@ -46,7 +46,7 @@ export default function SideBar() {
                 <li>
                     <Link to="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                         <i className="fs-4 bi bi-people custom-icon"></i>
-                        <span className="custom-icon ms-1 d-none d-sm-inline">User</span>
+                        <span className="custom-icon ms-1 d-none d-sm-inline">Users</span>
                     </Link>
                     <ul className="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                         <li className="w-100">
@@ -58,6 +58,21 @@ export default function SideBar() {
                             <Link to="/viewUsers" className="nav-link px-0 custom-icon">
                                 <i className=" bi bi-person-lines-fill "> </i>
                                 <span className="custom-icon d-none d-sm-inline"> View</span></Link>
+                        </li>
+                    </ul>
+                </li>
+
+{/* Employee Field */}
+                <li>
+                    <Link to="#submenu3" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
+                        <i className="fs-4 bi bi-people-fill custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Staff</span>
+                    </Link>
+                    <ul className="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                        <li className="w-100">
+                            <Link to="/" className="nav-link px-0"> <span className="custom-icon d-none d-sm-inline">Item</span> 1</Link>
+                        </li>
+                        <li>
+                            <Link to="/" className="nav-link px-0"> <span className="custom-icon d-none d-sm-inline">Item</span> 2</Link>
                         </li>
                     </ul>
                 </li>
@@ -88,20 +103,6 @@ export default function SideBar() {
                     </ul>
                 </li>
 
-
-                <li>
-                    <Link to="#submenu3" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
-                        <i className="fs-4 bi-bootstrap custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Bootstrap</span>
-                    </Link>
-                    <ul className="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                        <li className="w-100">
-                            <Link to="/" className="nav-link px-0"> <span className="custom-icon d-none d-sm-inline">Item</span> 1</Link>
-                        </li>
-                        <li>
-                            <Link to="/" className="nav-link px-0"> <span className="custom-icon d-none d-sm-inline">Item</span> 2</Link>
-                        </li>
-                    </ul>
-                </li>
 
                 <li>
                     <Link to="#submenu3" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
