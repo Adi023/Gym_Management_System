@@ -61,7 +61,7 @@ export default function ViewAllUsers() {
         <div className="col  col-md-4 ms-auto m-0 p-0" style={{ width: '550px' }}>
 
           <label htmlFor="searchInput" className="col-auto">Search:</label>
-          <input type="text" id="searchInput" className="col col-auto p-0"
+          <input type="text" id="searchInput" className="col col-auto py-0 pl-1"
             style={{ width: '260px', marginRight: '15px' }}
             placeholder="Enter Name, User Id, or Email" onChange={event => { setSearchTerm(event.target.value) }} />
 
@@ -69,7 +69,7 @@ export default function ViewAllUsers() {
           <input
             type="number"
             id="pageSizeInput"
-            className=" col col-auto m-0 p-0"
+            className=" col col-auto m-0 py-0 pl-1"
             style={{ width: '100px' }}
             value={pageSize}
             placeholder="Enter page size"
@@ -114,7 +114,7 @@ export default function ViewAllUsers() {
               <th scope="col" onClick={() => handleSortBy('dob')}>Date Of Birth</th>
               <th scope="col" onClick={() => handleSortBy('active')}>Status</th>
               <th scope="col" onClick={() => handleSortBy('gender')}>Gender</th>
-              <th scope="col" onClick={() => handleSortBy('bloodGroup')}>BloodGroup</th>
+              <th scope="col" onClick={() => handleSortBy('bloodGroup')}>Blood Group</th>
               <th scope="col" onClick={() => handleSortBy('roleId')}>Role</th>
             </tr>
           </thead>
@@ -152,9 +152,10 @@ export default function ViewAllUsers() {
           </tbody>
         </table>
       </div>
-      <Container className='mt-3'>
-        <Pagination aria-label="Page navigation example" size="lg">
-          <PaginationItem>
+      <div className='row'>
+       <Container className='mt-3'>
+        <Pagination aria-label="Page navigation example" className='col-md-4 ms-auto'  size="md">
+          <PaginationItem > 
             <PaginationLink onClick={() => handlePageChange(0)} disabled={postContent.pageNumber === 0}>
               First
             </PaginationLink>
@@ -185,6 +186,7 @@ export default function ViewAllUsers() {
           </PaginationItem>
         </Pagination>
       </Container>
+    </div>
     </div>
   );
 }
