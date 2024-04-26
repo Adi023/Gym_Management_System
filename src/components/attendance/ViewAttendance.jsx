@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import AttendanceServices from'../../services/AttendanceServices'
 import { Container, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-export default function ViewAttendance() {const [pageSize, setPageSize] = useState(5);
+import moment from 'moment';
+export default function ViewAttendance() {const [pageSize, setPageSize] = useState(10);
   const [sortBy, setSortBy] = useState('attendanceId');
   const [sortDir, setSortDir] = useState('asc');
   const [searchTerm, setSearchTerm] = useState("")
@@ -20,7 +21,7 @@ export default function ViewAttendance() {const [pageSize, setPageSize] = useSta
 
   const fetchData = async () => {
     try {
-      const responseData = await AttendanceServices.viewAttendanceData(0, 5, "attendanceId", "asc");
+      const responseData = await AttendanceServices.viewAttendanceData(0, 10, "attendanceId", "asc");
       console.log(responseData);
       setPostContent(responseData.data);
     } catch (error) {
@@ -31,6 +32,7 @@ export default function ViewAttendance() {const [pageSize, setPageSize] = useSta
   const handlePageChange = async (pageNumber = 0) => {
     try {
       const responseData = await AttendanceServices.viewAttendanceData(pageNumber, pageSize, sortBy, sortDir);
+      console.log(responseData);
       setPostContent(responseData.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -103,7 +105,7 @@ export default function ViewAttendance() {const [pageSize, setPageSize] = useSta
             <tr>
               <th scope="col" onClick={() => handleSortBy('attendanceId')}>ID</th>
               <th scope="col" onClick={() => handleSortBy('userId')}>User Id</th>
-              <th scope="col" onClick={() => handleSortBy('user_Id.name')}>Name</th>
+              <th scope="col" >Name</th>
               <th scope="col" onClick={() => handleSortBy('present')}>Status</th>
               <th scope="col" onClick={() => handleSortBy('attendanceDate')}>Attendance Date</th>
               <th scope="col" onClick={() => handleSortBy('updatedTimeStamp')}>Time</th>
@@ -117,21 +119,21 @@ export default function ViewAttendance() {const [pageSize, setPageSize] = useSta
               else if (String(d.attendanceId).toLowerCase().includes(String(searchTerm).toLowerCase())) {
                 return d;
               }
-              else if (String(d.userId).toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+              else if (String(d.userId).toLowerCase().includes(String(searchTerm).toLowerCase())) {
                 return d;
               }
-              else if (String(d.attendanceDate).toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+              else if (String(d.attendanceDate).toLowerCase().includes(String(searchTerm).toLowerCase())) {
                 return d;
               }
-
+              console.log(d.attendanceDate+" Filter")
             }).map((d) => (
               <tr key={d.attendanceId}>
                 <td data-label="ID : ">{d.attendanceId}</td>
                 <td data-label="User Id : ">{d.userId}</td>
                 <td data-label="Name :  ">{d.user_Id.name}</td>
-                <td data-label="Status : ">{d.present}</td>
+                <td data-label="Status : ">{d.present ? <p style={{color:"green"}}>Present</p> : <p style={{color:"red"}}>Absent</p>}</td>
                 <td data-label="attendanceDate : ">{d.attendanceDate}</td>
-                <td data-label="Time : ">{d.updatedTimeStamp}</td>
+                <td data-label="Time : ">{d.present ? moment(d.updatedTimeStamp).format('h:mm:ss A') : "-"}</td>
               </tr>
             ))}
           </tbody>
