@@ -6,8 +6,9 @@ class AttendanceServices{
         return httpCommon.post("/attendance",d);
     }
 
-    viewAttendanceData(){
-       return httpCommon.get("/attendance");
+    viewAttendanceData(pageNumber,pageSize,sortBy,sortDir){
+        // console.log(`Sort By: ${sortBy}, Sort Dir: ${sortDir}`);
+        return httpCommon.get(`/attendance/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
     }
 
     viewAttendaceByAttendanceDate(date){
