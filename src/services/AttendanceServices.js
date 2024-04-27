@@ -11,8 +11,8 @@ class AttendanceServices{
         return httpCommon.get(`/attendance/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
     }
 
-    viewAttendaceByAttendanceDate(date){
-        return httpCommon.get("/attendance/date/"+date)
+    viewAttendaceByAttendanceDate(date,pageNumber,pageSize,sortBy,sortDir){
+        return httpCommon.get(`/attendance/date/${date}/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`)
     }
 
     updateAttendance(userId, d){
