@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import AttendanceServices from'../../services/AttendanceServices'
-import { Container, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import AttendanceServices from '../../services/AttendanceServices'
 import moment from 'moment';
-export default function ViewAttendance() {const [pageSize, setPageSize] = useState(10);
+import PaginationBar from '../PaginationBar';
+
+export default function ViewAttendance() {
+  const [pageSize, setPageSize] = useState(5);
   const [sortBy, setSortBy] = useState('attendanceId');
-  const [sortDir, setSortDir] = useState('asc');
+  const [sortDir, setSortDir] = useState('desc');
   const [searchTerm, setSearchTerm] = useState("")
   const [postContent, setPostContent] = useState({
     content: [],
@@ -21,7 +23,7 @@ export default function ViewAttendance() {const [pageSize, setPageSize] = useSta
 
   const fetchData = async () => {
     try {
-      const responseData = await AttendanceServices.viewAttendanceData(0, 10, "attendanceId", "asc");
+      const responseData = await AttendanceServices.viewAttendanceData(0, 5, "attendanceId", "desc");
       console.log(responseData);
       setPostContent(responseData.data);
     } catch (error) {
@@ -41,7 +43,7 @@ export default function ViewAttendance() {const [pageSize, setPageSize] = useSta
 
   const handleSortChange = (e) => {
     setSortDir(e); // Update the sorting direction
-    handlePageChange(); // Call handlePageChange to update the page or perform sorting
+    handlePageChange(); 
   }
 
   const handleSortBy = (e) => {
@@ -114,7 +116,7 @@ export default function ViewAttendance() {const [pageSize, setPageSize] = useSta
           <tbody>
             {postContent.content.filter((d) => {
               if (searchTerm === "") {
-                return d
+                return d;
               }
               else if (String(d.attendanceId).toLowerCase().includes(String(searchTerm).toLowerCase())) {
                 return d;
@@ -125,13 +127,13 @@ export default function ViewAttendance() {const [pageSize, setPageSize] = useSta
               else if (String(d.attendanceDate).toLowerCase().includes(String(searchTerm).toLowerCase())) {
                 return d;
               }
-              console.log(d.attendanceDate+" Filter")
+              console.log(d.attendanceDate + " Filter")
             }).map((d) => (
               <tr key={d.attendanceId}>
                 <td data-label="ID : ">{d.attendanceId}</td>
                 <td data-label="User Id : ">{d.userId}</td>
                 <td data-label="Name :  ">{d.user_Id.name}</td>
-                <td data-label="Status : ">{d.present ? <p style={{color:"green"}}>Present</p> : <p style={{color:"red"}}>Absent</p>}</td>
+                <td data-label="Status : ">{d.present ? <p style={{ color: "green" }}>Present</p> : <p style={{ color: "red" }}>Absent</p>}</td>
                 <td data-label="attendanceDate : ">{d.attendanceDate}</td>
                 <td data-label="Time : ">{d.present ? moment(d.updatedTimeStamp).format('h:mm:ss A') : "-"}</td>
               </tr>
@@ -139,41 +141,10 @@ export default function ViewAttendance() {const [pageSize, setPageSize] = useSta
           </tbody>
         </table>
       </div>
-      <div className='row'>
-       <Container className='mt-3'>
-        <Pagination aria-label="Page navigation example" className='col-md-4 ms-auto'  size="md">
-          <PaginationItem > 
-            <PaginationLink onClick={() => handlePageChange(0)} disabled={postContent.pageNumber === 0}>
-              First
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink onClick={() => handlePageChange(postContent.pageNumber - 1)} previous disabled={postContent.pageNumber === 0}>
-              Previous
-            </PaginationLink>
-          </PaginationItem>
 
-          {[...Array(postContent.totalPages)].map((_, index) => (
-            <PaginationItem key={index} active={index === postContent.pageNumber}>
-              <PaginationLink onClick={() => handlePageChange(index)}>
-                {index + 1}
-              </PaginationLink>
-            </PaginationItem>
-          ))}
-
-          <PaginationItem>
-            <PaginationLink onClick={() => handlePageChange(postContent.pageNumber + 1)} next disabled={postContent.pageNumber === postContent.totalPages - 1}>
-              Next
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink onClick={() => handlePageChange(postContent.totalPages - 1)} disabled={postContent.pageNumber === postContent.totalPages - 1}>
-              Last
-            </PaginationLink>
-          </PaginationItem>
-        </Pagination>
-      </Container>
-    </div>
+      {/* Pagination Bar Starts*/}
+      <PaginationBar postContent={postContent} handlePageChange={handlePageChange} />
+     
     </div>
   );
 }
