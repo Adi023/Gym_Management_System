@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import UserServices from '../../services/UserServices';
-import { Container, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import PaginationBar from '../PaginationBar';
 
 
 export default function ViewAllUsers() {
@@ -108,7 +108,7 @@ export default function ViewAllUsers() {
               <th scope="col" onClick={() => handleSortBy('name')}>Name</th>
               <th scope="col" onClick={() => handleSortBy('email')}>Email</th>
               <th scope="col" onClick={() => handleSortBy('mobile')}>Mobile</th>
-              <th scope="col" onClick={() => handleSortBy('address')}>Address</th>
+              {/* <th scope="col" onClick={() => handleSortBy('address')}>Address</th> */}
               <th scope="col" onClick={() => handleSortBy('cityId')}>City</th>
               <th scope="col" onClick={() => handleSortBy('dateOfJoining')}>Date Of Joining</th>
               <th scope="col" onClick={() => handleSortBy('dob')}>Date Of Birth</th>
@@ -139,7 +139,7 @@ export default function ViewAllUsers() {
                 <td data-label="Name : ">{d.name}</td>
                 <td data-label="Email : ">{d.email}</td>
                 <td data-label="Mobile : ">{d.mobile}</td>
-                <td data-label="Address : ">{d.address}</td>
+                {/* <td data-label="Address : ">{d.address}</td> */}
                 <td data-label="City : ">{d.cityId.cityName}</td>
                 <td data-label="Date Of Joining : ">{d.dateOfJoining}</td>
                 <td data-label="Date Of Birth : ">{d.dob}</td>
@@ -152,41 +152,8 @@ export default function ViewAllUsers() {
           </tbody>
         </table>
       </div>
-      <div className='row'>
-       <Container className='mt-3'>
-        <Pagination aria-label="Page navigation example" className='col-md-4 ms-auto'  size="md">
-          <PaginationItem > 
-            <PaginationLink onClick={() => handlePageChange(0)} disabled={postContent.pageNumber === 0}>
-              First
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink onClick={() => handlePageChange(postContent.pageNumber - 1)} previous disabled={postContent.pageNumber === 0}>
-              Previous
-            </PaginationLink>
-          </PaginationItem>
-
-          {[...Array(postContent.totalPages)].map((_, index) => (
-            <PaginationItem key={index} active={index === postContent.pageNumber}>
-              <PaginationLink onClick={() => handlePageChange(index)}>
-                {index + 1}
-              </PaginationLink>
-            </PaginationItem>
-          ))}
-
-          <PaginationItem>
-            <PaginationLink onClick={() => handlePageChange(postContent.pageNumber + 1)} next disabled={postContent.pageNumber === postContent.totalPages - 1}>
-              Next
-            </PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink onClick={() => handlePageChange(postContent.totalPages - 1)} disabled={postContent.pageNumber === postContent.totalPages - 1}>
-              Last
-            </PaginationLink>
-          </PaginationItem>
-        </Pagination>
-      </Container>
-    </div>
+     {/* Pagination Bar Starts*/}
+     <PaginationBar postContent={postContent} handlePageChange={handlePageChange} />
     </div>
   );
 }
