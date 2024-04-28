@@ -110,7 +110,7 @@ export default function SideBar() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/" className="nav-link px-0 align-middle">
+                    <Link to="/imageUploader" className="nav-link px-0 align-middle">
                         <i className="fs-4 bi-people custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Customers</span>
                     </Link>
                 </li>
