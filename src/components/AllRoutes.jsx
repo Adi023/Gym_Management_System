@@ -30,6 +30,7 @@ import ViewAllUsers from './user/ViewAllUsers';
 import Login from './Login';
 import Dashboard from './user/Dashboard';
 import ViewSingleUser from './user/ViewSingleUser';
+import ImageUploader from './ImageUploder';
 
 
 export default function AllRoutes() {
@@ -73,7 +74,7 @@ export default function AllRoutes() {
             <Route path='/viewAttendance' element={<ViewAttendance/>}></Route>
 
 
-           
+           <Route path='/imageUploader' element={<ImageUploader/>}></Route>
             
           </Routes>
           </ErrorBoundary>
