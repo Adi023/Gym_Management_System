@@ -3,6 +3,7 @@ import React, { useEffect} from 'react'
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import AttendanceHome from'../attendance/AttendanceHome'
 
 const Dashboard = ({role}) => {
   let dashboardContent;
@@ -25,7 +26,7 @@ const Dashboard = ({role}) => {
       dashboardContent = (
         <div>
           <h2>Welcome Admin!</h2>
-        
+        <AttendanceHome/>
           
         </div>
       );
