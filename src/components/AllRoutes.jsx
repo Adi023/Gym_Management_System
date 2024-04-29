@@ -31,6 +31,8 @@ import Login from './Login';
 import Dashboard from './user/Dashboard';
 import ViewSingleUser from './user/ViewSingleUser';
 import ImageUploader from './ImageUploder';
+import AddEmployee from './Staff/AddEmployee';
+import ViewEmployee from './Staff/ViewEmployee';
 
 
 export default function AllRoutes() {
@@ -73,7 +75,11 @@ export default function AllRoutes() {
             <Route path='/markAttendance' element={<MarkAttendance/>}></Route>
             <Route path='/viewAttendance' element={<ViewAttendance/>}></Route>
 
+            {/* Employee Routes */}
+            <Route path='/addEmployee' element={<AddEmployee/>} ></Route>
+            <Route path='/viewEmployee' element={<ViewEmployee/>} ></Route>
 
+            {/* Helper Routes */}
            <Route path='/imageUploader' element={<ImageUploader/>}></Route>
             
           </Routes>
