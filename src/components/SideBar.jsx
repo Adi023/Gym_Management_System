@@ -73,7 +73,7 @@ export default function SideBar() {
                                     <i className=" bi bi-person-add "></i>
                                     <span className="custom-icon d-none d-sm-inline"> Add</span></Link>
                                 </li>
-                                <li >
+                                <li className="w-100">
                                     <Link to="/viewEmployee" className="nav-link px-0 custom-icon">
                                     <i className=" bi bi-person-lines-fill "> </i> 
                                     <span className="custom-icon d-none d-sm-inline">View</span> </Link>
@@ -93,7 +93,7 @@ export default function SideBar() {
                                     <i class="bi bi-check-square-fill"></i>
                                         <span className="custom-icon d-none d-sm-inline"> Mark</span></Link>
                                 </li>
-                                <li >
+                                <li className="w-100">
                                     <Link to="/viewAttendance" className="nav-link px-0 custom-icon">
                                         <i className=" bi bi-person-lines-fill "> </i>
                                         <span className="custom-icon d-none d-sm-inline"> View</span></Link>
@@ -109,12 +109,17 @@ export default function SideBar() {
                             </Link>
                             <ul className="collapse  nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
                                 <li className="w-100">
-                                    <Link to="/markAttendance" className="nav-link px-0 custom-icon">
+                                    <Link to="/addPlan" className="nav-link px-0 custom-icon">
                                         <i className=" bi bi-person-add "></i>
                                         <span className="custom-icon d-none d-sm-inline"> Add</span></Link>
                                 </li>
-                                <li >
-                                    <Link to="/viewAttendance" className="nav-link px-0 custom-icon">
+                                <li className="w-100">
+                                    <Link to="/viewPlan" className="nav-link px-0 custom-icon">
+                                        <i className=" bi bi-person-lines-fill "> </i>
+                                        <span className="custom-icon d-none d-sm-inline"> View</span></Link>
+                                </li>
+                                <li className="w-100">
+                                    <Link to="/updatePlan" className="nav-link px-0 custom-icon">
                                         <i className=" bi bi-person-lines-fill "> </i>
                                         <span className="custom-icon d-none d-sm-inline"> View</span></Link>
                                 </li>
