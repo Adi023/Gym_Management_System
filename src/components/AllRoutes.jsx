@@ -19,6 +19,15 @@ import MarkAttendance from './attendance/MarkAttendance'
 import ViewAttendance from './attendance/ViewAttendance'
 
 
+//Employee imports
+import AddEmployee from './Employee/AddEmployee';
+import ViewEmployee from './Employee/ViewEmployee';
+
+//plan imports
+import AddPlan from './plan/AddPlan'
+import ViewPlan from './plan/ViewPlan'
+import UpdatePlan from './plan/UpdatePlan'
+
 //Other imports
 import Header from './Header'
 import Home from './Home'
@@ -31,8 +40,8 @@ import Login from './Login';
 import Dashboard from './user/Dashboard';
 import ViewSingleUser from './user/ViewSingleUser';
 import ImageUploader from './ImageUploder';
-import AddEmployee from './Staff/AddEmployee';
-import ViewEmployee from './Staff/ViewEmployee';
+
+
 
 
 export default function AllRoutes() {
@@ -79,6 +88,11 @@ export default function AllRoutes() {
             <Route path='/addEmployee' element={<AddEmployee/>} ></Route>
             <Route path='/viewEmployee' element={<ViewEmployee/>} ></Route>
 
+            {/* Plan Routes */}
+            <Route path='/addPlan' element={<AddPlan/>}></Route>
+            <Route path='/viewPlan' element={<ViewPlan/>}></Route>
+            <Route path='/updatePlan' element={<UpdatePlan/>}></Route>
+
             {/* Helper Routes */}
            <Route path='/imageUploader' element={<ImageUploader/>}></Route>
             
@@ -86,7 +100,6 @@ export default function AllRoutes() {
           </ErrorBoundary>
        {/* </Router> */}
         </div>
-      
     </>
   )
 }
