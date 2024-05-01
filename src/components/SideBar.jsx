@@ -90,12 +90,12 @@ export default function SideBar() {
                             <ul className="collapse  nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                                 <li className="w-100">
                                     <Link to="/markAttendance" className="nav-link px-0 custom-icon">
-                                    <i class="bi bi-check-square-fill"></i>
+                                    <i class="fas fa-calendar-check"></i>
                                         <span className="custom-icon d-none d-sm-inline"> Mark</span></Link>
                                 </li>
                                 <li className="w-100">
                                     <Link to="/viewAttendance" className="nav-link px-0 custom-icon">
-                                        <i className=" bi bi-person-lines-fill "> </i>
+                                    <i class="fas fa-clipboard-list"></i>
                                         <span className="custom-icon d-none d-sm-inline"> View</span></Link>
                                 </li>
                             </ul>
@@ -110,18 +110,18 @@ export default function SideBar() {
                             <ul className="collapse  nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
                                 <li className="w-100">
                                     <Link to="/addPlan" className="nav-link px-0 custom-icon">
-                                        <i className=" bi bi-person-add "></i>
+                                    <i class="fas fa-plus-circle"></i>
                                         <span className="custom-icon d-none d-sm-inline"> Add</span></Link>
                                 </li>
                                 <li className="w-100">
                                     <Link to="/viewPlan" className="nav-link px-0 custom-icon">
-                                        <i className=" bi bi-person-lines-fill "> </i>
+                                    <i class="far fa-eye"></i>
                                         <span className="custom-icon d-none d-sm-inline"> View</span></Link>
                                 </li>
                                 <li className="w-100">
                                     <Link to="/updatePlan" className="nav-link px-0 custom-icon">
-                                        <i className=" bi bi-person-lines-fill "> </i>
-                                        <span className="custom-icon d-none d-sm-inline"> View</span></Link>
+                                    <i class="fas fa-edit"></i>
+                                        <span className="custom-icon d-none d-sm-inline"> Update</span></Link>
                                 </li>
                             </ul>
                         </li>
