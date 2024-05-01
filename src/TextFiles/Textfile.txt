@@ -43,7 +43,7 @@
           {/* <div className="d-flex align-items-center mx-2"> */}
             <label htmlFor="sortDirSelect" >Sort Direction:</label>
             <button className="btn btn-link" onClick={() => handleSortChange('asc')}>
-            <i class="bi bi-sort-up fa-2x" onClick={() => handleSortChange('asc')}> </i> {/* Use the appropriate class for the up arrow icon */}
+            <i className="bi bi-sort-up fa-2x" onClick={() => handleSortChange('asc')}> </i> {/* Use the appropriate class for the up arrow icon */}
             </button>
             <button className="btn btn-link" onClick={() => handleSortChange('desc')}>
               <i className="bi bi-sort-down-alt fa-2x" onClick={() => handleSortChange('desc')}></i> {/* Use the appropriate class for the down arrow icon */}
