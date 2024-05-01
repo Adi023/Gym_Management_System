@@ -187,10 +187,10 @@
 }
 
 .sidewidth {
-  width: 145px;
+  width: auto;
 
   @media (max-width: 576px) {
-    width: min-content;
+    width:20pxs;
   }
 }
 
