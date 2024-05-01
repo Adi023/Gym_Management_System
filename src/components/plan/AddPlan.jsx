@@ -28,13 +28,13 @@ export default function AddPlan() {
         {errors.planName && <p style={{ color: 'red' }}>{errors.planName.message}</p>}
         <br />
     
-        <label htmlFor="Plan Description">Plan Price</label>
+        <label htmlFor="Plan Description">Plan Description</label>
         <input type="text"  {...register('planDescription', { required: 'Plan Description Is Required' })} placeholder={"Plan Description"} />
         {errors.planDescription && <p style={{ color: 'red' }}>{errors.planDescription.message}</p>}
         <br />
     
         <label htmlFor="planPrice">Plan Price</label>
-        <input type="text"  {...register('planPrice', { required: 'Plan Price Is Required' })} placeholder={"Plan Price"} />
+        <input type="number"  {...register('planPrice', { required: 'Plan Price Is Required' })} placeholder={"Plan Price"} />
         {errors.planPrice && <p style={{ color: 'red' }}>{errors.planPrice.message}</p>}
         <br />
 
@@ -63,10 +63,10 @@ export default function AddPlan() {
         <br /> */}
 
         <label></label>
-        <input type="submit" value={"Register"} placeholder={"Register"} />
+        <input type="submit" value={"Add Plan"}  />
         <br/>
         <label></label>
-        <input type="reset" value={"Reset"} placeholder={"Reset"} />
+        <input type="reset" value={"Reset"}  />
         </div>
       </form>
     </div>
