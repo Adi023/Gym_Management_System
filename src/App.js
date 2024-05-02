@@ -7,11 +7,13 @@ import Loading from "./components/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import SideBar from "./components/SideBar";
 // import { Nav, Navbar } from "react-bootstrap";
+import AxiosErrorHandler from "./components/AxiosErrorHandler";
 import { useNavigate } from "react-router-dom";
 import { resetRole } from "./redux/actions";
 import ConfirmationModal from "./components/ConfirmationModal";
 import ErrorBoundary from './ErrorBoundary'; // Adjust the path as needed
-import AxiosErrorHandler from "./components/AxiosErrorHandler";
+import InvalidUrlPage from "./components/InvalidUrlPage";
+import validRoutes from "./components/routes";
 // import { ErrorBoundary } from 'react-error-boundary'
 
 function MyFallbackComponent({ error, resetErrorBoundary }) {
@@ -26,12 +28,24 @@ function MyFallbackComponent({ error, resetErrorBoundary }) {
 
 
 function App() {
-  
   const [isLoading, setIsLoading] = useState(true);
+  const [invalidUrl, setInvalidUrl] = useState(false);
+
+  const handleInvalidUrl = () => {
+    const pathname = window.location.pathname;
+    // Check if the URL matches any valid route
+    if (!validRoutes.includes(pathname)) {
+      setInvalidUrl(true);
+    }
+  };
+
+
   let appjsContent;
+
   useEffect(() => {
     // Simulate loading for 1 seconds
     // handleLogin();
+    handleInvalidUrl();
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
@@ -42,21 +56,21 @@ function App() {
 
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-    const handleResetRole = () => {
-        setShowConfirmation(true);
-    };
+  const handleResetRole = () => {
+    setShowConfirmation(true);
+  };
 
-    const confirmResetRole = () => {
-        // Execute the reset role logic
-        dispatch(resetRole());
-        localStorage.removeItem('role');
-        navigate('/');
-        setShowConfirmation(false);
-    };
+  const confirmResetRole = () => {
+    // Execute the reset role logic
+    dispatch(resetRole());
+    localStorage.removeItem('role');
+    navigate('/');
+    setShowConfirmation(false);
+  };
 
-    const cancelResetRole = () => {
-        setShowConfirmation(false);
-    };
+  const cancelResetRole = () => {
+    setShowConfirmation(false);
+  };
 
   const role = useSelector(state => state.role);
   // console.log(role+"app");
@@ -66,40 +80,47 @@ function App() {
     case 'user':
     case 'manager':
     case 'employee':
-      appjsContent = (
-        <div className="d-flex">
-          <div className="sidebar">
-            <SideBar />
-          </div>
-          <div className="content">
-            <nav className="navbar navbar-expand-sm bg-black navbar-dark mr-3 justify-content-end">
-              <button onClick={handleResetRole} className="btn btn-success ml-auto mr-3">SIGN OUT </button>
-            </nav>
-            <ErrorBoundary>
-      <AxiosErrorHandler>           <AllRoutes />
-      </AxiosErrorHandler>
- 
-           </ErrorBoundary>
-          </div>
-        </div>
-      )
+      appjsContent = <>
+        {invalidUrl ? (
+          <InvalidUrlPage />
+        ) : (
+            <div className="d-flex">
+              <div className="sidebar">
+                <SideBar />
+              </div>
+              <div className="content">
+                <nav className="navbar navbar-expand-sm bg-black navbar-dark mr-3 justify-content-end">
+                  <button onClick={handleResetRole} className="btn btn-success ml-auto mr-3">SIGN OUT</button>
+                </nav>
+                <ErrorBoundary>
+                <AxiosErrorHandler>           
+                  <AllRoutes />
+                 </AxiosErrorHandler>
+                </ErrorBoundary>
+              </div>
+            </div>
+        )}
+      </>
       break;
     default:
-      appjsContent = (
-        <>
-          <Header role={role} />
-          <ErrorBoundary
-      FallbackComponent={MyFallbackComponent}
-      onReset={() => {
-        // reset the state of your app here
-      }}
-      resetKeys={['someKey']}
-    >
-            <AllRoutes />
-          </ErrorBoundary>
-         
-        </>
-      )
+      appjsContent = <>
+        {invalidUrl ? (
+          <InvalidUrlPage />
+        ) : (
+          <>
+            <Header role={role} />
+            <ErrorBoundary
+              FallbackComponent={MyFallbackComponent}
+              onReset={() => {
+                // reset the state of your app here
+              }}
+              resetKeys={['someKey']}
+            >
+              <AllRoutes />
+            </ErrorBoundary>
+          </>
+        )}
+      </>
       break;
   }
   return (
@@ -112,14 +133,13 @@ function App() {
         </>
       )}
       <ConfirmationModal
-                show={showConfirmation}
-                onHide={cancelResetRole}
-                onConfirm={confirmResetRole}
-                message="Are you sure you want to Sign Out?"
-            />
+        show={showConfirmation}
+        onHide={cancelResetRole}
+        onConfirm={confirmResetRole}
+        message="Are you sure you want to Sign Out?"
+      />
     </div>
   );
 }
 
 export default App;
-
