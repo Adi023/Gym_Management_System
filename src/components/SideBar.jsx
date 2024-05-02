@@ -40,7 +40,7 @@ export default function SideBar() {
                             <Link to="dashboard" className="nav-link align-middle px-0">
                                 <i className="fs-4 bi-house custom-icon " ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Home</span>
                             </Link>
-                        </li>
+                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
                         {/* User Fields */}
                         <li>
@@ -60,7 +60,7 @@ export default function SideBar() {
                                         <span className="custom-icon d-none d-sm-inline"> View</span></Link>
                                 </li>
                             </ul>
-                        </li>
+                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
                         {/* Employee Field */}
                         <li>
@@ -79,7 +79,7 @@ export default function SideBar() {
                                     <span className="custom-icon d-none d-sm-inline">View</span> </Link>
                                 </li>
                             </ul>
-                        </li>
+                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
                         {/* Attendance Fields */}
                         <li>
@@ -89,49 +89,49 @@ export default function SideBar() {
                             </Link>
                             <ul className="collapse  nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                                 <li className="w-100">
-                                    <Link to="/markAttendance" className="nav-link px-0 custom-icon">
-                                    <i class="fas fa-calendar-check"></i>
-                                        <span className="custom-icon d-none d-sm-inline"> Mark</span></Link>
+                                    <Link to="/markAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className="fas fa-calendar-check"></i>
+                                        <span className=" d-none d-sm-inline"> Mark</span></Link>
                                 </li>
                                 <li className="w-100">
-                                    <Link to="/viewAttendance" className="nav-link px-0 custom-icon">
-                                    <i class="fas fa-clipboard-list"></i>
-                                        <span className="custom-icon d-none d-sm-inline"> View</span></Link>
+                                    <Link to="/viewAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className="fas fa-clipboard-list"></i>
+                                        <span className=" d-none d-sm-inline"> View</span></Link>
                                 </li>
                             </ul>
-                        </li>
+                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
                         {/* Plans Fields */}
-                        <li>
+                        <li >
                             <Link to="#submenu4" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi-grid custom-icon" ></i> 
+                                <i className="fs-4  bi-grid custom-icon" ></i> 
                                 <span className="custom-icon ms-1 d-none d-sm-inline">Plans</span>
                             </Link>
                             <ul className="collapse  nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
                                 <li className="w-100">
                                     <Link to="/addPlan" className="nav-link px-0 custom-icon">
-                                    <i class="fas fa-plus-circle"></i>
+                                    <i className="fas fa-plus-circle"></i>
                                         <span className="custom-icon d-none d-sm-inline"> Add</span></Link>
                                 </li>
                                 <li className="w-100">
                                     <Link to="/viewPlan" className="nav-link px-0 custom-icon">
-                                    <i class="far fa-eye"></i>
+                                    <i className="far fa-eye"></i>
                                         <span className="custom-icon d-none d-sm-inline"> View</span></Link>
                                 </li>
                                 <li className="w-100">
                                     <Link to="/updatePlan" className="nav-link px-0 custom-icon">
-                                    <i class="fas fa-edit"></i>
+                                    <i className="fas fa-edit"></i>
                                         <span className="custom-icon d-none d-sm-inline"> Update</span></Link>
                                 </li>
                             </ul>
-                        </li>
+                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
 
                         <li>
                             <Link to="/imageUploader" className="nav-link px-0 align-middle">
                                 <i className="fs-4 bi-people custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Image Test</span>
                             </Link>
-                        </li>
+                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
                     </ul>
                 </>
             );
