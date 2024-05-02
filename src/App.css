@@ -179,6 +179,9 @@
   display: flex;
 }
 
+body, html {
+  overflow-x: hidden;
+}
 .sidebar {
   /* position: fixed; */
   top: 120px;
@@ -190,7 +193,7 @@
   width: auto;
 
   @media (max-width: 576px) {
-    width:20pxs;
+    width:auto;
   }
 }
 
@@ -227,7 +230,7 @@
   /* Set content area height to fill the viewport */
   overflow-y: auto;
   /* Enable vertical scrolling for content */
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .content {
@@ -241,7 +244,7 @@
   /* Set content area height to fill the viewport */
   overflow-y: auto;
   /* Enable vertical scrolling for content */
-  overflow-x: auto;
+  overflow-x: hidden;
   position: relative;
   /* Ensure z-index works correctly */
 }
@@ -263,6 +266,10 @@
 .custom-icon {
   color: rgb(153, 225, 20);
   /* Change color to your desired color */
+}
+
+.text-hover-white:hover  {
+  color: white !important;
 }
 
 .divcard {
