@@ -56,7 +56,7 @@ export default function SideBar() {
                                 </li>
                                 <li className="w-100">
                                     <Link to="/viewUsers" className="nav-link px-0 custom-icon">
-                                        <i className=" bi bi-person-lines-fill "> </i>
+                                    <i className="fa-solid fa-list"></i>
                                         <span className="custom-icon d-none d-sm-inline"> View</span></Link>
                                 </li>
                             </ul>
@@ -70,7 +70,7 @@ export default function SideBar() {
                             <ul className="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                                 <li className="w-100">
                                     <Link to="/addEmployee" className="nav-link px-0 custom-icon"> 
-                                    <i className=" bi bi-person-add "></i>
+                                    <i className="bi bi-person-fill-add"></i>
                                     <span className="custom-icon d-none d-sm-inline"> Add</span></Link>
                                 </li>
                                 <li className="w-100">
