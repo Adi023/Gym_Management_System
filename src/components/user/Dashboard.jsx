@@ -25,7 +25,7 @@ const Dashboard = ({role}) => {
     case 'admin':
       dashboardContent = (
         <div>
-          <h2>Welcome Admin!</h2>
+          {/* <h2>Welcome Admin!</h2> */}
         <AttendanceHome/>
           
         </div>
