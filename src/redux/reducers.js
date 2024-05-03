@@ -3,6 +3,7 @@ import { SET_ROLE,RESET_ROLE } from './actionTypes';
 
 const initialState = {
   role: 'default', // Default role is 'default'
+  isAuthenticated: false
 };
 
 export default (state = initialState, action) => {
@@ -13,12 +14,14 @@ export default (state = initialState, action) => {
       return {
         ...state,
         role: action.payload,
+        isAuthenticated: true // Assuming role assignment implies user is authenticated
       };
       //to reset role for application
       case RESET_ROLE:
       return {
         ...state,
         role: initialState.role, // Reset role to default value
+        isAuthenticated: false // Assuming role assignment implies user is authenticated
       };
     default:
       return state; // Return the current state without modifying it
