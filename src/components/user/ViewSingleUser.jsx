@@ -5,11 +5,11 @@ export default function ViewSingleUser() {
 
   const getService = () => {
     var userId = 1
-    // var id = localStorage.getItem('cr_id');
+    // var id = localStorage.getItem('userId');
 
     UserServices.getUserById(userId).then(
       (Response) => {
-        //console.log(Response.data)
+        // console.log(Response.data)
         setData(Response.data)
       },
       (Error) => {
@@ -31,180 +31,38 @@ export default function ViewSingleUser() {
       <div className="row">
         <div className="col-md-6  mb-4">
 
-          Id: {data.userId}<br />
-          Name: {data.name}<br />
-          Password: {data.password}<br />
+          Id: {data.userId ? data.userId : 'N/A'}<br /><br />
+          Name: {data.name ? data.name : 'N/A'}<br />
+          Password: {data.password ? data.password : 'N/A'}<br />
 
         </div>
         <div className="col-md-6  mb-4">
-          Gender: {data.gender}<br />
-          Blood Group: {data.bloodGroup}<br />
-          DOB: {data.dob}<br />
+          Gender: {data.gender ? data.gender : 'N/A'}<br />
+          Blood Group: {data.bloodGroup ? data.bloodGroup : 'N/A'}<br />
+          DOB: {data.dob ? data.dob : 'N/A'}<br />
 
         </div>
       </div>
       <div className="row  mb-4">
         <div className="col-md-12">
-          Email: {data.email}<br />
-          Mobile: {data.mobile}<br />
-          Address: {data.address}<br />
-          City Id: {data.cityId}<br />
+          Email: {data.email ? data.email : 'N/A'}<br />
+          Mobile: {data.mobile ? data.mobile : 'N/A'}<br />
+          Address: {data.address ? data.address : 'N/A'}<br />
+          {/* City Id: {data.cityId.cityId ? data.cityId.cityName:'N/A'}<br /> */}
+          City: {data.cityId?.cityName?data.cityId?.cityName:'N/A'}<br />
+          State: {data.cityId?.stateId?.stateName?data.cityId?.stateId?.stateName :'N/A'}<br />
+          Country: {data.cityId?.countryId?.countryName}<br />
         </div>
       </div>
       <div className="row  mb-4">
         <div className="col-md-6">
 
-          Date of Joining: {data.date_of_joining}<br />
-          Active: {data.active}<br />
-          Role Id: {data.roleId}<br />
+          Date of Joining: {data.dateOfJoining ? data.dateOfJoining : 'N/A'}<br />
+          Active: {data.active ? data.active : 'N/A'}<br />
+          {/* Role Id: {data.roleId ? data.roleId :'N/A'}<br /> */}
 
         </div>
       </div>
-
-
-      {/* <div className="col-md-8">
-              <div className="card mb-3">
-                <div className="card-body">
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">User ID :</h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                    {data.userId}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Name : </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                    {data.name}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0"> Password : </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                    {data.password}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0"> Gender : </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                    {data.gender}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Blood Group : </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                    {data.bloodGroup}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">DOB :</h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                     {data.dob}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Email: </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                    {data.email}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0"> Mobile: </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                   {data.mobile}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0"> Address: </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                   {data.address}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">City Id: </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                    {data.cityId}
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0"> Date of Joining: </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                   {data.date_of_joining}<br />
-         
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0"> Active: </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                   {data.active}<br />
-          
-                    </div>
-                  </div>
-                  <hr/>
-
-                  <div className="row">
-                    <div className="col-sm-3">
-                      <h6 className="mb-0">Role Id: </h6>
-                    </div>
-                    <div className="col-sm-9 text-secondary">
-                    {data.roleId}<br />
-                    </div>
-                  </div>
-                  <hr/>
-                 
-                </div>
-              </div>
-      </div> */}
-
     </div>
-
-
-
   )
 }
