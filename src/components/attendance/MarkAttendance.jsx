@@ -3,6 +3,8 @@ import AttendanceServices from '../../services/AttendanceServices';
 import { useForm } from 'react-hook-form';
 import moment from 'moment';
 import PaginationBar from '../PaginationBar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleNotch, faInfoCircle, faSpinner, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function MarkAttendance() {
 
@@ -51,7 +53,7 @@ export default function MarkAttendance() {
 
   const fetchData = async () => {
     try {
-      const attendanceData = await AttendanceServices.viewAttendaceByAttendanceDate(formattedDate,0, 5, "attendanceId", "desc");
+      const attendanceData = await AttendanceServices.viewAttendaceByAttendanceDate(formattedDate, 0, 5, "attendanceId", "desc");
       console.log(attendanceData);
       setAttendanceData(attendanceData.data);
     } catch (error) {
@@ -61,8 +63,8 @@ export default function MarkAttendance() {
 
   const handlePageChange = async (pageNumber = 0) => {
     try {
-      console.log(pageSize+" Pagesize")
-      const responseData = await AttendanceServices.viewAttendaceByAttendanceDate(formattedDate,pageNumber, pageSize, sortBy, sortDir);
+      console.log(pageSize + " Pagesize")
+      const responseData = await AttendanceServices.viewAttendaceByAttendanceDate(formattedDate, pageNumber, pageSize, sortBy, sortDir);
       console.log(responseData);
       setAttendanceData(responseData.data);
     } catch (error) {
@@ -72,7 +74,7 @@ export default function MarkAttendance() {
 
   const handleSortChange = (e) => {
     setSortDir(e); // Update the sorting direction
-    handlePageChange(); 
+    handlePageChange();
   }
 
   const handleSortBy = (e) => {
@@ -87,116 +89,124 @@ export default function MarkAttendance() {
   };
 
   return (
-    <>
-      <div className='container  divcard'>
-        <div className="row m-0 p-0">
-          <div className="col  col-md-4 ms-auto m-0 p-0" style={{ width: '550px' }}>
-            <label htmlFor="searchInput" className="col-auto">Search:</label>
-            <input type="text" id="searchInput" className="col col-auto  py-0 pl-1"
-              style={{ width: '280px', marginRight: '15px' }}
-              placeholder="Enter Id, User Id, or Attendance Date" onChange={event => { setSearchTerm(event.target.value) }} />
-          </div>
-          <h2 className="col-auto " >Mark Attendance</h2>
-        </div>
-
+    <div className='container'>
+      <br />
+      <div className="row m-0 p-0 ">
+        <h1>Mark Attendance</h1>
       </div>
       <br />
+      {dataAttendance.totalPages !== 0 ? (
+        // scope start 1
+        <>
+          <div className="row m-0 p-0 divcardProfile">
 
-      <div className='container py-4 px-4 divcard'>
-      <div className="row m-0 p-0">
-        <div className="col  col-md-4 ms-auto m-0 p-0" style={{ width: '550px' }}>
+            <div className="col  col-md-4 ms-auto m-0 p-0" style={{ width: '550px' }}>
+              <label htmlFor="searchInput" className="col-auto">Search:</label>
+              <input type="text" id="searchInput" className="col col-auto  py-0 pl-1"
+                style={{ width: '280px', marginRight: '15px' }}
+                placeholder="Enter Id, User Id, or Attendance Date"
+                onChange={event => { setSearchTerm(event.target.value) }} />
 
-          <label htmlFor="searchInput" className="col-auto">Search:</label>
-          <input type="text" id="searchInput" className="col col-auto  py-0 pl-1"
-            style={{ width: '280px', marginRight: '15px' }}
-            placeholder="Enter Id, User Id, or Attendance Date" onChange={event => { setSearchTerm(event.target.value) }} />
+              <label htmlFor="pageSizeInput" className=' col-auto' >Page Size:</label>
+              <input type="number" id="pageSizeInput" className=" col col-auto m-0  py-0 pl-1 "
+                style={{ width: '100px' }} value={pageSize} placeholder="Enter page size"
+                onChange={(e) => {
+                  const pageSize = parseInt(e.target.value.trim());
+                  if (pageSize > 0 && pageSize <= dataAttendance.totalElements) {
+                    setPageSize(pageSize);
+                  } else {
+                    if (pageSize === ' ') {
+                      setPageSize('5');
+                    } else {
+                      setPageSize('5');
+                      alert("Enter Valid Page Size");
+                    }
+                  }
+                }}
+              />
+            </div>
 
-          <label htmlFor="pageSizeInput" className=' col-auto' >Page Size:</label>
-          <input
-            type="number"
-            id="pageSizeInput"
-            className=" col col-auto m-0  py-0 pl-1 "
-            style={{ width: '100px' }}
-            value={pageSize}
-            placeholder="Enter page size"
-            onChange={(e) => {
-              const pageSize = parseInt(e.target.value.trim());
-              if (pageSize > 0 && pageSize <= dataAttendance.totalElements) {
-                setPageSize(pageSize);
-              } else {
-                if (pageSize === ' ') {
-                  setPageSize('5');
-                } else {
-                  setPageSize('5');
-                  alert("Enter Valid Page Size");
-                }
-              }
-            }}
-          />
-        </div>
+            <div className="col-auto m-0 p-0" >
+              <button className="btn m-0 p-0" onClick={() => handleSortChange('asc')}>
+                <i className="bi bi-sort-up fa-2x"></i>
+              </button>
+              <button className="btn m-0 p-0" onClick={() => handleSortChange('desc')}>
+                <i className="bi bi-sort-down-alt fa-2x"></i>
+              </button>
+            </div>
+          </div><br />
 
-        <div className="col-auto m-0 p-0" >
-          <button className="btn m-0 p-0" onClick={() => handleSortChange('asc')}>
-            <i className="bi bi-sort-up fa-2x"></i>
-          </button>
-          <button className="btn m-0 p-0" onClick={() => handleSortChange('desc')}>
-            <i className="bi bi-sort-down-alt fa-2x"></i>
-          </button>
-        </div>
-      </div>
-        <form onSubmit={handleSubmit(sendData)} style={{ display: 'contents' }}>
-          <table className="table table-hover text-center">
-            <thead className="table-dark">
-              <tr>
-              <th scope="col" onClick={() => handleSortBy('userId')}>User Id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Attendance Date</th>
-                <th scope="col" onClick={() => handleSortBy('updatedTimeStamp')}>Attendance Time</th>
-                <th scope="col">Status</th>
-                <th scope="col"  >Mark</th>
-              </tr>
-            </thead>
-            <tbody>
-              {dataAttendance.content.filter((d) => {
-                console.log(searchTerm+" serchterm")
-                if (searchTerm === "") {
-                  return d
-                }
-    
-                else if (String(d.userId).toLowerCase().includes(String(searchTerm).toLowerCase())) {
-                  return d;
-                }
-               
-              }).map((d) => (
-                <tr key={d.userId} style={{ verticalAlign: "middle" }}>
-                  <td>{d.userId}</td>
-                  <td >{d.user_Id.name}</td>
-                  <td>{d.attendanceDate}</td>
-                  <td >
-                    {d.present ? moment(d.updatedTimeStamp).format('h:mm:ss A') : "-"}</td>
-                  <td>{d.present ? <h6 style={{ color: "green" }}>Present</h6> : <h6 style={{ color: "blue" }}>Unmarked</h6>}</td>
-                  <td >
-                    {d.present ? <h6><i className="bi bi-check2-square text-success" >Marked</i></h6> :
-                      <button
-                        type="button"
-                        className="btn btn-warning"
-                        onClick={() => {
-                          setFormData(d.userId, d.present = true);
-                          sendData(d);
-                        }}
-                      >Mark</button>}
-                  </td>
+          <form onSubmit={handleSubmit(sendData)} style={{ display: 'contents' }}>
+            <table className="table table-hover text-center divcardProfile">
+              <thead className="table-dark">
+                <tr>
+                  <th scope="col" onClick={() => handleSortBy('userId')}>User Id</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Attendance Date</th>
+                  <th scope="col" onClick={() => handleSortBy('updatedTimeStamp')}>Attendance Time</th>
+                  <th scope="col">Status</th>
+                  <th scope="col"  >Mark</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-          {/* Hidden input fields */}
-          <input type="hidden" {...register("userId")} />
-          <input type="hidden" {...register("present")} />
-        </form>
-      </div>
+              </thead>
+
+              <tbody>
+                {dataAttendance.content.filter((d) => {
+                  console.log(searchTerm + " serchterm")
+                  if (searchTerm === "") {
+                    return d
+                  }
+                  else if (String(d.userId).toLowerCase().includes(String(searchTerm).toLowerCase())) {
+                    return d;
+                  }
+                }).map((d) => (
+
+                  <tr key={d.userId} style={{ verticalAlign: "middle" }}>
+                    <td>{d.userId}</td>
+                    <td >{d.user_Id.name}</td>
+                    <td>{d.attendanceDate}</td>
+                    <td >
+                      {d.present ? moment(d.updatedTimeStamp).format('h:mm:ss A') : "-"}</td>
+                    <td>{d.present ? <h6 style={{ color: "green" }}>Present</h6> : <h6 style={{ color: "blue" }}>Unmarked</h6>}</td>
+                    <td >
+                      {d.present ? <h6><i className="bi bi-check2-square text-success" >Marked</i></h6> :
+                        <button
+                          type="button"
+                          className="btn btn-warning"
+                          onClick={() => {
+                            setFormData(d.userId, d.present = true);
+                            sendData(d);
+                          }}
+                        >Mark</button>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+
+            </table>
+            {/* Hidden input fields */}
+            <input type="hidden" {...register("userId")} />
+            <input type="hidden" {...register("present")} />
+          </form>
+        </>//scope End 1
+      ) : (
+        <> {/* scope start 2 */}
+          <table className="table table-hover text-center"></table>
+          <div className="mx-auto custom-container p-4 text-center">
+            <FontAwesomeIcon icon={faInfoCircle} size="4x" style={{ color: "#1693f3" }} />
+            <p>No data available for today</p>
+          </div>
+          {/* scope End 2 */}
+        </>
+      )}
+
       {/* Pagination Bar Starts*/}
-      <PaginationBar postContent={dataAttendance} handlePageChange={handlePageChange} />
-    </>
+      {dataAttendance.totalPages === 0 ? (<></>) :
+        (
+          <div className="row m-0 p-0 divcardProfile">
+            <PaginationBar postContent={dataAttendance} handlePageChange={handlePageChange} />
+          </div>
+        )}
+    </div>
+
   );
 }
