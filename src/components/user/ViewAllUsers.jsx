@@ -55,9 +55,12 @@ export default function ViewAllUsers() {
       {/* <label htmlFor="searchInput" className="col">Search:</label>
       <input type="text" id="searchInput" className="form-control"
         placeholder="Enter Name, User Id, or Email" onChange={event => { setSearchTerm(event.target.value) }} />
-      <br /> */}
-
-      <div className="row m-0 p-0">
+      <br /> */}<br />
+      <div className="row m-0 p-0 ">
+        <h1>View All Users</h1>
+      </div>
+      <br />
+      <div className="row m-0 p-0 divcardProfile">
         <div className="col  col-md-4 ms-auto m-0 p-0" style={{ width: '550px' }}>
 
           <label htmlFor="searchInput" className="col-auto">Search:</label>
@@ -97,9 +100,9 @@ export default function ViewAllUsers() {
             <i className="bi bi-sort-down-alt fa-2x"></i>
           </button>
         </div>
-      </div>
+      </div><br />
 
-      <div className="table-responsive" >
+      <div className="table-responsive divcardProfile" >
         {/* className="table-responsive" */}
         <table className="table table-hover">
           <thead className="table-dark">
@@ -151,9 +154,12 @@ export default function ViewAllUsers() {
             ))}
           </tbody>
         </table>
+      </div><br/>
+      {/* Pagination Bar Starts*/}
+      <div className="row m-0 p-0 divcardProfile">
+      <PaginationBar postContent={postContent} handlePageChange={handlePageChange} />
       </div>
-     {/* Pagination Bar Starts*/}
-     <PaginationBar postContent={postContent} handlePageChange={handlePageChange} />
+      <br/>
     </div>
   );
 }
