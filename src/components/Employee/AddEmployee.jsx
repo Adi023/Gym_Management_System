@@ -1,19 +1,19 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
-import UserServices from '../../services/UserServices'
+import EmployeeServices from '../../services/EmployeeServices'
 
 export default function AddEmployee() {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const sendData = (d) => {
-      UserServices.addUser(d);
+      EmployeeServices.addEmployee(d);
       console.log(d);
       alert("User Added Successfully")
       reset();
     }
   return (
     <div className="signup-container">
-    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Sign UP</h2>
+    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Add New Staff</h2>
       <form onSubmit={handleSubmit(sendData)}>
       <div className="form-row">
 
