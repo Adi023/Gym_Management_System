@@ -1,15 +1,15 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
-import UserServices from '../../services/UserServices'
+import PlanServices from '../../services/PlanServices'
 
 export default function AddPlan() {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const sendData = (d) => {
-      UserServices.addUser(d);
+      PlanServices.addPlan(d);
       console.log(d);
-      alert("User Added Successfully")
+      alert("Plan Added Successfully")
       reset();
     }
   return (
