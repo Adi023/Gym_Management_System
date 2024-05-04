@@ -179,9 +179,11 @@
   display: flex;
 }
 
-body, html {
+body,
+html {
   overflow-x: hidden;
 }
+
 .sidebar {
   /* position: fixed; */
   top: 120px;
@@ -193,7 +195,7 @@ body, html {
   width: auto;
 
   @media (max-width: 576px) {
-    width:auto;
+    width: auto;
   }
 }
 
@@ -268,22 +270,24 @@ body, html {
   /* Change color to your desired color */
 }
 
-.text-hover-white:hover  {
+.text-hover-white:hover {
   color: white !important;
 }
 
 .divcard {
   display: flex;
   flex-wrap: wrap;
-  background: #ffffff;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+border-radius: 24px;
+background: #ffffff;
+box-shadow:  21px 21px 35px #666666,
+             -21px -21px 35px #ffffff;
 }
 
 .divcardProfile {
-
-
-  background: #ffffff;
-  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+/* border-radius: 24px; */
+background: #ffffff;
+box-shadow:  21px 21px 35px #666666,
+             -21px -21px 35px #ffffff;
 }
 
 
@@ -302,7 +306,7 @@ body, html {
   table tbody,
   table tr,
   table td {
-  display: block;
+    display: block;
     border: 1px solid #dddddd;
   }
 
@@ -327,6 +331,25 @@ body, html {
   table tr {
     margin: 25px
   }
+}
 
+/* Not Data Icon */
+/* Inside your CSS file or style block */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
 
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-container {
+  position: relative;
+}
+
+.info-icon {
+  animation: rotate 2s linear infinite;
+  /* Apply rotation animation to the icon */
 }
