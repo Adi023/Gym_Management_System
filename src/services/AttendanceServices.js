@@ -18,6 +18,10 @@ class AttendanceServices{
     updateAttendance(userId, d){
         return httpCommon.put(`/attendance/${userId}`,d)
     }
+
+    weeklyAttendanceCount(){
+        return httpCommon.get(`/attendance/sevenDaysCount`)
+    }
 }
 
 const myInstance = new AttendanceServices();
