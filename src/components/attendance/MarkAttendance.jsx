@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import moment from 'moment';
 import PaginationBar from '../PaginationBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleNotch, faInfoCircle, faSpinner, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {  faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 
 export default function MarkAttendance() {
 
