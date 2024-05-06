@@ -1,3 +1,9 @@
+
+
+
+
+npm install moment
+npm install chartjs-adap
 npm install @fortawesome/fontawesome-svg-core @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 npm install chartjs-plugin-datalabels 
 -> 05-05-2024
