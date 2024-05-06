@@ -1,5 +1,3 @@
-import React from 'react'
-
 import React, { useEffect, useState } from 'react'
 import UserServices from '../../services/UserServices';
 import AttendanceServices from '../../services/AttendanceServices';
@@ -54,8 +52,6 @@ export default function MarkSingleAttendance() {
       console.error('Error fetching data:', error);
     }
   };
-
-  // const onSubmit=()=>{handleSubmit(sendData)};
 
   useEffect(() => {
     fetchData();
