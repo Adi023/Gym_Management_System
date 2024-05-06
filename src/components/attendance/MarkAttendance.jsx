@@ -136,77 +136,81 @@ export default function MarkAttendance() {
             </div>
           </div><br />
 
-          <form onSubmit={handleSubmit(sendData)} style={{ display: 'contents' }}>
-            <table className="table table-hover text-center divcardProfile">
-              <thead className="table-dark">
-                <tr>
-                  <th scope="col" onClick={() => handleSortBy('userId')}>User Id</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Attendance Date</th>
-                  <th scope="col" onClick={() => handleSortBy('updatedTimeStamp')}>Attendance Time</th>
-                  <th scope="col">Status</th>
-                  <th scope="col"  >Mark</th>
-                </tr>
-              </thead>
 
-              <tbody>
-                {dataAttendance.content.filter((d) => {
-                  console.log(searchTerm + " serchterm")
-                  if (searchTerm === "") {
-                    return d
-                  }
-                  else if (String(d.userId).toLowerCase().includes(String(searchTerm).toLowerCase())) {
-                    return d;
-                  }
-                }).map((d) => (
-
-                  <tr key={d.userId} style={{ verticalAlign: "middle" }}>
-                    <td>{d.userId}</td>
-                    <td >{d.user_Id.name}</td>
-                    <td>{d.attendanceDate}</td>
-                    <td >
-                      {d.present ? moment(d.updatedTimeStamp).format('h:mm:ss A') : "-"}</td>
-                    <td>{d.present ? <h6 style={{ color: "green" }}>Present</h6> : <h6 style={{ color: "blue" }}>Unmarked</h6>}</td>
-                    <td >
-                      {d.present ? <h6><i className="bi bi-check2-square text-success" >Marked</i></h6> :
-                        <button
-                          type="button"
-                          className="btn btn-warning"
-                          onClick={() => {
-                            setFormData(d.userId, d.present = true);
-                            sendData(d);
-                          }}
-                        >Mark</button>}
-                    </td>
+          <div className="table-responsive divcardProfile">
+            <form onSubmit={handleSubmit(sendData)} style={{ display: 'contents' }} >
+              <table className="table table-hover text-center ">
+                <thead className="table-dark">
+                  <tr>
+                    <th scope="col" onClick={() => handleSortBy('userId')}>User Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Attendance Date</th>
+                    <th scope="col" onClick={() => handleSortBy('updatedTimeStamp')}>Attendance Time</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"  >Mark</th>
                   </tr>
-                ))}
-              </tbody>
+                </thead>
 
-            </table>
-            {/* Hidden input fields */}
-            <input type="hidden" {...register("userId")} />
-            <input type="hidden" {...register("present")} />
-          </form>
-        </>//scope End 1
-      ) : (
-        <> {/* scope start 2 */}
-          <table className="table table-hover text-center"></table>
-          <div className="mx-auto custom-container p-4 text-center">
-            <FontAwesomeIcon icon={faInfoCircle} size="4x" style={{ color: "#1693f3" }} />
-            <p>No data available for today</p>
-          </div>
-          {/* scope End 2 */}
-        </>
+                <tbody>
+                  {dataAttendance.content.filter((d) => {
+                    console.log(searchTerm + " serchterm")
+                    if (searchTerm === "") {
+                      return d
+                    }
+                    else if (String(d.userId).toLowerCase().includes(String(searchTerm).toLowerCase())) {
+                      return d;
+                    }
+                  }).map((d) => (
+
+                    <tr key={d.userId} style={{ verticalAlign: "middle" }}>
+                      <td>{d.userId}</td>
+                      <td >{d.user_Id.name}</td>
+                      <td>{d.attendanceDate}</td>
+                      <td >
+                        {d.present ? moment(d.updatedTimeStamp).format('h:mm:ss A') : "-"}</td>
+                      <td>{d.present ? <h6 style={{ color: "green" }}>Present</h6> : <h6 style={{ color: "blue" }}>Unmarked</h6>}</td>
+                      <td >
+                        {d.present ? <h6><i className="bi bi-check2-square text-success" >Marked</i></h6> :
+                          <button
+                            type="button"
+                            className="btn btn-warning"
+                            onClick={() => {
+                              setFormData(d.userId, d.present = true);
+                              sendData(d);
+                            }}
+                          >Mark</button>}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+
+              </table>
+              {/* Hidden input fields */}
+              <input type="hidden" {...register("userId")} />
+              <input type="hidden" {...register("present")} />
+            </form>
+            </div><br/>
+  
+          </>//scope End 1
+          ) : (
+          <> {/* scope start 2 */}
+            <table className="table table-hover text-center"></table>
+            <div className="mx-auto custom-container p-4 text-center">
+              <FontAwesomeIcon icon={faInfoCircle} size="4x" style={{ color: "#1693f3" }} />
+              <p>No data available for today</p>
+            </div>
+            {/* scope End 2 */}
+          </>
       )}
 
-      {/* Pagination Bar Starts*/}
-      {dataAttendance.totalPages === 0 ? (<></>) :
-        (
-          <div className="row m-0 p-0 divcardProfile">
-            <PaginationBar postContent={dataAttendance} handlePageChange={handlePageChange} />
-          </div>
-        )}
-    </div>
+          {/* Pagination Bar Starts*/}
+          {dataAttendance.totalPages === 0 ? (<></>) :
+            (
+              <div className="row m-0 p-0 divcardProfile">
+                <PaginationBar postContent={dataAttendance} handlePageChange={handlePageChange} />
+              </div>
+            )}
+        </div>
 
-  );
+      );
 }
