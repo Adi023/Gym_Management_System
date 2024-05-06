@@ -14,6 +14,8 @@ import ConfirmationModal from "./components/ConfirmationModal";
 import ErrorBoundary from './ErrorBoundary'; // Adjust the path as needed
 import InvalidUrlPage from "./components/InvalidUrlPage";
 import validRoutes from "./components/routes";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 // import { ErrorBoundary } from 'react-error-boundary'
 
 function MyFallbackComponent({ error, resetErrorBoundary }) {
@@ -84,21 +86,21 @@ function App() {
         {invalidUrl ? (
           <InvalidUrlPage />
         ) : (
-            <div className="d-flex">
-              <div className="sidebar">
-                <SideBar />
-              </div>
-              <div className="content">
-                <nav className="navbar navbar-expand-sm bg-black navbar-dark mr-3 justify-content-end">
-                  <button onClick={handleResetRole} className="btn btn-success ml-auto mr-3">SIGN OUT</button>
-                </nav>
-                <ErrorBoundary>
-                <AxiosErrorHandler>           
-                  <AllRoutes />
-                 </AxiosErrorHandler>
-                </ErrorBoundary>
-              </div>
+          <div className="d-flex">
+            <div className="sidebar">
+              <SideBar />
             </div>
+            <div className="content">
+              <nav className="navbar navbar-expand-sm bg-black navbar-dark mr-3 justify-content-end">
+                <button onClick={handleResetRole} className="btn btn-success ml-auto mr-3">SIGN OUT</button>
+              </nav>
+              <ErrorBoundary>
+                <AxiosErrorHandler>
+                  <AllRoutes />
+                </AxiosErrorHandler>
+              </ErrorBoundary>
+            </div>
+          </div>
         )}
       </>
       break;
@@ -125,6 +127,14 @@ function App() {
   }
   return (
     <div className="App">
+   <ToastContainer
+   
+    theme="colored"
+    transition="Bounce"
+/>
+
+
+
       {isLoading ? (
         <Loading />
       ) : (
