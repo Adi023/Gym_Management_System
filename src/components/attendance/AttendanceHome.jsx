@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import WeeklyAttendance from './WeeklyAttendance';
 import AttendanceServices from '../../services/AttendanceServices'
 import DigitalClock from '../Helper/DigitalClock';
+import { useSelector } from 'react-redux';
 
 export default function AttendanceHome() {
     const [dateTime, setDateTime] = useState(new Date());
     const [attendanceData, setAttendanceData] = useState([]);
+    const role = useSelector(state => state.role);
+
     useEffect(() => {
         console.log('Setting up interval...');
         const fetchDataAndTimeInterval = async () => {
@@ -58,33 +61,22 @@ export default function AttendanceHome() {
 
     return (
         <div className='container'>
-            <h1>Welcome Admin</h1>
+            <br/>
+            <div className='container py-4 px-4 divcard' >
 
-            <div className='container py-4 px-4' style={{
-                display: 'flex', flexWrap: 'wrap',
-                background: '#ffffff',
-                boxShadow: ' 20px 20px 60px #d9d9d9,-20px -20px 60px #ffffff'
-            }}>
-
-                <div style={{ flex: '1' }}>
-                    <div className="card text-white bg-dark mb-3">
-                        <div className="card-header">Header</div>
-                        <div className="card-body">
-                            <h5 className="card-title">Dark card title</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
+                <div className="card text-center d-flex flex-wrap justify-content-center align-items-center bg-dark text-white" style={{ flex: 1 }}>
+                    <h5 className="card-title">Welcome {role}</h5>
                 </div>
 
-                <div style={{ flex: '1' }}>
+                <div style={{ flex: 1 }}>
                     <DigitalClock />
                 </div>
+
             </div>
             <br />
-            <div className='container py-4 px-4' style={{
+            <div className='container py-4 px-4 divcardProfile' style={{
                 display: 'flex', flexWrap: 'wrap',
-                background: '#ffffff',
-                boxShadow: ' 20px 20px 60px #d9d9d9,-20px -20px 60px #ffffff'
+              
             }}>
                 <table className="table table-hover">
                     <thead>
@@ -115,7 +107,7 @@ export default function AttendanceHome() {
                         <WeeklyAttendance attendanceData={attendanceData} />
                     </div>
                 </div>
-            ) : (<h1>No Chart Available</h1>)}
+            ) : (<div className='divcardProfile'><h1 className='p-4'>No Chart Available</h1></div>)}
             <br />
         </div>
     )
