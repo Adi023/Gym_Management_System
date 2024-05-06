@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PlanServices from '../../services/PlanServices'
 import PaginationBar from '../PaginationBar';
+import { toast } from 'react-toastify';
 
 export default function ViewPlan() {
 
@@ -19,12 +20,14 @@ export default function ViewPlan() {
 
   useEffect(() => {
     fetchData();
+    // toast.success("Succses")
   }, []);
 
   const fetchData = async () => {
     try {
-      const responseData = await PlanServices.viewAllPlan(0, 5, "planId", "desc");
+      const responseData = await PlanServices.viewAllPlan(0, 5, "planId", "asc");
       console.log(responseData);
+      // toast.success("Succses")
       setPostContent(responseData.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -134,7 +137,7 @@ export default function ViewPlan() {
                 <td data-label="BillngCycle : ">{d.planBillngCycle}</td>
                 <td data-label="Restrictions : ">{d.planRestrictions}</td>
                 <td data-label="Discount : ">{d.planDiscount}</td>
-                <td data-label="ts : ">{d.ts}</td>      
+                <td data-label="ts : ">{new Date(d.ts).toLocaleDateString()}</td>      
               </tr>
             ))}
           </tbody>
