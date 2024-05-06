@@ -50,14 +50,14 @@ export default function SideBar() {
                             </Link>
                             <ul className="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                 <li className="w-100">
-                                    <Link to="/register" className="nav-link px-0 custom-icon">
+                                    <Link to="/register" className="nav-link px-0 text-secondary text-hover-white">
                                         <i className=" bi bi-person-add "></i>
-                                        <span className="custom-icon d-none d-sm-inline"> Add</span></Link>
+                                        <span className="d-none d-sm-inline"> Add</span></Link>
                                 </li>
                                 <li className="w-100">
-                                    <Link to="/viewUsers" className="nav-link px-0 custom-icon">
+                                    <Link to="/viewUsers" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="fa-solid fa-list"></i>
-                                        <span className="custom-icon d-none d-sm-inline"> View</span></Link>
+                                        <span className="d-none d-sm-inline"> View</span></Link>
                                 </li>
                             </ul>
                         </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
@@ -69,14 +69,14 @@ export default function SideBar() {
                             </Link>
                             <ul className="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                                 <li className="w-100">
-                                    <Link to="/addEmployee" className="nav-link px-0 custom-icon"> 
+                                    <Link to="/addEmployee" className="nav-link px-0 text-secondary text-hover-white"> 
                                     <i className="bi bi-person-fill-add"></i>
-                                    <span className="custom-icon d-none d-sm-inline"> Add</span></Link>
+                                    <span className="d-none d-sm-inline"> Add</span></Link>
                                 </li>
                                 <li className="w-100">
-                                    <Link to="/viewEmployee" className="nav-link px-0 custom-icon">
+                                    <Link to="/viewEmployee" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className=" bi bi-person-lines-fill "> </i> 
-                                    <span className="custom-icon d-none d-sm-inline">View</span> </Link>
+                                    <span className="d-none d-sm-inline">View</span> </Link>
                                 </li>
                             </ul>
                         </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
@@ -109,19 +109,39 @@ export default function SideBar() {
                             </Link>
                             <ul className="collapse  nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
                                 <li className="w-100">
-                                    <Link to="/addPlan" className="nav-link px-0 custom-icon">
+                                    <Link to="/addPlan" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="fas fa-plus-circle"></i>
-                                        <span className="custom-icon d-none d-sm-inline"> Add</span></Link>
+                                        <span className="d-none d-sm-inline"> Add</span></Link>
                                 </li>
                                 <li className="w-100">
-                                    <Link to="/viewPlan" className="nav-link px-0 custom-icon">
+                                    <Link to="/viewPlan" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="far fa-eye"></i>
-                                        <span className="custom-icon d-none d-sm-inline"> View</span></Link>
+                                        <span className="d-none d-sm-inline"> View</span></Link>
                                 </li>
                                 <li className="w-100">
-                                    <Link to="/updatePlan" className="nav-link px-0 custom-icon">
+                                    <Link to="/updatePlan" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="fas fa-edit"></i>
-                                        <span className="custom-icon d-none d-sm-inline"> Update</span></Link>
+                                        <span className="d-none d-sm-inline"> Update</span></Link>
+                                </li>
+                            </ul>
+                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
+
+
+                        <li>
+                            <Link to="#submenu5" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                                <i className="fs-4 bi-table custom-icon" ></i>
+                                <span className="custom-icon ms-1 d-none d-sm-inline">Attendance</span>
+                            </Link>
+                            <ul className="collapse  nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
+                                <li className="w-100">
+                                    <Link to="/markAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className="fas fa-calendar-check"></i>
+                                        <span className=" d-none d-sm-inline"> Mark</span></Link>
+                                </li>
+                                <li className="w-100">
+                                    <Link to="/viewAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className="fas fa-clipboard-list"></i>
+                                        <span className=" d-none d-sm-inline"> View</span></Link>
                                 </li>
                             </ul>
                         </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
