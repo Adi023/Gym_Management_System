@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PlanServices from '../../services/PlanServices'
 import PaginationBar from '../PaginationBar';
-import { toast } from 'react-toastify';
-
 export default function ViewPlan() {
 
   const [pageSize, setPageSize] = useState(5);

@@ -28,6 +28,6 @@ const validRoutes  = [
     '/updatePlan',
     '/imageUploader',
     '/viewMemberships',
-    '/addMemberships'
+    '/addMembership'
   ];
   export default validRoutes;
