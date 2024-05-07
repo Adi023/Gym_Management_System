@@ -1,8 +1,6 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import ErrorBoundary from '../ErrorBoundary'
-
-import ErrorPage from './ErrorPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 //Admin imports
 import AddAdmin from './admin/AddAdmin'
@@ -18,6 +16,12 @@ import WeeklyAttendance from './attendance/WeeklyAttendance'
 import MarkAttendance from './attendance/MarkAttendance'
 import ViewAttendance from './attendance/ViewAttendance'
 
+//user imports
+import ViewSingleUser from './user/ViewSingleUser';
+import UserLogin from './user/UserLogin';
+import AddUser from './user/AddUser';
+import ViewAllUsers from './user/ViewAllUsers';
+import Login from './Login';
 
 //Employee imports
 import AddEmployee from './Employee/AddEmployee';
@@ -28,22 +32,21 @@ import AddPlan from './plan/AddPlan'
 import ViewPlan from './plan/ViewPlan'
 import UpdatePlan from './plan/UpdatePlan'
 
+//Memberships imports
+import ViewMemberships from './membership/ViewMemberships';
+import AddMembership from './membership/AddMembership'
+
 //Other imports
 import Header from './Header'
 import Home from './Home'
 import ContactUs from './ContactUs';
 import AboutUs from './AboutUs';
-import UserLogin from './user/UserLogin';
-import AddUser from './user/AddUser';
-import ViewAllUsers from './user/ViewAllUsers';
-import Login from './Login';
 import Dashboard from './user/Dashboard';
-import ViewSingleUser from './user/ViewSingleUser';
 import ImageUploader from './ImageUploder';
-import { useSelector } from 'react-redux';
 import RequireAuth from './RequireAuth';
-
-
+import UnAuthenticatedUrl from './user/UnAuthenticatedUrl';
+import ErrorPage from './ErrorPage';
+import ErrorBoundary from '../ErrorBoundary'
 
 
 export default function AllRoutes() {
@@ -55,9 +58,7 @@ console.log(isAuthenticated+"  isAuthenticated 1")
     <>
       <div>
         {/* <Router> */}
-        {/* <ErrorBoundary> */}
-
-
+    
           <Routes>
             {/*Allowed to every one Routes*/}
             <Route path="/" element={<Home></Home>}></Route>
@@ -106,19 +107,21 @@ console.log(isAuthenticated+"  isAuthenticated 1")
                 <Route path='addPlan' element={<RequireAuth component={AddPlan} requiredRoles={['admin']} />}  />
                 <Route path='viewPlan' element={<RequireAuth component={ViewPlan} requiredRoles={['admin']} />}  />
                 <Route path='updatePlan' element={<RequireAuth component={UpdatePlan} requiredRoles={['admin']} />}  />
+                
+                {/* Memberships Routes */}
+                <Route path='addMembership' element={<RequireAuth component={AddMembership} requiredRoles={['admin']} />}  />
+                <Route path='viewMemberships' element={<RequireAuth component={ViewMemberships} requiredRoles={['admin']} />}  />
 
+                
                 {/* Helper Routes */}
                 <Route path='imageUploader' element={<RequireAuth component={ImageUploader} requiredRoles={['admin']} />}  />
-
+                
               </>
             ) : (
-              
-              <Route path="/" element={<div>Unauthorized Access!</div>} />
-
+              <Route path="*" element={<UnAuthenticatedUrl/>} />
             ) }
 
           </Routes>
-        {/* </ErrorBoundary> */}
         {/* </Router> */}
       </div>
     </>
