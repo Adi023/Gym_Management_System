@@ -134,12 +134,12 @@ export default function SideBar() {
                             </Link>
                             <ul className="collapse  nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
                                 <li className="w-100">
-                                    <Link to="/markAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                                    <Link to="/addMembership" className="nav-link px-0 text-secondary text-hover-white">
                                   <i class="bi bi-shield-plus"></i>
                                         <span className=" d-none d-sm-inline"> Add</span></Link>
                                 </li>
                                 <li className="w-100">
-                                    <Link to="/viewAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                                    <Link to="/viewMemberships" className="nav-link px-0 text-secondary text-hover-white">
                                     <i class="bi bi-shield-exclamation"></i>
                                         <span className=" d-none d-sm-inline"> View</span></Link>
                                 </li>
