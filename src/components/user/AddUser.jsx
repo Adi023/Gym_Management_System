@@ -62,14 +62,14 @@ export default function AddUser() {
 
   return (
     <div className="signup-container">
-    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Sign UP</h2>
-      <form onSubmit={handleSubmit(sendData)}>
+    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Add New User</h2>
+      <form onSubmit={handleSubmit(sendData)} autocomplete="nope">
 
       <div className="form-row">
      
       {/* <div className="form-group col-md-6"> */}
         <label htmlFor="exampleInputEmail1">User Id</label>
-        <input type="text"  {...register('userId', { required: 'User Id Is Required' })} placeholder={"User Id"} />
+        <input type="text"  {...register('userId', { required: 'User Id Is Required' })} placeholder={"User Id"} autocomplete="new-password"/>
         {errors.userId && <p style={{ color: 'red' }}>{errors.userId.message}</p>}
         <br />
       {/* </div> */}
@@ -90,14 +90,19 @@ export default function AddUser() {
         <br />
 
         <label>Password</label>
-        <input type="password" {...register('password', { required: 'Password Is Required' })} placeholder={"Password"} 
-        onChange={handlePasswordChange}
-        /><br />
+        <input type="password" {...register('password', { required: 'Password Is Required' })} 
+        placeholder={"Password"} 
+        onChange={handlePasswordChange}  
+       autocomplete="new-password"
+        />
+        <br />
         <label>Confirm Password</label>
         <input type="password" 
         // value={confirmPassword} 
-        required  placeholder={"Confirm Password"} 
-        onChange={handleConfirmPasswordChange}
+        required  
+        placeholder={"Confirm Password"} 
+        onChange={handleConfirmPasswordChange}  
+       autocomplete="new-password"
         />
         {!passwordsMatch && <p style={{ color: 'red' }}>Passwords do not match</p>}
         {errors.password && <p style={{ color: 'red' }}>{errors.password.message}</p>}
