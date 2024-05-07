@@ -126,21 +126,21 @@ export default function SideBar() {
                             </ul>
                         </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
-
+{/* Membership Fields */}
                         <li>
                             <Link to="#submenu5" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi-table custom-icon" ></i>
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Attendance</span>
+                            <i class="bi bi-shield-fill-check fs-4 custom-icon"></i>
+                                <span className="custom-icon ms-1 d-none d-sm-inline">Membership</span>
                             </Link>
                             <ul className="collapse  nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
                                 <li className="w-100">
                                     <Link to="/markAttendance" className="nav-link px-0 text-secondary text-hover-white">
-                                    <i className="fas fa-calendar-check"></i>
-                                        <span className=" d-none d-sm-inline"> Mark</span></Link>
+                                  <i class="bi bi-shield-plus"></i>
+                                        <span className=" d-none d-sm-inline"> Add</span></Link>
                                 </li>
                                 <li className="w-100">
                                     <Link to="/viewAttendance" className="nav-link px-0 text-secondary text-hover-white">
-                                    <i className="fas fa-clipboard-list"></i>
+                                    <i class="bi bi-shield-exclamation"></i>
                                         <span className=" d-none d-sm-inline"> View</span></Link>
                                 </li>
                             </ul>
