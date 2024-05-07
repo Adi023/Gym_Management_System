@@ -26,6 +26,8 @@ const validRoutes  = [
     '/addPlan',
     '/viewPlan',
     '/updatePlan',
-    '/imageUploader'
+    '/imageUploader',
+    '/viewMemberships',
+    '/addMemberships'
   ];
   export default validRoutes;
