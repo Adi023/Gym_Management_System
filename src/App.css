@@ -353,3 +353,31 @@ box-shadow:  21px 21px 35px #666666,
   animation: rotate 2s linear infinite;
   /* Apply rotation animation to the icon */
 }
+
+.gender-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.male {
+  background-color: blue;
+}
+
+.female {
+  background-color: pink;
+}
+
+.others {
+  background-color: grey;
+}
