@@ -129,18 +129,18 @@ export default function SideBar() {
 {/* Membership Fields */}
                         <li>
                             <Link to="#submenu5" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                            <i class="bi bi-shield-fill-check fs-4 custom-icon"></i>
+                            <i className="bi bi-shield-fill-check fs-4 custom-icon"></i>
                                 <span className="custom-icon ms-1 d-none d-sm-inline">Membership</span>
                             </Link>
                             <ul className="collapse  nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
                                 <li className="w-100">
                                     <Link to="/addMembership" className="nav-link px-0 text-secondary text-hover-white">
-                                  <i class="bi bi-shield-plus"></i>
+                                  <i className="bi bi-shield-plus"></i>
                                         <span className=" d-none d-sm-inline"> Add</span></Link>
                                 </li>
                                 <li className="w-100">
                                     <Link to="/viewMemberships" className="nav-link px-0 text-secondary text-hover-white">
-                                    <i class="bi bi-shield-exclamation"></i>
+                                    <i className="bi bi-shield-exclamation"></i>
                                         <span className=" d-none d-sm-inline"> View</span></Link>
                                 </li>
                             </ul>
