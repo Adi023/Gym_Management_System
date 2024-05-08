@@ -68,10 +68,10 @@ export default function AddUser() {
       <div className="form-row">
      
       {/* <div className="form-group col-md-6"> */}
-        <label htmlFor="exampleInputEmail1">User Id</label>
+        {/* <label htmlFor="exampleInputEmail1">User Id</label>
         <input type="text"  {...register('userId', { required: 'User Id Is Required' })} placeholder={"User Id"} autocomplete="new-password"/>
         {errors.userId && <p style={{ color: 'red' }}>{errors.userId.message}</p>}
-        <br />
+        <br /> */}
       {/* </div> */}
 
       {/* <div className="form-group col-md-6"> */}
