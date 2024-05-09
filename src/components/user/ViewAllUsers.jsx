@@ -156,7 +156,7 @@ export default function ViewAllUsers() {
         </table>
       </div><br/>
       {/* Pagination Bar Starts*/}
-      <div className="row m-0 p-0 divcardProfile">
+      <div className="row m-0 p-1 divcardProfile">
       <PaginationBar postContent={postContent} handlePageChange={handlePageChange} />
       </div>
       <br/>
