@@ -150,7 +150,7 @@ export default function ViewAttendance() {
       {/* Pagination Bar Starts*/}
       <div className="row m-0 p-0 divcardProfile">
       <PaginationBar postContent={postContent} handlePageChange={handlePageChange} />
-     </div>
+     </div> <br/>
     </div>
   );
 }
