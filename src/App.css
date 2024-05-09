@@ -285,9 +285,11 @@ box-shadow:  21px 21px 35px #666666,
 
 .divcardProfile {
 /* border-radius: 24px; */
+overflow-x : auto;
 background: #ffffff;
 box-shadow:  21px 21px 35px #666666,
              -21px -21px 35px #ffffff;
+
 }
 
 
