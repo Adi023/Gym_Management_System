@@ -141,11 +141,11 @@ export default function AddUser() {
         <br />
 
         <label>Date Of Joining</label>
-        <input type="date" {...register('date_of_joining', { required: 'date_of_joining is required' })}
+        <input type="date" {...register('dateOfJoining', { required: 'dateOfJoining is required' })}
          placeholder={"Date Of Joining"} 
          min={minDate}
          />
-        {errors.date_of_joining && <p style={{ color: 'red' }}>{errors.date_of_joining.message}</p>}
+        {errors.dateOfJoining && <p style={{ color: 'red' }}>{errors.dateOfJoining.message}</p>}
         <br />
 
         <label>Date Of Birth</label>
