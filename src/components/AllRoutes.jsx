@@ -44,7 +44,7 @@ import AboutUs from './AboutUs';
 import Dashboard from './user/Dashboard';
 import ImageUploader from './ImageUploder';
 import RequireAuth from './RequireAuth';
-import UnAuthenticatedUrl from './user/UnAuthenticatedUrl';
+import UnAuthenticatedUrl from './UnAuthenticatedUrl';
 import ErrorPage from './ErrorPage';
 import ErrorBoundary from '../ErrorBoundary'
 
@@ -91,7 +91,7 @@ console.log(isAuthenticated+"  isAuthenticated 1")
                 {/* <Route path='/register' element={<RequireAuth component={AddUser} requiredRoles={['admin']} />}  /> */}
                 <Route path='/viewUsers' element={<RequireAuth component={ViewAllUsers} requiredRoles={['admin']} />}  />
                 <Route path='/viewSingleUser' element={<RequireAuth component={ViewSingleUser} requiredRoles={['admin']} />}  />
-                <Route path='/dashboard' element={<RequireAuth component={Dashboard} requiredRoles={['admin']} />}  />
+                <Route path='/dashboard' element={<RequireAuth component={Dashboard} requiredRoles={['admin','user']} />}  />
 
                 {/* Attendance Routes */}
                 <Route path='attendance' element={<RequireAuth component={AttendanceHome} requiredRoles={['admin']} />}  />
