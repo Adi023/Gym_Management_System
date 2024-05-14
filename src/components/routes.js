@@ -28,6 +28,7 @@ const validRoutes  = [
     '/updatePlan',
     '/imageUploader',
     '/viewMemberships',
-    '/addMembership'
+    '/addMembership',
+    '/unauthorized'
   ];
   export default validRoutes;
