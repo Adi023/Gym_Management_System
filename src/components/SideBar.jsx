@@ -31,11 +31,8 @@ export default function SideBar() {
         case 'admin':
             sidebarContent = (
                 <>
-                    <Link to="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span className="custom-icon fs-5 d-none d-sm-inline">Menu</span>
-                    </Link>
+                  
 
-                    <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li className="nav-item">
                             <Link to="dashboard" className="nav-link align-middle px-0">
                                 <i className="fs-4 bi-house custom-icon " ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Home</span>
@@ -152,13 +149,39 @@ export default function SideBar() {
                                 <i className="fs-4 bi-people custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Image Test</span>
                             </Link>
                         </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
-                    </ul>
+                   
                 </>
             );
             break;
         case 'user':
             sidebarContent = (
                 <>
+                
+                <li className="nav-item">
+                            <Link to="dashboard" className="nav-link align-middle px-0">
+                                <i className="fs-4 bi-house custom-icon " ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Home</span>
+                            </Link>
+                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
+
+                        {/* User Fields */}
+                        <li>
+                            <Link to="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                                <i className="fs-4 bi bi-people custom-icon"></i>
+                                <span className="custom-icon ms-1 d-none d-sm-inline">Users</span>
+                            </Link>
+                            <ul className="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                <li className="w-100">
+                                    <Link to="/register" className="nav-link px-0 text-secondary text-hover-white">
+                                        <i className=" bi bi-person-add "></i>
+                                        <span className="d-none d-sm-inline"> Add</span></Link>
+                                </li>
+                                {/* <li className="w-100">
+                                    <Link to="/viewUsers" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className="fa-solid fa-list"></i>
+                                        <span className="d-none d-sm-inline"> View</span></Link>
+                                </li> */}
+                            </ul>
+                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
                 </>
             );
@@ -197,9 +220,12 @@ export default function SideBar() {
                 <div className="row flex-nowrap">
                     <div className=" sidewidth  px-0 bg-black" >
                         <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-
+                        <Link to="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span className="custom-icon fs-5 d-none d-sm-inline">Menu</span>
+                    </Link>
+                    <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                             {sidebarContent}
-
+                    </ul>
                             <hr className="custom-icon" />
                             <div className="dropdown pb-4">
                                 <Link to="/" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
