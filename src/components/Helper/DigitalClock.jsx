@@ -21,25 +21,25 @@ export default function DigitalClock() {
 
 
             <div className="card-body text-center d-flex flex-wrap justify-content-center align-items-center" >
-
+{/* 
               <div className="clock-item">
                 <p className="clock-label mx-2">Date</p>
-                <p className="clock-day clock-timer"><h4>{dateTime.toLocaleDateString("es-CL")}</h4></p>
-              </div>
+                <h4 className="clock-day clock-timer">{dateTime.toLocaleDateString("es-CL")}</h4>
+              </div> */}
 
 
               <div className="clock-item">
-                <p className="clock-hours clock-timer"><h4>{dateTime.getHours()}</h4></p>
+                <h4 className="clock-hours clock-timer">{dateTime.getHours()}</h4>
                 <p className="clock-label mr-4 mx-4">Hours</p>
               </div>
               <p className="clock-timer mx-2">:</p>
               <div className="clock-item">
-                <p className="clock-minutes clock-timer"><h4>{dateTime.getMinutes()}</h4></p>
-                <p className="clock-label mx-2">Minutes</p>
+                <h4 className="clock-minutes clock-timer">{dateTime.getMinutes()}</h4>
+                <p className="clock-label mx-2">Minute</p>
               </div>
               <p className="clock-timer mx-2">:</p>
               <div className="clock-item">
-                <p className="clock-seconds clock-timer"><h4>{dateTime.getSeconds()}</h4></p>
+                <h4 className="clock-seconds clock-timer">{dateTime.getSeconds()}</h4>
                 <p className="clock-label mx-2">Seconds</p>
               </div>
             </div>
