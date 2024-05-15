@@ -58,22 +58,22 @@ export default function Footer() {
 
                             {/* <!-- Grid column --> */}
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                                {/* <!-- Links --> */}
+                               
                                 <h6 className="text-uppercase fw-bold mb-4">
                                     Products
                                 </h6>
                                 <p>
-                                    <a href="#!" className="text-reset">Angular</a>
+                                    <a href="/" className="text-reset">Home</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">React</a>
+                                    <a href="/AboutUs" className="text-reset">About us</a>
                                 </p>
                                 <p>
-                                    <a href="#!" className="text-reset">Vue</a>
+                                    <a href="/ContactUs" className="text-reset">Contact Us</a>
                                 </p>
-                                <p>
-                                    <a href="#!" className="text-reset">Laravel</a>
-                                </p>
+                                {/* <p>
+                                    <a href="/" className="text-reset">Laravel</a>
+                                </p> */}
                             </div>
                             {/* <!-- Grid column --> */}
 
@@ -119,7 +119,7 @@ export default function Footer() {
 
                 {/* <!-- Copyright --> */}
                 <div className="text-center p-4" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-                    © 2023 Copyright:
+                    © 2024 Copyright:
                     <a className="text-reset fw-bold" href="https://mdbootstrap.com/">GMS.com</a>
                 </div>
                 {/* <!-- Copyright --> */}
