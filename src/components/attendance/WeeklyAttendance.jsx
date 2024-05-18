@@ -64,7 +64,7 @@ const WeeklyAttendance = ({ attendanceData }) => {
     };
 
     return (
-        <div >
+        <div className="chart-attendance divcardProfile">
             <h1>Last 7 Days Attendance Data</h1>
             <Bar className="card border-dark  mb-3" data={data} options={options} plugins={[ChartDataLabels]} />
         </div>
