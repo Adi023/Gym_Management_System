@@ -3,6 +3,7 @@ import WeeklyAttendance from './WeeklyAttendance';
 import AttendanceServices from '../../services/AttendanceServices'
 import DigitalClock from '../Helper/DigitalClock';
 import { useSelector } from 'react-redux';
+import PieChart from './PieChart';
 
 export default function AttendanceHome() {
     const [dateTime, setDateTime] = useState(new Date());
@@ -59,16 +60,16 @@ export default function AttendanceHome() {
     //     return () => clearInterval(interval); // Cleanup interval on component unmount
     // }, []);
     // Find the maximum count among males, females, and others
-    // const malesCount = 10;
-    // const femalesCount = 15;
-    // const othersCount = 5;
+    const malesCount = 10;
+    const femalesCount = 15;
+    const othersCount = 5;
 
-    // const maxCount = Math.max(malesCount, femalesCount, othersCount);
+    const maxCount = Math.max(malesCount, femalesCount, othersCount);
 
-    // // Calculate size ratios for each circle
-    // const maleRatio = malesCount / maxCount;
-    // const femaleRatio = femalesCount / maxCount;
-    // const othersRatio = othersCount / maxCount;
+    // Calculate size ratios for each circle
+    const maleRatio = malesCount / maxCount;
+    const femaleRatio = femalesCount / maxCount;
+    const othersRatio = othersCount / maxCount;
     return (
         <div className='container'>
             <br />
@@ -87,18 +88,19 @@ export default function AttendanceHome() {
             {/* <div className='container  divcard'>
                 <div className=' container py-4 px-4 bg-dark d-flex justify-content-around' style={{ flex: 1 }}>
                         <div className="circle male" style={{ width: `${100 * maleRatio}px`, height: `${100 * maleRatio}px` }}>{malesCount}</div>
-                         <div className="label text-white">Males</div>
+                         <div className="label text-white" style={{ width: `${100 * maleRatio}px`, height: `${100 * maleRatio}px` }}>Males</div>
                         <div className="circle female" style={{ width: `${80 * femaleRatio}px`, height: `${80 * femaleRatio}px` }}>{femalesCount}
-                        <div className="label text-white">Males</div></div>
+                        <div className="label text-white" style={{ width: `${80 * femaleRatio}px`, height: `${80 * femaleRatio}px` }}>Females</div></div>
                         <div className="circle others" style={{ width: `${60 * othersRatio}px`, height: `${60 * othersRatio}px` }}>{othersCount}
-                        <div className="label text-white">Males</div></div>
+                        <div className="label text-white" style={{ width: `${60 * othersRatio}px`, height: `${60 * othersRatio}px` }}>Others</div></div>
                 </div>
 
                 <div className="card text-center d-flex flex-wrap justify-content-center align-items-center bg-dark text-white" style={{ flex: 1 }}>
                     <h1>Testing</h1>
                 </div>
-            </div>
-            <br /> */}
+            </div> */}
+            <PieChart/>
+            <br />
 
             <div className='container py-4 px-4 divcardProfile' style={{
                 display: 'flex', flexWrap: 'wrap',
@@ -124,15 +126,11 @@ export default function AttendanceHome() {
                 </table>
             </div> <br />
             {attendanceData && attendanceData.length > 0 ? (
-                <div className='container py-4 px-4' style={{
-                    display: 'flex', flexWrap: 'wrap',
-                    background: '#ffffff',
-                    boxShadow: ' 20px 20px 60px #d9d9d9,-20px -20px 60px #ffffff'
-                }}>
-                    <div className='container py-4 px-4'>
+               
+                    <div className='container py-4 px-4 '>
                         <WeeklyAttendance attendanceData={attendanceData} />
                     </div>
-                </div>
+               
             ) : (<div className='divcardProfile'><h1 className='p-4'>No Chart Available</h1></div>)}
             <br />
         </div>
