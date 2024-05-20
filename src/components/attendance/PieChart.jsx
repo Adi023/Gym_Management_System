@@ -37,9 +37,9 @@ const PieChart = () => {
     },
   };
 
-  return <div className="chart-container divcard">
-  <Pie data={data} options={options} />
-</div>;
+  return <div className="chart-container ">
+    <Pie data={data} options={options} />
+  </div>;
 };
 
 export default PieChart;
