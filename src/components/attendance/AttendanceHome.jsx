@@ -4,6 +4,7 @@ import AttendanceServices from '../../services/AttendanceServices'
 import DigitalClock from '../Helper/DigitalClock';
 import { useSelector } from 'react-redux';
 import PieChart from './PieChart';
+import ToDo from '../ToDo';
 
 export default function AttendanceHome() {
     const [dateTime, setDateTime] = useState(new Date());
@@ -60,16 +61,7 @@ export default function AttendanceHome() {
     //     return () => clearInterval(interval); // Cleanup interval on component unmount
     // }, []);
     // Find the maximum count among males, females, and others
-    const malesCount = 10;
-    const femalesCount = 15;
-    const othersCount = 5;
 
-    const maxCount = Math.max(malesCount, femalesCount, othersCount);
-
-    // Calculate size ratios for each circle
-    const maleRatio = malesCount / maxCount;
-    const femaleRatio = femalesCount / maxCount;
-    const othersRatio = othersCount / maxCount;
     return (
         <div className='container'>
             <br />
@@ -99,7 +91,21 @@ export default function AttendanceHome() {
                     <h1>Testing</h1>
                 </div>
             </div> */}
-            <PieChart/>
+
+            <div className='container  divcard'>
+                <div className='d-flex' style={{ flex: '1 1 40%' }}>
+                  <PieChart />
+                </div>
+                <div className="d-flex my-2 p-3" 
+                style={{ flex: '2 1 60%',
+                height:'300px',
+                overflow : 'auto',
+                borderLeft:'1px solid grey' }}>
+
+                    <ToDo />
+                </div>
+            </div>
+
             <br />
 
             <div className='container py-4 px-4 divcardProfile' style={{
@@ -126,11 +132,11 @@ export default function AttendanceHome() {
                 </table>
             </div> <br />
             {attendanceData && attendanceData.length > 0 ? (
-               
-                    <div className='container py-4 px-4 '>
-                        <WeeklyAttendance attendanceData={attendanceData} />
-                    </div>
-               
+
+                <div className='container py-4 px-4 '>
+                    <WeeklyAttendance attendanceData={attendanceData} />
+                </div>
+
             ) : (<div className='divcardProfile'><h1 className='p-4'>No Chart Available</h1></div>)}
             <br />
         </div>
