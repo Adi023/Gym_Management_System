@@ -61,18 +61,11 @@ export default function AddUser() {
   }, []);
 
   return (
-    <div className="signup-container">
+    <div className="signup-container ">
     <h2 style={{ marginLeft: '25%', position: 'relative' }}>Add New User</h2>
       <form onSubmit={handleSubmit(sendData)} autocomplete="nope">
 
       <div className="form-row">
-     
-      {/* <div className="form-group col-md-6"> */}
-        {/* <label htmlFor="exampleInputEmail1">User Id</label>
-        <input type="text"  {...register('userId', { required: 'User Id Is Required' })} placeholder={"User Id"} autocomplete="new-password"/>
-        {errors.userId && <p style={{ color: 'red' }}>{errors.userId.message}</p>}
-        <br /> */}
-      {/* </div> */}
 
       {/* <div className="form-group col-md-6"> */}
         <label htmlFor="inputPassword4">Name</label>
