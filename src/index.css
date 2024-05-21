@@ -41,39 +41,41 @@ body, html {
   transition: 0.5s;
   outline: none;
   resize: vertical;
-}
-
-
-
+} */
+/* 
 input:focus {
   border: 3px solid #555;
 } */
 input, select {
   width: 100%; /* Set width to 100% for responsiveness */
   padding: 0.7vw; /* Use viewport units for padding */
-  margin: 1vw 0; /* Use viewport units for margin */
+  margin: 1vw 0 2vw 0; /* Use viewport units for margin */
   box-sizing: border-box;
-  border: 0.2em solid #ccc; /* Adjust border thickness */
-  transition: border-color 0.5s; /* Simplify transition */
-  outline: none;
+  border: 0.2em solid #ccc;
+  transition: border-color 0.5s; 
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color:#ccc;
 }
 
-/* Adjust border color on focus */
+
 input:focus {
-  border-color: #555; /* Darken border color when focused */
+  border-width: 0 0 2px;
+  border-color: #555;
 }
 
-/* Use media queries for different screen sizes */
+
 @media (min-width: 768px) {
-  /* Apply different styles for screens wider than 768px */
+ 
   input, select {
-    width: 50%; /* Example: Set width to 50% for medium-sized screens */
+    width: 50%; 
   }
 }
 
 
 label {
   padding: 12px 12px 12px 0;
+  margin-bottom: 10px;
   display: inline-block;
   position: relative;
   text-align: left;
