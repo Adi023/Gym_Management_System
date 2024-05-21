@@ -2,13 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-//Admin imports
-import AddAdmin from './admin/AddAdmin'
-import AdminLogin from './admin/AdminLogin'
-import UpdateAdmin from './admin/UpdateAdmin'
-import ViewAdmin from './admin/ViewAdmin'
-import Admin from './Admin'
-import AdminDashBoard from './admin/AdminDashBoard';
+
 
 //Attendance imports
 import AttendanceHome from './attendance/AttendanceHome';
@@ -77,16 +71,8 @@ console.log(isAuthenticated+"  isAuthenticated 1")
             {isAuthenticated ? (
               <>
                 {/*Admin Routes*/}
-                <Route path="/Admin" element={<RequireAuth component={Admin} requiredRoles={['admin']} />} />
                 <Route path="register" element={<RequireAuth component={AddUser}  /> }  />
-
-                {/* <Route path="Admin" element={<RequireAuth component={<Admin/>} requiredRoles={['admin']} />}  /> */}
-                <Route path="AddAdmin" element={<RequireAuth component={AddAdmin} requiredRoles={['admin']} />}  />
-                <Route path="AdminLogin" element={<RequireAuth component={AdminLogin} requiredRoles={['admin']} />}  />
-                <Route path="UpdateAdmin" element={<RequireAuth component={UpdateAdmin} requiredRoles={['admin']} />}  />
-                <Route path="ViewAdmin" element={<RequireAuth component={ViewAdmin} requiredRoles={['admin']} />}  />
-                <Route path="AdminDashBoard" element={<RequireAuth component={AdminDashBoard} requiredRoles={['admin']} />}  />
-
+                
                 {/*User Routes*/}
                 {/* <Route path='/register' element={<RequireAuth component={AddUser} requiredRoles={['admin']} />}  /> */}
                 <Route path='/viewUsers' element={<RequireAuth component={ViewAllUsers} requiredRoles={['admin']} />}  />
