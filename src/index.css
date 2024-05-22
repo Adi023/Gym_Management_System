@@ -58,8 +58,17 @@ input, select {
   border-color:#ccc;
 }
 
+input[type=button], input[type=submit], input[type=reset] {
+  border-width: 0 ;
+  transition: all 0.3s ease;
+}
 
-input:focus {
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+  border-width:  0.5px;
+  border-color: #555;
+  /* transform: scale(1.1); */
+}
+input:hover {
   border-width: 0 0 2px;
   border-color: #555;
 }
