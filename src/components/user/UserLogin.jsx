@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { setRole } from '../../redux/actions';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function UserLogin({onLogin}) {
+export default function UserLogin({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -11,12 +11,12 @@ export default function UserLogin({onLogin}) {
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    
+
     e.preventDefault();
     // Assuming you have a function to validate credentials and retrieve user role
     // console.log(username +' '+password);
     const role = validateLogin(username, password);
-    
+
     if (role) {
       // Call onLogin callback with user role
       onLogin(role);
@@ -41,11 +41,11 @@ export default function UserLogin({onLogin}) {
       navigate('/login');
     }
   }
-  
+
   return (
-    <div style={{padding:"70px"}}>
-        <div id="login" >
-      <h1 >Login</h1>
+    <div style={{ padding: "70px" }}>
+    <div id="login">
+      <h1>Login</h1>
       <form onSubmit={handleLogin}>
         <div>
           <label>Username:</label>
@@ -64,10 +64,10 @@ export default function UserLogin({onLogin}) {
           />
         </div>
         <label></label>
-        <input type="submit" value={"Login"}/>
+        <input type="submit" value={"Login"} />
+        <br />
       </form>
-    
-        </div>
     </div>
+  </div>  
   )
 }
