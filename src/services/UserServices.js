@@ -12,7 +12,18 @@ class UserServices{
     viewAllUsers(pageNumber,pageSize,sortBy,sortDir){
         // console.log(`Sort By: ${sortBy}, Sort Dir: ${sortDir}`);
         return httpCommon.get(`/user/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
+    }
 
+    
+    getPaidUsers(pageNumber,pageSize,sortBy,sortDir){
+        // console.log(`Sort By: ${sortBy}, Sort Dir: ${sortDir}`);
+        return httpCommon.get(`/user/paid/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
+    }
+
+    
+    getUnpaidUsers(pageNumber,pageSize,sortBy,sortDir){
+        // console.log(`Sort By: ${sortBy}, Sort Dir: ${sortDir}`);
+        return httpCommon.get(`/user/unpaid/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
     }
 
     getUserById(userId){
