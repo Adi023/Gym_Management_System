@@ -12,6 +12,7 @@ export default function PieChart () {
     try {
       const paid = await UserServices.getPaidUsers(0, 5, "userId", "desc");
       const unPaid = await UserServices.getUnpaidUsers(0, 5, "userId", "desc");
+      console.log(paid.data)
        setPaidUsers(paid.data.totalElements);
        setUnPaidUser(unPaid.data.totalElements);
       console.log("Paid Users:", paid.data.totalElements +" " +"unPaidUser : ",unPaid.data.totalElements);
