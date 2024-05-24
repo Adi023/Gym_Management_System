@@ -159,15 +159,17 @@ export default function SideBar() {
                 
                 <li className="nav-item">
                             <Link to="dashboard" className="nav-link align-middle px-0">
-                                <i className="fs-4 bi-house custom-icon " ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Home</span>
+                                <i className="fs-4 bi-house custom-icon " ></i> 
+                                <span className="custom-icon ms-1 d-none d-sm-inline">Home</span>
                             </Link>
-                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                </li>
+                <hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
-                        {/* User Fields */}
-                        <li>
+                {/* User Fields */}
+                <li>
                             <Link to="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                                 <i className="fs-4 bi bi-people custom-icon"></i>
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Users</span>
+                                <span className="custom-icon ms-1 d-none d-sm-inline">Profile</span>
                             </Link>
                             <ul className="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                 <li className="w-100">
@@ -181,8 +183,24 @@ export default function SideBar() {
                                         <span className="d-none d-sm-inline"> View</span></Link>
                                 </li> */}
                             </ul>
-                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                           
+                </li>
+                <hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
+                <li>
+                            <Link to="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                                <i className="fs-4 bi bi-people custom-icon"></i>
+                                <span className="custom-icon ms-1 d-none d-sm-inline">Membership</span>
+                            </Link>
+                            <ul className="collapse  nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li className="w-100">
+                                    <Link to="/" className="nav-link px-0 text-secondary text-hover-white">
+                                        <i className=" bi bi-person-add "></i>
+                                        <span className="d-none d-sm-inline">Details</span></Link>
+                                </li>
+                            </ul>
+                </li>
+                <hr style={{margin:'0px',color:'white',width:'100%'}}/>
                 </>
             );
             break;
