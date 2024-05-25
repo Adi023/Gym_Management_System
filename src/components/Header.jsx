@@ -90,7 +90,6 @@ export default function Header() {
           <Link to="/" className="nav-link">HOME</Link>
           <Link to="/AboutUs" className="nav-link">ABOUT US</Link>
           <Link to="/ContactUs" className="nav-link">CONTACT US</Link>
-          <Link to="/register" className="nav-link">REGISTER</Link>
           <Link to="/login" className="nav-link">LOGIN</Link>
         </Nav>
 
