@@ -5,8 +5,8 @@ class UserServices{
     addUser(d){
         return httpCommon.post("/user",d);
     }
-    viewUsers(){
-        return httpCommon.get("/user");
+    getAllUsersInfo(){
+        return httpCommon.get("/user/allUsersInfo");
     }
 
     viewAllUsers(pageNumber,pageSize,sortBy,sortDir){
