@@ -10,12 +10,11 @@ const Dashboard = ({role}) => {
   const navigate = useNavigate();
 
   const reduxRole = useSelector(state => state.role);
-
-  console.log(role+" "+reduxRole);
+  const reduxUserId = useSelector(state => state.userId);
+  console.log(role+" "+reduxRole+" "+reduxUserId);
 
   
   useEffect(() => {
-    // Check if the role is 'default' and navigate to the home page
     if (reduxRole === 'default') {
       navigate('/');
     }
