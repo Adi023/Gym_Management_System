@@ -63,7 +63,7 @@ export default function AddUser() {
   return (
     <div className="signup-container ">
     <h2 style={{ marginLeft: '25%', position: 'relative' }}>Add New User</h2>
-      <form onSubmit={handleSubmit(sendData)} autocomplete="nope">
+      <form onSubmit={handleSubmit(sendData)} autoComplete="nope">
 
       <div className="form-row">
 
@@ -86,7 +86,7 @@ export default function AddUser() {
         <input type="password" {...register('password', { required: 'Password Is Required' })} 
         placeholder={"Password"} 
         onChange={handlePasswordChange}  
-       autocomplete="new-password"
+        autoComplete="new-password"
         />
         <br />
         <label>Confirm Password</label>
@@ -95,7 +95,7 @@ export default function AddUser() {
         required  
         placeholder={"Confirm Password"} 
         onChange={handleConfirmPasswordChange}  
-       autocomplete="new-password"
+        autoComplete="new-password"
         />
         {!passwordsMatch && <p style={{ color: 'red' }}>Passwords do not match</p>}
         {errors.password && <p style={{ color: 'red' }}>{errors.password.message}</p>}
