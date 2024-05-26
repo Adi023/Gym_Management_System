@@ -57,12 +57,12 @@ export default function AddMembership() {
   return (
     <div className="signup-container">
       <h2 style={{ marginLeft: '25%', position: 'relative' }}>Add New Membership</h2>
-      <form onSubmit={handleSubmit(sendData)} autocomplete="nope">
+      <form onSubmit={handleSubmit(sendData)} autoComplete="nope">
 
         <div className="form-row">
 
           <label htmlFor="inputUserId">User Id</label>
-          <input type="text"  {...register('userId', { required: 'User Id Is Required' })} placeholder={"User Id"} autocomplete="new-password" />
+          <input type="text"  {...register('userId', { required: 'User Id Is Required' })} placeholder={"User Id"} autoComplete="new-password" />
           {errors.userId && <p style={{ color: 'red' }}>{errors.userId.message}</p>}
           <br />
 
