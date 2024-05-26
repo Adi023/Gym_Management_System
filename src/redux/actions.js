@@ -9,7 +9,8 @@ export const resetRole = () => ({
   type: RESET_ROLE,
 });
 
-export const setRole = (role) => ({
+export const setRole = (role,userId) => ({
   type: SET_ROLE,
   payload: role,
+  payload2 : userId
 });
