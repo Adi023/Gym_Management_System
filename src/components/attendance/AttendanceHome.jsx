@@ -12,9 +12,9 @@ export default function AttendanceHome() {
     const role = useSelector(state => state.role);
 
     useEffect(() => {
-        console.log('Setting up interval...');
+        // console.log('Setting up interval...');
         const fetchDataAndTimeInterval = async () => {
-            console.log('Fetching data...');
+            // console.log('Fetching data...');
             await fetchData();
 
             const intervalId = setInterval(() => {
@@ -37,10 +37,8 @@ export default function AttendanceHome() {
         try {
             const responseData = await AttendanceServices.weeklyAttendanceCount();
             setAttendanceData(responseData.data);
-            console.log(responseData.data)
         } catch (error) {
             console.error('Error fetching data:', error);
-            // Optionally, set an error state here to provide feedback to the user
         }
     };
     // console.log(attendanceData)
@@ -77,20 +75,6 @@ export default function AttendanceHome() {
 
             </div>
             <br />
-            {/* <div className='container  divcard'>
-                <div className=' container py-4 px-4 bg-dark d-flex justify-content-around' style={{ flex: 1 }}>
-                        <div className="circle male" style={{ width: `${100 * maleRatio}px`, height: `${100 * maleRatio}px` }}>{malesCount}</div>
-                         <div className="label text-white" style={{ width: `${100 * maleRatio}px`, height: `${100 * maleRatio}px` }}>Males</div>
-                        <div className="circle female" style={{ width: `${80 * femaleRatio}px`, height: `${80 * femaleRatio}px` }}>{femalesCount}
-                        <div className="label text-white" style={{ width: `${80 * femaleRatio}px`, height: `${80 * femaleRatio}px` }}>Females</div></div>
-                        <div className="circle others" style={{ width: `${60 * othersRatio}px`, height: `${60 * othersRatio}px` }}>{othersCount}
-                        <div className="label text-white" style={{ width: `${60 * othersRatio}px`, height: `${60 * othersRatio}px` }}>Others</div></div>
-                </div>
-
-                <div className="card text-center d-flex flex-wrap justify-content-center align-items-center bg-dark text-white" style={{ flex: 1 }}>
-                    <h1>Testing</h1>
-                </div>
-            </div> */}
 
             <div className='container  divcard'>
                 <div className='d-flex' style={{ flex: '1 1 40%' }}>
