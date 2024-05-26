@@ -46,7 +46,7 @@ import ErrorBoundary from '../ErrorBoundary'
 export default function AllRoutes() {
 
   const isAuthenticated = useSelector(state => state.role !== null && state.role !== 'default');
-console.log(isAuthenticated+"  isAuthenticated 1")
+// console.log(isAuthenticated+"  isAuthenticated 1")
 
   return (
     <>
