@@ -1,9 +1,9 @@
-// reducers.js
 import { SET_ROLE,RESET_ROLE } from './actionTypes';
 
 const initialState = {
   role: 'default', // Default role is 'default'
-  isAuthenticated: false
+  isAuthenticated: false,
+  userId : null
 };
 
 export default (state = initialState, action) => {
@@ -14,14 +14,16 @@ export default (state = initialState, action) => {
       return {
         ...state,
         role: action.payload,
-        isAuthenticated: true // Assuming role assignment implies user is authenticated
+        isAuthenticated: true, // Assuming role assignment implies user is authenticated
+        userId : action.payload2
       };
       //to reset role for application
       case RESET_ROLE:
       return {
         ...state,
         role: initialState.role, // Reset role to default value
-        isAuthenticated: false // Assuming role assignment implies user is authenticated
+        isAuthenticated: false, // Assuming role assignment implies user is authenticated
+        userId : null
       };
     default:
       return state; // Return the current state without modifying it
