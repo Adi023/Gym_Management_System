@@ -45,7 +45,7 @@ export default function MarkAttendance() {
   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
   const day = currentDate.getDate().toString().padStart(2, '0');
   const formattedDate = `${year}-${month}-${day}`;
-  console.log(formattedDate); // Output: 2024-04-27
+  // console.log(formattedDate); // Output: 2024-04-27
 
   useEffect(() => {
     fetchData();
@@ -63,7 +63,7 @@ export default function MarkAttendance() {
 
   const handlePageChange = async (pageNumber = 0) => {
     try {
-      console.log(pageSize + " Pagesize")
+      // console.log(pageSize + " Pagesize")
       const responseData = await AttendanceServices.viewAttendaceByAttendanceDate(formattedDate, pageNumber, pageSize, sortBy, sortDir);
       console.log(responseData);
       setAttendanceData(responseData.data);
