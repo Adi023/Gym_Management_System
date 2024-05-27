@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import UserServices from '../../services/UserServices'
+import { useSelector } from 'react-redux';
 
 export default function ViewSingleUser() {
-
+  const reduxUserId = useSelector(state => state.userId);
   const getService = () => {
-    var userId = 1
+    // var userId = 1
     // var id = localStorage.getItem('userId');
 
-    UserServices.getUserById(userId).then(
+    UserServices.getUserById(reduxUserId).then(
       (Response) => {
         // console.log(Response.data)
         setData(Response.data)
@@ -22,7 +23,7 @@ export default function ViewSingleUser() {
 
   useEffect(() => {
     getService();
-  }, []);
+  });
   return (
     <div className='container py-4 px-4 divcardProfile'>
       <div className="profile-header">
