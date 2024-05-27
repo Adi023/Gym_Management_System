@@ -18,8 +18,7 @@ export default function AttendanceByUserId() {
     lastPage: false,
     pageNumber: 0
   });
-  const reduxUserId = useSelector(state => state.userId);
-  const userId =  Number(reduxUserId);
+  const userId = useSelector(state => state.userId);
 
   useEffect(() => {
     fetchData(userId);
