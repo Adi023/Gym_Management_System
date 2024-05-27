@@ -13,6 +13,11 @@ class MembershipServices{
         // console.log(`Sort By: ${sortBy}, Sort Dir: ${sortDir}`);
         return httpCommon.get(`/membership/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
 
+    }byUserId
+
+    
+    getMembershipByUserId(userID){
+        return httpCommon.get("/membership/byUserId/"+userID)
     }
 
     getMembershipById(membershipId){
