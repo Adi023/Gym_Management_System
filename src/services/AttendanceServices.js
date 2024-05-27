@@ -11,6 +11,11 @@ class AttendanceServices{
         return httpCommon.get(`/attendance/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
     }
 
+    viewAttendanceByUserId(pageNumber,pageSize,sortBy,sortDir,userId){
+        // console.log(`Sort By: ${sortBy}, Sort Dir: ${sortDir}`);
+        return httpCommon.get(`/attendance/byid/${pageNumber}/${pageSize}/${sortBy}/${sortDir}/${userId}`);
+    }
+
     viewAttendaceByAttendanceDate(date,pageNumber,pageSize,sortBy,sortDir){
         return httpCommon.get(`/attendance/date/${date}/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`)
     }
