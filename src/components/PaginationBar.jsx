@@ -42,13 +42,13 @@ export default function PaginationBar({ postContent, handlePageChange }) {
                         );
                     })}
 
-                    {postContent.pageNumber + 3 < postContent.totalPages && (
+                    {postContent.pageNumber + 2 < postContent.totalPages && (
                         <PaginationItem disabled>
                             <PaginationLink>...</PaginationLink>
                         </PaginationItem>
                     )}
 
-                    {(postContent.pageNumber + 3 < postContent.totalPages) && (
+                    {(postContent.pageNumber + 2 < postContent.totalPages) && (
                         <PaginationItem disabled={postContent.pageNumber === postContent.totalPages - 1}>
                             <PaginationLink onClick={() => handlePageChange(postContent.totalPages - 1)} >
                                 {postContent.totalPages}</PaginationLink>
