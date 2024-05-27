@@ -41,6 +41,8 @@ import RequireAuth from './RequireAuth';
 import UnAuthenticatedUrl from './UnAuthenticatedUrl';
 import ErrorPage from './ErrorPage';
 import ErrorBoundary from '../ErrorBoundary'
+import AttendanceByUserId from './attendance/AttendanceByUserId';
+import ViewMembershipById from './membership/ViewMembershipById';
 
 
 export default function AllRoutes() {
@@ -76,7 +78,7 @@ export default function AllRoutes() {
                 {/*User Routes*/}
                 {/* <Route path='/register' element={<RequireAuth component={AddUser} requiredRoles={['admin']} />}  /> */}
                 <Route path='/viewUsers' element={<RequireAuth component={ViewAllUsers} requiredRoles={['admin']} />}  />
-                <Route path='/viewSingleUser' element={<RequireAuth component={ViewSingleUser} requiredRoles={['admin']} />}  />
+                <Route path='/viewSingleUser' element={<RequireAuth component={ViewSingleUser} requiredRoles={['admin','user']} />}  />
                 <Route path='/dashboard' element={<RequireAuth component={Dashboard} requiredRoles={['admin','user']} />}  />
 
                 {/* Attendance Routes */}
@@ -84,6 +86,7 @@ export default function AllRoutes() {
                 <Route path='weeklyAttendance' element={<RequireAuth component={WeeklyAttendance} requiredRoles={['admin']} />}  />
                 <Route path='markAttendance' element={<RequireAuth component={MarkAttendance} requiredRoles={['admin']} />}  />
                 <Route path='viewAttendance' element={<RequireAuth component={ViewAttendance} requiredRoles={['admin']} />}  />
+                <Route path='attendanceByUserId' element={<RequireAuth component={AttendanceByUserId} requiredRoles={['admin','user']} />}  />
 
                 {/* Employee Routes */}
                 <Route path='addEmployee' element={<RequireAuth component={AddEmployee}  requiredRoles={['admin']} />}  />
@@ -97,6 +100,7 @@ export default function AllRoutes() {
                 {/* Memberships Routes */}
                 <Route path='addMembership' element={<RequireAuth component={AddMembership} requiredRoles={['admin']} />}  />
                 <Route path='viewMemberships' element={<RequireAuth component={ViewMemberships} requiredRoles={['admin']} />}  />
+                <Route path='viewMembershipById' element={<RequireAuth component={ViewMembershipById} requiredRoles={['admin','user']} />}  />
 
                 
                 {/* Helper Routes */}
