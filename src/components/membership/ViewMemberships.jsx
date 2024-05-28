@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import MembershipServices from '../../services/MembershipServices'
 import PaginationBar from '../PaginationBar';
+import TodaysDate from '../Helper/TodaysDate'
 
 export default function ViewMemberships() {
   const [pageSize, setPageSize] = useState(5);
   const [sortBy, setSortBy] = useState('membershipId');
-  const [sortDir, setSortDir] = useState('desc');
+  const [sortDir, setSortDir] = useState('asc');
   const [searchTerm, setSearchTerm] = useState("")
   const [postContent, setPostContent] = useState({
     content: [],
@@ -24,7 +25,7 @@ export default function ViewMemberships() {
   const fetchData = async () => {
     try {
       const responseData = await MembershipServices.viewAllMembership(0, 5, "membershipId", "asc");
-      console.log(responseData);
+      console.log(new Date() + " Date");
       // toast.success("Succses")
       setPostContent(responseData.data);
     } catch (error) {
@@ -34,7 +35,7 @@ export default function ViewMemberships() {
 
   const handlePageChange = async (pageNumber = 0) => {
     try {
-      const responseData = await  MembershipServices.viewAllMembership(pageNumber, pageSize, sortBy, sortDir);
+      const responseData = await MembershipServices.viewAllMembership(pageNumber, pageSize, sortBy, sortDir);
       console.log(responseData);
       setPostContent(responseData.data);
     } catch (error) {
@@ -44,7 +45,7 @@ export default function ViewMemberships() {
 
   const handleSortChange = (e) => {
     setSortDir(e); // Update the sorting direction
-    handlePageChange(); 
+    handlePageChange();
   }
 
   const handleSortBy = (e) => {
@@ -112,7 +113,8 @@ export default function ViewMemberships() {
               <th scope="col" onClick={() => handleSortBy('planId')}>Plan Name</th>
               <th scope="col" onClick={() => handleSortBy('membershipStartDate')}>Start Date</th>
               <th scope="col" onClick={() => handleSortBy('membershipEndDate')}>End Date</th>
-              <th scope="col" onClick={() => handleSortBy('ts')}>Added Date</th>ss
+              <th scope="col" onClick={() => handleSortBy('ts')}>Added Date</th>
+              <th scope="col" onClick={() => handleSortBy('ts')}>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -133,17 +135,19 @@ export default function ViewMemberships() {
                 <td data-label="Plan Name :  ">{d.plan?.planName}</td>
                 <td data-label="Start Date : ">{d.membershipStartDate}</td>
                 <td data-label="End Date : ">{d.membershipEndDate}</td>
-                <td data-label="ts : ">{new Date(d.ts).toLocaleDateString()}</td>      
+                <td data-label="Added Date : ">{new Date(d.ts).toLocaleDateString()}</td>
+                <td data-label="Status : ">{(d.membershipEndDate < TodaysDate.getDate()) ?
+                  <h6 style={{ color: "Red" }}>Expired</h6> : <h6 style={{ color: "green" }}>Active</h6>}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <br/>
+      <br />
       {/* Pagination Bar Starts*/}
       <div className="row m-0 p-0 divcardProfile">
-      <PaginationBar postContent={postContent} handlePageChange={handlePageChange} />
-     </div>
+        <PaginationBar postContent={postContent} handlePageChange={handlePageChange} />
+      </div>
     </div>
   )
 }
