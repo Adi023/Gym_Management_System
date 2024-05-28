@@ -25,9 +25,9 @@ export default function ViewSingleUser() {
     getService();
   });
   return (
-    <div className='container py-4 px-4 divcardProfile'>
+    <div className='container py-4 px-4 divcardProfile my-5'>
       <div className="profile-header">
-        <u><h1 className="text-center mb-4">Profile</h1></u>
+       <h1 className=" mb-4">Profile</h1>
       </div>
       <div className="row">
         <div className="col-md-6  mb-4">
@@ -41,7 +41,6 @@ export default function ViewSingleUser() {
           Gender: {data.gender ? data.gender : 'N/A'}<br />
           Blood Group: {data.bloodGroup ? data.bloodGroup : 'N/A'}<br />
           DOB: {data.dob ? data.dob : 'N/A'}<br />
-
         </div>
       </div>
       <div className="row  mb-4">
@@ -59,7 +58,7 @@ export default function ViewSingleUser() {
         <div className="col-md-6">
 
           Date of Joining: {data.dateOfJoining ? data.dateOfJoining : 'N/A'}<br />
-          Active: {data.active ? data.active : 'N/A'}<br />
+          Activity Status: {data.active ? "Active" : 'N/A'}<br />
           {/* Role Id: {data.roleId ? data.roleId :'N/A'}<br /> */}
 
         </div>
