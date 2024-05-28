@@ -168,7 +168,7 @@ export default function SideBar() {
                 {/* User Fields */}
                 <li>
                             <Link to="/viewSingleUser" className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi bi-people custom-icon"></i>
+                                <i className="fs-4 bi bi-person custom-icon"></i>
                                 <span className="custom-icon ms-1 d-none d-sm-inline">Profile</span>
                             </Link>
                 </li>
@@ -176,7 +176,7 @@ export default function SideBar() {
 
                 <li>
                             <Link to="/viewMembershipById"  className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi bi-people custom-icon"></i>
+                                <i className="fs-4 bi bi-shield-check custom-icon"></i>
                                 <span className="custom-icon ms-1 d-none d-sm-inline">Membership</span>
                             </Link>
                 </li>
@@ -184,7 +184,7 @@ export default function SideBar() {
 
                 <li>
                             <Link to="/attendanceByUserId"  className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi bi-people custom-icon"></i>
+                                <i className="fs-4 bi-person-lines-fill custom-icon"></i>
                                 <span className="custom-icon ms-1 d-none d-sm-inline">Attendance</span>
                             </Link>
                 </li>
@@ -240,8 +240,8 @@ export default function SideBar() {
                                     <span className="custom-icon d-none d-sm-inline mx-1">Admin</span>
                                 </Link>
                                 <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
-                                    <li><Link className="dropdown-item" to="/">New project...</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Settings</Link></li>
+                                    {/* <li><Link className="dropdown-item" to="/">New project...</Link></li> */}
+                                    <li><Link className="dropdown-item" to="/">Home</Link></li>
                                     <li><Link className="dropdown-item" to="/viewSingleUser">Profile</Link></li>
                                     <li>
                                         <hr className="dropdown-divider" />
