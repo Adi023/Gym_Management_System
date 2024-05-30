@@ -14,7 +14,7 @@ import ConfirmationModal from "./components/ConfirmationModal";
 import ErrorBoundary from './ErrorBoundary'; // Adjust the path as needed
 import InvalidUrlPage from "./components/InvalidUrlPage";
 import validRoutes from "./components/routes";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import { ErrorBoundary } from 'react-error-boundary'
 
@@ -67,6 +67,7 @@ function App() {
     dispatch(resetRole());
     localStorage.removeItem('role');
     navigate('/login');
+    toast.info("Logged Out Successfuly")
     setShowConfirmation(false);
   };
 
@@ -127,11 +128,7 @@ function App() {
   }
   return (
     <div className="App">
-   <ToastContainer
-   
-    theme="colored"
-    transition="Bounce"
-/>
+  <ToastContainer theme="colored" />
 
 
 
