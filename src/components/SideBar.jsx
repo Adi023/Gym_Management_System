@@ -18,7 +18,7 @@ export default function SideBar() {
         // Execute the reset role logic
         dispatch(resetRole());
         localStorage.removeItem('role');
-        navigate('/');
+        navigate('/login');
         setShowConfirmation(false);
     };
 
