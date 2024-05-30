@@ -66,7 +66,7 @@ function App() {
     // Execute the reset role logic
     dispatch(resetRole());
     localStorage.removeItem('role');
-    navigate('/');
+    navigate('/login');
     setShowConfirmation(false);
   };
 
