@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MembershipServices from '../../services/MembershipServices'
 import { useSelector } from 'react-redux';
 import TodaysDate from '../Helper/TodaysDate'
+import { toast } from 'react-toastify';
 
 
 export default function ViewMembershipById() {
@@ -36,53 +37,89 @@ export default function ViewMembershipById() {
       <br />
       <div className="row m-0 p-0 divcardProfile">
         <div className="col  col-md-4 ms-auto m-0 p-0" style={{ width: '550px' }}>
-          <label htmlFor="searchInput" className="col-auto">Search:</label>
+          <h6 htmlFor="searchInput" className="col-auto">Search:</h6>
           <input type="text" id="searchInput" className="col col-auto  py-0 pl-1"
             style={{ width: '280px', marginRight: '15px' }}
             placeholder="Attendance Date or Attendance Id" onChange={event => { setSearchTerm(event.target.value) }} />
         </div>
       </div>
       <br />
-      <div className="table-responsive divcardProfile" >
-        {/* className="table-responsive" */}
-        <table className="table table-hover">
-          <thead className="table-dark">
-            <tr>
-              <th >Id</th>
-              <th >User Name</th>
-              <th >Plan Name</th>
-              <th >Start Date</th>
-              <th >End Date</th>
-              <th >Added Date</th>
-              <th >Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {postContent.filter((d) => {
-              if (searchTerm === "") {
-                return d;
-              }
-              else if (String(d.membershipId).toLowerCase().includes(String(searchTerm).toLowerCase())) {
-                return d;
-              }
-              else if (d.plan.planName.toLowerCase().includes(String(searchTerm).toLowerCase())) {
-                return d;
-              }
-            }).map((d) => (
-              <tr key={d.membershipId}>
-                <td data-label="Id : ">{d.membershipId}</td>
-                <td data-label="User Name  : ">{d.user?.name}</td>
-                <td data-label="Plan Name :  ">{d.plan?.planName}</td>
-                <td data-label="Start Date : ">{d.membershipStartDate}</td>
-                <td data-label="End Date : ">{d.membershipEndDate}</td>
-                <td data-label="Added Date : ">{new Date(d.ts).toLocaleDateString()}</td>
-                <td data-label="Status : ">{(d.membershipEndDate < TodaysDate.getDate()) ?
-                  <h6 style={{ color: "Red" }}>Expired</h6> : <h6 style={{ color: "green" }}>Active</h6>}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <div className="container divcardProfile">
+  <div className="row">
+    {postContent
+      .filter((d) => {
+        if (searchTerm === "") {
+          return d;
+        } else if (
+          String(d.membershipId)
+            .toLowerCase()
+            .includes(String(searchTerm).toLowerCase())
+        ) {
+          return d;
+        } else if (
+          d.plan.planName
+            .toLowerCase()
+            .includes(String(searchTerm).toLowerCase())
+        ) {
+          return d;
+        }
+        return null;
+      })
+      .map((d) => {
+        const isExpired = d.membershipEndDate < TodaysDate.getDate();
+        return (
+          <div className="col-md-3" key={d.membershipId}>
+            <div
+              className="card"
+              style={{
+                boxShadow: isExpired
+                  ? "rgba(255, 0, 0, 0.4) 0px 15px 30px -5px"
+                  : "rgba(0, 128, 0, 0.4) 0px 15px 30px -5px",
+                backgroundImage: isExpired
+                  ? "linear-gradient(144deg, #FF4E50, #F9D423 50%, #FF4E50)"
+                  : "linear-gradient(144deg,#40ff53, #92f342 50%,#00eba5)"
+              }}
+            >
+              <div className="card__content">
+                <div className="info">
+                  <h6 className="m-label">Id :</h6><br/>
+                  <h6 >{d.membershipId}</h6>
+                </div>
+                <div className="info">
+                  <h6 className="m-label">Name :</h6><br/>
+                  <h6 >{d.plan?.planName}</h6>
+                </div>
+                <div className="info">
+                  <h6 className="m-label">Start Date :</h6><br/>
+                  <h6 >{d.membershipStartDate}</h6>
+                </div>
+                <div className="info">
+                  <h6 className="m-label">End Date :</h6><br/>
+                  <h6 >{d.membershipEndDate}</h6>
+                </div>
+                <div className="info">
+                  <h6 className="m-label">Added Date :</h6><br/>
+                  <h6 >{new Date(d.ts).toLocaleDateString()}</h6>
+                </div>
+                <div className="info">
+                  <h6 className="m-label">Status :</h6><br/>
+                  <h6 className="m-label">
+                    {isExpired ? (
+                      <h6 className="m-label" style={{ color: "Red" }}>Expired</h6>
+                    ) : (
+                      <h6 className="m-label" style={{ color: "green" }}>Active</h6>
+                    )}
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+  </div>
+</div>
+
+
       <br />
 
     </div>
