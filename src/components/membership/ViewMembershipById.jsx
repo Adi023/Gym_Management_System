@@ -70,7 +70,7 @@ export default function ViewMembershipById() {
         return (
           <div className="col-md-3" key={d.membershipId}>
             <div
-              className="card"
+              className="membershipcard"
               style={{
                 boxShadow: isExpired
                   ? "rgba(255, 0, 0, 0.4) 0px 15px 30px -5px"
