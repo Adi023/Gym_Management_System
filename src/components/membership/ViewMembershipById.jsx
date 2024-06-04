@@ -22,9 +22,11 @@ export default function ViewMembershipById() {
       console.error('Error fetching data:', error);
     }
   };
-
+  // let sorted='null';
   useEffect(() => {
     fetchData();
+    // sorted = [...postContent].sort((a, b) => b.membershipId - a.membershipId);
+    // console.log(sorted);
     // toast.success("Succses")
   }, []);
 
@@ -44,28 +46,33 @@ export default function ViewMembershipById() {
         </div>
       </div>
       <br />
-      <div className="container divcardProfile">
+  <div className="container divcardProfile">
   <div className="row">
     {postContent
       .filter((d) => {
+        // let sorted = [d].sort((a, b) => b.membershipId - a.membershipId);
         if (searchTerm === "") {
-          return d;
+          // const sorted = [...d].sort((a, b) => a.membershipId - b.membershipId);
+         return d;
         } else if (
           String(d.membershipId)
             .toLowerCase()
             .includes(String(searchTerm).toLowerCase())
         ) {
-          return d;
+          // const sorted = [...d].sort((a, b) => a.membershipId - b.membershipId);
+         return d;
         } else if (
           d.plan.planName
             .toLowerCase()
             .includes(String(searchTerm).toLowerCase())
         ) {
-          return d;
+          // const sorted = [...d].sort((a, b) => a.membershipId - b.membershipId);
+         return d;
         }
         return null;
       })
       .map((d) => {
+        
         const isExpired = d.membershipEndDate < TodaysDate.getDate();
         return (
           <div className="col-md-3" key={d.membershipId}>
