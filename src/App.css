@@ -81,12 +81,10 @@
 
   @media (max-width: 991px) {
     height: 120px;
-    /* Decrease width for smaller screens */
   }
 
   @media (max-width: 576px) {
     height: 180px;
-    /* Further decrease width for extra small screens */
   }
 }
 
@@ -188,12 +186,10 @@ html {
 }
 
 .divcardProfile {
- 
   overflow-x: auto;
   background: #ffffff;
   box-shadow: 21px 21px 35px #666666,
     -21px -21px 35px #ffffff;
-
 }
 
 .chart-container {
@@ -209,7 +205,6 @@ html {
   min-height: 100px;
   padding: 10px;
 }
-
 
 @media only screen and (max-width: 950px) {
   table {
@@ -271,15 +266,11 @@ html {
   align-items: center;
 }
 
-
-
 .list-group-item-custom {
   display: flex;
   justify-content: space-between;
   white-space: normal;
- 
   word-break: break-word;
- 
 }
 
 .membershipcard {
@@ -323,4 +314,3 @@ html {
 .card__content .info > h2 {
   font-size: 1.2rem;
 }
-
