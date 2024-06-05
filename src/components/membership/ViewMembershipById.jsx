@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MembershipServices from '../../services/MembershipServices'
 import { useSelector } from 'react-redux';
-import TodaysDate from '../Helper/TodaysDate'
-import { toast } from 'react-toastify';
+import TodaysDate from '../Helper/TodaysDate';
 
 
 export default function ViewMembershipById() {
@@ -128,7 +127,6 @@ export default function ViewMembershipById() {
 
 
       <br />
-
     </div>
   )
 }
