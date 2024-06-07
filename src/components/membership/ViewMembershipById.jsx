@@ -39,7 +39,7 @@ export default function ViewMembershipById() {
       <br />
       <div className="row m-0 p-0 divcardProfile">
         <div className="col  col-md-4 ms-auto m-0 p-0" style={{ width: '550px' }}>
-          <h6 htmlFor="searchInput" className="col-auto">Search:</h6>
+          <label htmlFor="searchInput" className="col-auto">Search:</label>
           <input type="text" id="searchInput" className="col col-auto  py-0 pl-1"
             style={{ width: '280px', marginRight: '15px' }}
             placeholder="Attendance Date or Attendance Id" onChange={event => { setSearchTerm(event.target.value) }} />
@@ -89,7 +89,7 @@ export default function ViewMembershipById() {
             >
               <div className="card__content">
                 <div className="info">
-                  <h6 className="m-label">Id :</h6><br/>
+                  <h6 className="m-label">Id : </h6><br/>
                   <h6 >{d.membershipId}</h6>
                 </div>
                 <div className="info">
