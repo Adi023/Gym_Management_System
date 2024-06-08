@@ -237,7 +237,7 @@ export default function SideBar() {
                                 <Link to="/" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                                     {/* <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" className="rounded-circle"/> */}
                                     <i className="bi bi-person-circle custom-icon" ></i>
-                                    <span className="custom-icon d-none d-sm-inline mx-1">Admin</span>
+                                    <span className="custom-icon d-none d-sm-inline mx-1">{reduxRole}</span>
                                 </Link>
                                 <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
                                     {/* <li><Link className="dropdown-item" to="/">New project...</Link></li> */}
