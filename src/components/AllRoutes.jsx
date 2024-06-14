@@ -6,9 +6,9 @@ import { useSelector } from 'react-redux';
 
 //Attendance imports
 import AttendanceHome from './attendance/AttendanceHome';
-import WeeklyAttendance from './attendance/WeeklyAttendance'
-import MarkAttendance from './attendance/MarkAttendance'
-import ViewAttendance from './attendance/ViewAttendance'
+import WeeklyAttendance from './attendance/WeeklyAttendance';
+import MarkAttendance from './attendance/MarkAttendance';
+import ViewAttendance from './attendance/ViewAttendance';
 
 //user imports
 import ViewSingleUser from './user/ViewSingleUser';
@@ -22,13 +22,30 @@ import AddEmployee from './Employee/AddEmployee';
 import ViewEmployee from './Employee/ViewEmployee';
 
 //plan imports
-import AddPlan from './plan/AddPlan'
-import ViewPlan from './plan/ViewPlan'
-import UpdatePlan from './plan/UpdatePlan'
+import AddPlan from './plan/AddPlan';
+import ViewPlan from './plan/ViewPlan';
+import UpdatePlan from './plan/UpdatePlan';
 
 //Memberships imports
 import ViewMemberships from './membership/ViewMemberships';
-import AddMembership from './membership/AddMembership'
+import AddMembership from './membership/AddMembership';
+
+//Equipments imports
+import EquipmentsDetails from './equipments/EquipmentsDetails';
+import AddEquipments from './equipments/AddEquipments';
+import UpdateEquipmentsInfo from './equipments/UpdateEquipmentsInfo';
+
+//Activity Imports
+import AddActivity from './activities/AddActivity';
+import AllActivities from './activities/AllActivities';
+import ViewActivityById from './activities/ViewActivityById';
+import UpdateActivity from './activities/UpdateActivity';
+
+//DietPlans imports
+import AddDiet from './diet/AddDiet';
+import ViewDietPlans from './diet/ViewDietPlans';
+import ViewDietById from './diet/ViewDietPlanBbyId';
+import UpdateDiet from './diet/UpdateDiet'
 
 //Other imports
 import Header from './Header'
@@ -63,6 +80,12 @@ export default function AllRoutes() {
             <Route path="AboutUs" element={<AboutUs></AboutUs>}></Route>
             <Route path="/userlogin" element={<UserLogin></UserLogin>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
+
+            <Route path="/equpmentsDetails" element={<EquipmentsDetails/>}/>
+            <Route path="/addEquipments" element={<AddEquipments/>}/>
+            <Route path="/UpdateEquipmentsInfo" element={<UpdateEquipmentsInfo/>}/>
+            
+           
 
             {/* Error */}
             <Route path='/ErrorBoundary' element={<ErrorBoundary />}></Route>
@@ -102,9 +125,20 @@ export default function AllRoutes() {
                 <Route path='viewMemberships' element={<RequireAuth component={ViewMemberships} requiredRoles={['admin']} />}  />
                 <Route path='viewMembershipById' element={<RequireAuth component={ViewMembershipById} requiredRoles={['admin','user']} />}  />
 
+              {/* Acivity Route */}
+              <Route path="/addActivity" element={<RequireAuth component={AddActivity} requiredRoles={['admin']} />}/>
+              <Route path="/viewActivities" element={<RequireAuth component={AllActivities} requiredRoles={['admin','user']} />}/>
+              <Route path="/viewActivityById" element={<RequireAuth component={ViewActivityById} requiredRoles={['admin','user']} />}/>
+              <Route path="/updateActivity" element={<RequireAuth component={UpdateActivity} requiredRoles={['admin']} />}/>
                 
-                {/* Helper Routes */}
-                <Route path='imageUploader' element={<RequireAuth component={ImageUploader} requiredRoles={['admin']} />}  />
+              {/* Diet Route */}
+              <Route path="/addDiet" element={<RequireAuth component={AddDiet} requiredRoles={['admin']} />}/>
+              <Route path="/viewDietPlans" element={<RequireAuth component={ViewDietPlans} requiredRoles={['admin']} />}/>
+              <Route path="/viewDietById" element={<RequireAuth component={ViewDietById} requiredRoles={['admin','user']} />}/>
+              <Route path="/updateDiet" element={<RequireAuth component={UpdateDiet} requiredRoles={['admin','user']} />}/>
+
+              {/* Helper Routes */}
+              <Route path='imageUploader' element={<RequireAuth component={ImageUploader} requiredRoles={['admin']} />}  />
                 
               </>
             ) : (
