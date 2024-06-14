@@ -31,6 +31,17 @@ const validRoutes  = [
     '/addMembership',
     '/unauthorized',
     '/attendanceByUserId',
-    '/viewMembershipById'
+    '/viewMembershipById',
+    '/addActivity',
+    '/viewActivities',
+    '/viewActivityById',
+    '/updateActivity',
+    '/equpmentsDetails',
+    '/addEquipments',
+    '/UpdateEquipmentsInfo',
+    '/addDiet',
+    '/viewDietPlans',
+    '/viewDietById'
+
   ];
   export default validRoutes;
