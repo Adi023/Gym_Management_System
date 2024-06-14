@@ -31,164 +31,204 @@ export default function SideBar() {
         case 'admin':
             sidebarContent = (
                 <>
-                  
 
-                        <li className="nav-item">
-                            <Link to="dashboard" className="nav-link align-middle px-0">
-                                <i className="fs-4 bi-house custom-icon " ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Home</span>
-                            </Link>
-                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
-                        {/* User Fields */}
-                        <li>
-                            <Link to="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi bi-people custom-icon"></i>
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Users</span>
-                            </Link>
-                            <ul className="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                                <li className="w-100">
-                                    <Link to="/register" className="nav-link px-0 text-secondary text-hover-white">
-                                        <i className=" bi bi-person-add "></i>
-                                        <span className="d-none d-sm-inline"> Add</span></Link>
-                                </li>
-                                <li className="w-100">
-                                    <Link to="/viewUsers" className="nav-link px-0 text-secondary text-hover-white">
+                    <li className="nav-item">
+                        <Link to="dashboard" className="nav-link align-middle px-0">
+                            <i className="fs-4 bi-house custom-icon " ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Home</span>
+                        </Link>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
+
+                    {/* User Fields */}
+                    <li>
+                        <Link to="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi bi-people custom-icon"></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Users</span>
+                        </Link>
+                        <ul className="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li className="w-100">
+                                <Link to="/register" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className=" bi bi-person-add "></i>
+                                    <span className="d-none d-sm-inline"> Add</span></Link>
+                            </li>
+                            <li className="w-100">
+                                <Link to="/viewUsers" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="fa-solid fa-list"></i>
-                                        <span className="d-none d-sm-inline"> View</span></Link>
-                                </li>
-                            </ul>
-                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                                    <span className="d-none d-sm-inline"> View</span></Link>
+                            </li>
+                        </ul>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
-                        {/* Employee Field */}
-                        <li>
-                            <Link to="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
-                                <i className="fs-4 bi bi-people-fill custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Staff</span>
-                            </Link>
-                            <ul className="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
-                                <li className="w-100">
-                                    <Link to="/addEmployee" className="nav-link px-0 text-secondary text-hover-white"> 
+                    {/* Employee Field */}
+                    <li>
+                        <Link to="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
+                            <i className="fs-4 bi bi-people-fill custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Staff</span>
+                        </Link>
+                        <ul className="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li className="w-100">
+                                <Link to="/addEmployee" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="bi bi-person-fill-add"></i>
                                     <span className="d-none d-sm-inline"> Add</span></Link>
-                                </li>
-                                <li className="w-100">
-                                    <Link to="/viewEmployee" className="nav-link px-0 text-secondary text-hover-white">
-                                    <i className=" bi bi-person-lines-fill "> </i> 
+                            </li>
+                            <li className="w-100">
+                                <Link to="/viewEmployee" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className=" bi bi-person-lines-fill "> </i>
                                     <span className="d-none d-sm-inline">View</span> </Link>
-                                </li>
-                            </ul>
-                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                            </li>
+                        </ul>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
-                        {/* Attendance Fields */}
-                        <li>
-                            <Link to="#submenu3" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi-table custom-icon" ></i>
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Attendance</span>
-                            </Link>
-                            <ul className="collapse  nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                                <li className="w-100">
-                                    <Link to="/markAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                    {/* Attendance Fields */}
+                    <li>
+                        <Link to="#submenu3" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi-table custom-icon" ></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Attendance</span>
+                        </Link>
+                        <ul className="collapse  nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <li className="w-100">
+                                <Link to="/markAttendance" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="fas fa-calendar-check"></i>
-                                        <span className=" d-none d-sm-inline"> Mark</span></Link>
-                                </li>
-                                <li className="w-100">
-                                    <Link to="/viewAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                                    <span className=" d-none d-sm-inline"> Mark</span></Link>
+                            </li>
+                            <li className="w-100">
+                                <Link to="/viewAttendance" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="fas fa-clipboard-list"></i>
-                                        <span className=" d-none d-sm-inline"> View</span></Link>
-                                </li>
-                            </ul>
-                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                                    <span className=" d-none d-sm-inline"> View</span></Link>
+                            </li>
+                        </ul>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
-                        {/* Plans Fields */}
-                        <li >
-                            <Link to="#submenu4" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                                <i className="fs-4  bi-grid custom-icon" ></i> 
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Plans</span>
-                            </Link>
-                            <ul className="collapse  nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
-                                <li className="w-100">
-                                    <Link to="/addPlan" className="nav-link px-0 text-secondary text-hover-white">
+                    {/* Plans Fields */}
+                    <li >
+                        <Link to="#submenu4" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                            <i className="fs-4  bi-grid custom-icon" ></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Plans</span>
+                        </Link>
+                        <ul className="collapse  nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                            <li className="w-100">
+                                <Link to="/addPlan" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="fas fa-plus-circle"></i>
-                                        <span className="d-none d-sm-inline"> Add</span></Link>
-                                </li>
-                                <li className="w-100">
-                                    <Link to="/viewPlan" className="nav-link px-0 text-secondary text-hover-white">
+                                    <span className="d-none d-sm-inline"> Add</span></Link>
+                            </li>
+                            <li className="w-100">
+                                <Link to="/viewPlan" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="far fa-eye"></i>
-                                        <span className="d-none d-sm-inline"> View</span></Link>
-                                </li>
-                                <li className="w-100">
-                                    <Link to="/updatePlan" className="nav-link px-0 text-secondary text-hover-white">
+                                    <span className="d-none d-sm-inline"> View</span></Link>
+                            </li>
+                            <li className="w-100">
+                                <Link to="/updatePlan" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="fas fa-edit"></i>
-                                        <span className="d-none d-sm-inline"> Update</span></Link>
-                                </li>
-                            </ul>
-                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                                    <span className="d-none d-sm-inline"> Update</span></Link>
+                            </li>
+                        </ul>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
-{/* Membership Fields */}
-                        <li>
-                            <Link to="#submenu5" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                    {/* Membership Fields */}
+                    <li>
+                        <Link to="#submenu5" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                             <i className="bi bi-shield-fill-check fs-4 custom-icon"></i>
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Membership</span>
-                            </Link>
-                            <ul className="collapse  nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
-                                <li className="w-100">
-                                    <Link to="/addMembership" className="nav-link px-0 text-secondary text-hover-white">
-                                  <i className="bi bi-shield-plus"></i>
-                                        <span className=" d-none d-sm-inline"> Add</span></Link>
-                                </li>
-                                <li className="w-100">
-                                    <Link to="/viewMemberships" className="nav-link px-0 text-secondary text-hover-white">
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Membership</span>
+                        </Link>
+                        <ul className="collapse  nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
+                            <li className="w-100">
+                                <Link to="/addMembership" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className="bi bi-shield-plus"></i>
+                                    <span className=" d-none d-sm-inline"> Add</span></Link>
+                            </li>
+                            <li className="w-100">
+                                <Link to="/viewMemberships" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="bi bi-shield-exclamation"></i>
-                                        <span className=" d-none d-sm-inline"> View</span></Link>
-                                </li>
-                            </ul>
-                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                                    <span className=" d-none d-sm-inline"> View</span></Link>
+                            </li>
+                        </ul>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
+                    {/* Equipment Fields */}
+                    <li>
+                        <Link to="#submenu6" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                            {/* <i className="bi bi-shield-fill-check fs-4 custom-icon"></i> */}
+                            <i class="bi bi-gear-wide-connected fs-4 custom-icon"></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Equipments</span>
+                        </Link>
+                        <ul className="collapse  nav flex-column ms-1" id="submenu6" data-bs-parent="#menu">
+                            <li className="w-100">
+                                <Link to="/addEquipments" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i class="bi bi-patch-plus"></i>
+                                    <span className=" d-none d-sm-inline"> Add</span></Link>
+                            </li>
+                            <li className="w-100">
+                                <Link to="/equpmentsDetails" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className="bi bi-patch-exclamation"></i>
+                                    <span className=" d-none d-sm-inline"> View</span></Link>
+                            </li>
+                        </ul>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
+                     {/* Activity Fields */}
+                     <li>
+                        <Link to="#submenu7" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                            {/* <i className="bi bi-shield-fill-check fs-4 custom-icon"></i> */}
+                            <i class="bi bi-activity fs-4 custom-icon"></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Activity</span>
+                        </Link>
+                        <ul className="collapse  nav flex-column ms-1" id="submenu7" data-bs-parent="#menu">
+                            <li className="w-100">
+                                <Link to="/addActivity" className="nav-link px-0 text-secondary text-hover-white">
+                                <i class="bi bi-plus-lg"></i>
+                                    <span className=" d-none d-sm-inline"> Add</span></Link>
+                            </li>
+                            <li className="w-100">
+                                <Link to="/viewActivities" className="nav-link px-0 text-secondary text-hover-white">
+                                <i class="bi bi-list-nested"></i>
+                                    <span className=" d-none d-sm-inline"> View</span></Link>
+                            </li>
+                        </ul>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
-                        <li>
-                            <Link to="/imageUploader" className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi-people custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Image Test</span>
-                            </Link>
-                        </li><hr style={{margin:'0px',color:'white',width:'100%'}}/>
-                   
+                    <li>
+                        <Link to="/imageUploader" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi-people custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Image Test</span>
+                        </Link>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
+
                 </>
             );
             break;
         case 'user':
             sidebarContent = (
                 <>
-                
-                <li className="nav-item">
-                            <Link to="dashboard" className="nav-link align-middle px-0">
-                                <i className="fs-4 bi-house custom-icon " ></i> 
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Home</span>
-                            </Link>
-                </li>
-                <hr style={{margin:'0px',color:'white',width:'100%'}}/>
 
-                {/* User Fields */}
-                <li>
-                            <Link to="/viewSingleUser" className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi bi-person custom-icon"></i>
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Profile</span>
-                            </Link>
-                </li>
-                <hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                    <li className="nav-item">
+                        <Link to="dashboard" className="nav-link align-middle px-0">
+                            <i className="fs-4 bi-house custom-icon " ></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Home</span>
+                        </Link>
+                    </li>
+                    <hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
-                <li>
-                            <Link to="/viewMembershipById"  className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi bi-shield-check custom-icon"></i>
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Membership</span>
-                            </Link>
-                </li>
-                <hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                    {/* User Fields */}
+                    <li>
+                        <Link to="/viewSingleUser" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi bi-person custom-icon"></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Profile</span>
+                        </Link>
+                    </li>
+                    <hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
-                <li>
-                            <Link to="/attendanceByUserId"  className="nav-link px-0 align-middle">
-                                <i className="fs-4 bi-person-lines-fill custom-icon"></i>
-                                <span className="custom-icon ms-1 d-none d-sm-inline">Attendance</span>
-                            </Link>
-                </li>
-                <hr style={{margin:'0px',color:'white',width:'100%'}}/>
+                    <li>
+                        <Link to="/viewMembershipById" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi bi-shield-check custom-icon"></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Membership</span>
+                        </Link>
+                    </li>
+                    <hr style={{ margin: '0px', color: 'white', width: '100%' }} />
+
+                    <li>
+                        <Link to="/attendanceByUserId" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi-person-lines-fill custom-icon"></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Attendance</span>
+                        </Link>
+                    </li>
+                    <hr style={{ margin: '0px', color: 'white', width: '100%' }} />
                 </>
             );
             break;
@@ -226,12 +266,12 @@ export default function SideBar() {
                 <div className="row flex-nowrap">
                     <div className=" sidewidth  px-0 bg-black" >
                         <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                        <Link to="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span className="custom-icon fs-5 d-none d-sm-inline">Menu</span>
-                    </Link>
-                    <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                            {sidebarContent}
-                    </ul>
+                            <Link to="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                                <span className="custom-icon fs-5 d-none d-sm-inline">Menu</span>
+                            </Link>
+                            <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                                {sidebarContent}
+                            </ul>
                             <hr className="custom-icon" />
                             <div className="dropdown pb-4">
                                 <Link to="/" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
