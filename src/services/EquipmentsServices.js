@@ -1,26 +1,26 @@
 import httpCommon from "../http-common";
 
-class EquipmentsServices{
+class EquipementsServices{
 
-    addEquipments(d){
-       return  httpCommon.post("/equipment",d);
+    addEquipements(d){
+       return  httpCommon.post("/equipement",d);
     }
 
-    viewEquipments(pageNumber,pageSize,sortBy,sortDir){
-        return httpCommon.get(`/equipment/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
+    viewEquipements(pageNumber,pageSize,sortBy,sortDir){
+        return httpCommon.get(`/equipement/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
     }
 
-    viewEquipmentById(equipmentId){
-        return httpCommon.get("/equipment/"+equipmentId);
+    viewEquipementById(eqpId){
+        return httpCommon.get("/equipement/"+eqpId);
     }
 
-    updateEquipmentDetails(d){
-        return httpCommon.put("/equipment/{equipmentId}",d);
+    updateEquipementDetails(d){
+        return httpCommon.put("/equipement/{eqpId}",d);
     }
 
-    deleteEquipment(equipmentId){
-        return httpCommon.delete("/equipment/"+equipmentId);
+    deleteEquipement(eqpId){
+        return httpCommon.delete("/equipement/"+eqpId);
     }
 }
-const myInstance =new EquipmentsServices();
+const myInstance =new EquipementsServices();
 export default myInstance;
