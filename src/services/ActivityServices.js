@@ -3,23 +3,23 @@ import httpCommon from "../http-common";
 class ActivityServices{
 
     addActivity(d){
-       return  httpCommon.post("/Activity",d);
+       return  httpCommon.post("/activity",d);
     }
 
     viewActivity(pageNumber,pageSize,sortBy,sortDir){
-        return httpCommon.get(`/Activity/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
+        return httpCommon.get(`/activity/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
     }
 
     viewActivityById(activityId){
-        return httpCommon.get("/Activity/"+activityId);
+        return httpCommon.get("/activity/"+activityId);
     }
 
     updateActivityDetails(d){
-        return httpCommon.put("/Activity/{activityId}",d);
+        return httpCommon.put("/activity/{activityId}",d);
     }
 
     deleteActivity(activityId){
-        return httpCommon.delete("/Activity/"+activityId);
+        return httpCommon.delete("/activity/"+activityId);
     }
 }
 const myInstance =new ActivityServices();
