@@ -46,7 +46,7 @@ body, html {
 input:focus {
   border: 3px solid #555;
 } */
-input, select {
+input, select,textarea {
   width: 100%; /* Set width to 100% for responsiveness */
   padding: 0.7vw; /* Use viewport units for padding */
   margin: 1vw 0 2vw 0; /* Use viewport units for margin */
