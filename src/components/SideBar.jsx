@@ -184,6 +184,27 @@ export default function SideBar() {
                         </ul>
                     </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
+                    {/* Diet Fields */}
+                    <li>
+                        <Link to="#submenu8" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                            {/* <i className="bi bi-shield-fill-check fs-4 custom-icon"></i> */}
+                            <i class="bi bi-gear-wide-connected fs-4 custom-icon"></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Diet</span>
+                        </Link>
+                        <ul className="collapse  nav flex-column ms-1" id="submenu8" data-bs-parent="#menu">
+                            <li className="w-100">
+                                <Link to="/addDiet" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i class="bi bi-patch-plus"></i>
+                                    <span className=" d-none d-sm-inline"> Add</span></Link>
+                            </li>
+                            <li className="w-100">
+                                <Link to="/viewDietPlans" className="nav-link px-0 text-secondary text-hover-white">
+                                    <i className="bi bi-patch-exclamation"></i>
+                                    <span className=" d-none d-sm-inline"> View</span></Link>
+                            </li>
+                        </ul>
+                    </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
+
                     <li>
                         <Link to="/imageUploader" className="nav-link px-0 align-middle">
                             <i className="fs-4 bi-people custom-icon" ></i> <span className="custom-icon ms-1 d-none d-sm-inline">Image Test</span>
