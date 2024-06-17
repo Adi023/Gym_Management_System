@@ -3,23 +3,23 @@ import httpCommon from "../http-common";
 class DietServices{
 
     addDiet(d){
-       return  httpCommon.post("/Diet",d);
+       return  httpCommon.post("/dietplan",d);
     }
 
     viewDiet(pageNumber,pageSize,sortBy,sortDir){
-        return httpCommon.get(`/Diet/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
+        return httpCommon.get(`/dietplan/${pageNumber}/${pageSize}/${sortBy}/${sortDir}`);
     }
 
     viewDietById(dietId){
-        return httpCommon.get("/Diet/"+dietId);
+        return httpCommon.get("/dietplan/"+dietId);
     }
 
     updateDietDetails(d){
-        return httpCommon.put("/Diet/{dietId}",d);
+        return httpCommon.put("/dietplan/{dietId}",d);
     }
 
     deleteDiet(dietId){
-        return httpCommon.delete("/Diet/"+dietId);
+        return httpCommon.delete("/dietplan/"+dietId);
     }
 }
 const myInstance =new DietServices();
