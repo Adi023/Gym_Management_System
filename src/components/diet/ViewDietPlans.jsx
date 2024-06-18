@@ -23,7 +23,7 @@ export default function ViewDietPlans() {
 
   const fetchData = async () => {
     try {
-      const responseData = await DietServices.addDiet(0, 5, "eqpEame", "asc");
+      const responseData = await DietServices.viewDiet(0, 5, "dietName", "asc");
       console.log(responseData);
       setPostContent(responseData.data);
     } catch (error) {
@@ -33,7 +33,7 @@ export default function ViewDietPlans() {
 
   const handlePageChange = async (pageNumber = 0) => {
     try {
-      const responseData = await DietServices.addDiet(pageNumber, pageSize, sortBy, sortDir);
+      const responseData = await DietServices.viewDiet(pageNumber, pageSize, sortBy, sortDir);
       setPostContent(responseData.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -52,6 +52,7 @@ export default function ViewDietPlans() {
 
   return (
     <div className='container'>
+       <br />
     <div className="row m-0 p-0 ">
       <h1>Diet Plans</h1>
     </div>
