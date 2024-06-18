@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SideBar from "./components/SideBar";
 // import { Nav, Navbar } from "react-bootstrap";
 import AxiosErrorHandler from "./components/AxiosErrorHandler";
-import { useNavigate } from "react-router-dom";
+import { matchPath, useNavigate } from "react-router-dom";
 import { resetRole } from "./redux/actions";
 import ConfirmationModal from "./components/ConfirmationModal";
 import ErrorBoundary from './ErrorBoundary'; // Adjust the path as needed
@@ -35,8 +35,13 @@ function App() {
 
   const handleInvalidUrl = () => {
     const pathname = window.location.pathname;
+  
     // Check if the URL matches any valid route
-    if (!validRoutes.includes(pathname)) {
+    const isValid = validRoutes.some(validRoute => {
+      return matchPath({ path: validRoute, end: true }, pathname);
+    });
+  
+    if (!isValid) {
       setInvalidUrl(true);
     }
   };
