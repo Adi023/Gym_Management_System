@@ -115,11 +115,11 @@ export default function SideBar() {
                                     <i className="far fa-eye"></i>
                                     <span className="d-none d-sm-inline"> View</span></Link>
                             </li>
-                            <li className="w-100">
+                            {/* <li className="w-100">
                                 <Link to="/updatePlan" className="nav-link px-0 text-secondary text-hover-white">
                                     <i className="fas fa-edit"></i>
                                     <span className="d-none d-sm-inline"> Update</span></Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
@@ -146,13 +146,13 @@ export default function SideBar() {
                     <li>
                         <Link to="#submenu6" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                             {/* <i className="bi bi-shield-fill-check fs-4 custom-icon"></i> */}
-                            <i class="bi bi-gear-wide-connected fs-4 custom-icon"></i>
+                            <i className="bi bi-gear-wide-connected fs-4 custom-icon"></i>
                             <span className="custom-icon ms-1 d-none d-sm-inline">Equipments</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1" id="submenu6" data-bs-parent="#menu">
                             <li className="w-100">
                                 <Link to="/addEquipments" className="nav-link px-0 text-secondary text-hover-white">
-                                    <i class="bi bi-patch-plus"></i>
+                                    <i className="bi bi-patch-plus"></i>
                                     <span className=" d-none d-sm-inline"> Add</span></Link>
                             </li>
                             <li className="w-100">
@@ -167,18 +167,18 @@ export default function SideBar() {
                      <li>
                         <Link to="#submenu7" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                             {/* <i className="bi bi-shield-fill-check fs-4 custom-icon"></i> */}
-                            <i class="bi bi-activity fs-4 custom-icon"></i>
+                            <i className="bi bi-activity fs-4 custom-icon"></i>
                             <span className="custom-icon ms-1 d-none d-sm-inline">Activity</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1" id="submenu7" data-bs-parent="#menu">
                             <li className="w-100">
                                 <Link to="/addActivity" className="nav-link px-0 text-secondary text-hover-white">
-                                <i class="bi bi-plus-lg"></i>
+                                <i className="bi bi-plus-lg"></i>
                                     <span className=" d-none d-sm-inline"> Add</span></Link>
                             </li>
                             <li className="w-100">
                                 <Link to="/viewActivities" className="nav-link px-0 text-secondary text-hover-white">
-                                <i class="bi bi-list-nested"></i>
+                                <i className="bi bi-list-nested"></i>
                                     <span className=" d-none d-sm-inline"> View</span></Link>
                             </li>
                         </ul>
@@ -188,13 +188,13 @@ export default function SideBar() {
                     <li>
                         <Link to="#submenu8" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                             {/* <i className="bi bi-shield-fill-check fs-4 custom-icon"></i> */}
-                            <i class="bi bi-gear-wide-connected fs-4 custom-icon"></i>
+                            <i className="bi bi-gear-wide-connected fs-4 custom-icon"></i>
                             <span className="custom-icon ms-1 d-none d-sm-inline">Diet</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1" id="submenu8" data-bs-parent="#menu">
                             <li className="w-100">
                                 <Link to="/addDiet" className="nav-link px-0 text-secondary text-hover-white">
-                                    <i class="bi bi-patch-plus"></i>
+                                    <i className="bi bi-patch-plus"></i>
                                     <span className=" d-none d-sm-inline"> Add</span></Link>
                             </li>
                             <li className="w-100">
