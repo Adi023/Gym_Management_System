@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PlanServices from '../../services/PlanServices'
 import PaginationBar from '../PaginationBar';
+import { Link } from 'react-router-dom';
 export default function ViewPlan() {
 
   const [pageSize, setPageSize] = useState(5);
@@ -56,7 +57,7 @@ export default function ViewPlan() {
     <div className='container '>
       <br />
       <div className="row m-0 p-0 ">
-        <h1>View Plan</h1>
+        <h1>Plans</h1>
       </div>
       <br />
 
@@ -110,10 +111,12 @@ export default function ViewPlan() {
               <th scope="col" onClick={() => handleSortBy('planId')}>Id</th>
               <th scope="col" onClick={() => handleSortBy('planName')}>Name</th>
               <th scope="col" onClick={() => handleSortBy('planDescription')}>Description</th>
+              <th scope="col" onClick={() => handleSortBy('planPrice')}>Price</th>
               <th scope="col" onClick={() => handleSortBy('planBillngCycle')}>Billng Cycle</th>
               <th scope="col" onClick={() => handleSortBy('planRestrictions')}>Restrictions</th>
               <th scope="col" onClick={() => handleSortBy('planDiscount')}>Discount</th>
               <th scope="col" onClick={() => handleSortBy('ts')}>Added Date</th>
+              <th>Update</th>
             </tr>
           </thead>
           <tbody>
@@ -132,10 +135,12 @@ export default function ViewPlan() {
                 <td data-label="Id : ">{d.planId}</td>
                 <td data-label="Name  : ">{d. planName}</td>
                 <td data-label="Description :  ">{d.planDescription}</td>
+                <td data-label="Price :  ">{d.planPrice}</td>
                 <td data-label="BillngCycle : ">{d.planBillngCycle}</td>
                 <td data-label="Restrictions : ">{d.planRestrictions}</td>
                 <td data-label="Discount : ">{d.planDiscount}</td>
-                <td data-label="ts : ">{new Date(d.ts).toLocaleDateString()}</td>      
+                <td data-label="Added Date : ">{new Date(d.ts).toLocaleDateString()}</td>
+                <td data-label="Update : "><a href={'updatePlan/'+d.planId}><i className="fas fa-edit"></i></a></td>      
               </tr>
             ))}
           </tbody>
