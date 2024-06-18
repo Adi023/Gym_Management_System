@@ -134,7 +134,9 @@ export default function ViewAllUsers() {
               }
               else if (d.email.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
                 return d;
-              }
+              }else {
+                return d;
+            }
 
             }).map((d) => (
               <tr key={d.userId}>
