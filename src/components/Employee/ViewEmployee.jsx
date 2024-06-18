@@ -55,7 +55,7 @@ export default function ViewEmployee() {
     <div className='container '>
       <br />
       <div className="row m-0 p-0 ">
-        <h1>View Employee</h1>
+        <h1>Staff</h1>
       </div>
       <br />
 
