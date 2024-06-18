@@ -23,7 +23,7 @@ export default function EquipmentsDetails() {
 
   const fetchData = async () => {
     try {
-      const responseData = await EquipmentsServices.addEquipements(0, 5, "eqpEame", "asc");
+      const responseData = await EquipmentsServices.viewEquipements(0, 5, "eqpName", "asc");
       console.log(responseData);
       setPostContent(responseData.data);
     } catch (error) {
@@ -33,7 +33,7 @@ export default function EquipmentsDetails() {
 
   const handlePageChange = async (pageNumber = 0) => {
     try {
-      const responseData = await EquipmentsServices.addEquipements(pageNumber, pageSize, sortBy, sortDir);
+      const responseData = await EquipmentsServices.viewEquipements(pageNumber, pageSize, sortBy, sortDir);
       setPostContent(responseData.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -51,6 +51,7 @@ export default function EquipmentsDetails() {
   }
   return (
     <div className='container'>
+       <br />
     <div className="row m-0 p-0 ">
       <h1>Equipments</h1>
     </div>
