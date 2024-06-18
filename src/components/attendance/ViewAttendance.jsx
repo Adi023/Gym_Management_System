@@ -55,7 +55,7 @@ export default function ViewAttendance() {
     <div className='container '>
       <br />
       <div className="row m-0 p-0 ">
-        <h1>View Attendance</h1>
+        <h1>Attendance</h1>
       </div>
       <br />
       {/* <label htmlFor="searchInput" className="col">Search:</label>
