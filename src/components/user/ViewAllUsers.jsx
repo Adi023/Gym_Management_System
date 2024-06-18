@@ -57,7 +57,7 @@ export default function ViewAllUsers() {
         placeholder="Enter Name, User Id, or Email" onChange={event => { setSearchTerm(event.target.value) }} />
       <br /> */}<br />
       <div className="row m-0 p-0 ">
-        <h1>View All Users</h1>
+        <h1>Users</h1>
       </div>
       <br />
       <div className="row m-0 p-0 divcardProfile">
