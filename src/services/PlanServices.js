@@ -21,6 +21,10 @@ class PlanServices{
     deletePlan(planId){
         return httpCommon.delete("/plan/"+planId)
     }
+
+    updatePlan(d){
+        return httpCommon.put("/plan/{planId}",d)
+    }
 }
 
 const myInstance = new PlanServices();
