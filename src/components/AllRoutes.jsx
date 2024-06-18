@@ -118,7 +118,7 @@ export default function AllRoutes() {
                 {/* Plan Routes */}
                 <Route path='addPlan' element={<RequireAuth component={AddPlan} requiredRoles={['admin']} />}  />
                 <Route path='viewPlan' element={<RequireAuth component={ViewPlan} requiredRoles={['admin']} />}  />
-                <Route path='updatePlan' element={<RequireAuth component={UpdatePlan} requiredRoles={['admin']} />}  />
+                <Route exact  path='updatePlan/:planId' element={<RequireAuth component={UpdatePlan} requiredRoles={['admin']} />}  />
                 
                 {/* Memberships Routes */}
                 <Route path='addMembership' element={<RequireAuth component={AddMembership} requiredRoles={['admin']} />}  />
