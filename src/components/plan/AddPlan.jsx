@@ -67,15 +67,6 @@ export default function AddPlan() {
         {errors.planDiscount && <p style={{ color: 'red' }}>{errors.planDiscount.message}</p>}
         <br />
 
-        {/* <label>City</label>
-        <select {...register('city_Id', { required: 'City Is Required' })}>
-          <option value="">Select City</option>
-          <option value="1">MUMBAI</option>
-          <option value="2">NOIDA</option>
-        </select>
-        {errors.city_Id && <p style={{ color: 'red' }}>{errors.city_Id.message}</p>}
-        <br /> */}
-
         <label></label>
         <input type="submit" value={"Add Plan"}  />
         <br/>
