@@ -25,7 +25,7 @@ const validRoutes  = [
     '/viewEmployee',
     '/addPlan',
     '/viewPlan',
-    '/updatePlan',
+    '/updatePlan/:planId',
     '/imageUploader',
     '/viewMemberships',
     '/addMembership',
