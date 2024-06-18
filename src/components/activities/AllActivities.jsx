@@ -23,7 +23,7 @@ export default function AllActivities() {
 
   const fetchData = async () => {
     try {
-      const responseData = await ActivityServices.addActivity(0, 5, "activityName", "asc");
+      const responseData = await ActivityServices.viewActivity(0, 5, "activityName", "asc");
       console.log(responseData);
       setPostContent(responseData.data);
     } catch (error) {
@@ -33,7 +33,7 @@ export default function AllActivities() {
 
   const handlePageChange = async (pageNumber = 0) => {
     try {
-      const responseData = await ActivityServices.addActivity(pageNumber, pageSize, sortBy, sortDir);
+      const responseData = await ActivityServices.viewActivity(pageNumber, pageSize, sortBy, sortDir);
       setPostContent(responseData.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -52,6 +52,7 @@ export default function AllActivities() {
 
   return (
     <div className='container'>
+       <br />
     <div className="row m-0 p-0 ">
       <h1>Activities</h1>
     </div>
