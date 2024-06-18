@@ -57,7 +57,7 @@ export default function ViewMemberships() {
     <div className='container '>
       <br />
       <div className="row m-0 p-0 ">
-        <h1>View Memberships</h1>
+        <h1>Memberships</h1>
       </div>
       <br />
 
