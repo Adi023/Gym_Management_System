@@ -29,6 +29,7 @@ body > iframe {
 } */
 body, html {
   overflow-x: hidden;
+  overflow:hidden;
 }
 
 /* input,select {
