@@ -46,10 +46,9 @@ export default function AddActivity() {
         {errors.activityCreatedBy && <p style={{ color: 'red' }}>{errors.activityCreatedBy.message}</p>}
         <br />
 
-        <label>Activity isActive</label>
-        <input type="text" {...register('isActive', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"} />
+        {/* <label>Activity isActive</label> */}
+        <input type="hidden" {...register('isActive', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"}  defaultValue={true}/>
         {errors.isActive && <p style={{ color: 'red' }}>{errors.isActive.message}</p>}
-        <br />
 
         <label></label>
         <input type="submit" value={"Add Activity"}  />
