@@ -52,10 +52,11 @@ export default function AddDiet() {
         {errors.dietCreatedBy && <p style={{ color: 'red' }}>{errors.dietCreatedBy.message}</p>}
         <br />
 
-        <label>Diet isActive</label>
-        <input type="text" {...register('isActive', { required: 'Diet Restrictions Is Required' })} placeholder={"Diet is Active"} />
+        {/* <label>Diet isActive</label> */}
+        <input type="hidden" {...register('isActive', { required: 'Diet Restrictions Is Required' })} placeholder={"Diet is Active"} defaultValue={true}/>
         {errors.isActive && <p style={{ color: 'red' }}>{errors.isActive.message}</p>}
-        <br />
+     
+
 
         <label></label>
         <input type="submit" value={"Add Diet"}  />

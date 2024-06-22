@@ -51,10 +51,9 @@ export default function AddEquipments() {
         {errors.eqpImgUrl && <p style={{ color: 'red' }}>{errors.eqpImgUrl.message}</p>}
         <br />
 
-        <label>Is Active</label>
-        <input type="text" {...register('isActive', { required: 'Equipment Restrictions Is Required' })} placeholder={"Equipment is Active"} />
+        {/* <label>Is Active</label> */}
+        <input type="hidden" {...register('isActive', { required: 'Equipment Restrictions Is Required' })} placeholder={"Equipment is Active"}  defaultValue={true}/>
         {errors.isActive && <p style={{ color: 'red' }}>{errors.isActive.message}</p>}
-        <br />
 
         <label></label>
         <input type="submit" value={"Add Equipment"}  />
