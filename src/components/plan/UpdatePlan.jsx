@@ -55,49 +55,42 @@ export default function UpdatePlan(props) {
 
         <label htmlFor="planId">Plan Id</label>
         <input type="text"  {...register('planId', { required: 'Plan Id Is Required' })}
-        // defaultValue={plan.planId}
         placeholder={"Plan Id"} />
         {errors.planId && <p style={{ color: 'red' }}>{errors.planId.message}</p>}
         <br />
       
         <label htmlFor="planName">Plan Name</label>
         <input type="text"  {...register('planName', { required: 'Plan Name Is Required' })}
-        // defaultValue={plan.planName}
         placeholder={"Plan Name"} />
         {errors.planName && <p style={{ color: 'red' }}>{errors.planName.message}</p>}
         <br />
     
         <label htmlFor="Plan Description">Plan Description</label>
         <input type="text"  {...register('planDescription', { required: 'Plan Description Is Required' })}
-        // defaultValue={plan.planDescription}
         placeholder={"Plan Description"} />
         {errors.planDescription && <p style={{ color: 'red' }}>{errors.planDescription.message}</p>}
         <br />
     
         <label htmlFor="planPrice">Plan Price</label>
         <input type="number"  {...register('planPrice', { required: 'Plan Price Is Required' })}
-        // defaultValue={plan.planPrice}
         placeholder={"Plan Price"} />
         {errors.planPrice && <p style={{ color: 'red' }}>{errors.planPrice.message}</p>}
         <br />
 
         <label>Billng Cycle</label>
         <input type="number" {...register('planBillngCycle', { required: 'Billng Cycle Is Required' })}
-        // defaultValue={plan.planBillngCycle}
         placeholder={"Billng Cycle"} />
         {errors.planBillngCycle && <p style={{ color: 'red' }}>{errors.planBillngCycle.message}</p>}
         <br />
 
         <label>Plan Restrictions</label>
         <input type="text" {...register('planRestrictions', { required: 'Plan Restrictions Is Required' })}
-        // defaultValue={plan.planRestrictions}
         placeholder={"Plan Restrictions"} />
         {errors.planRestrictions && <p style={{ color: 'red' }}>{errors.planRestrictions.message}</p>}
         <br />
 
         <label>Plan Discount</label>
         <input type="text" {...register('planDiscount', { required: 'Plan Discount Is Required' })}
-        // defaultValue={plan.planDiscount}
         placeholder={"Plan Discount"} />
         {errors.planDiscount && <p style={{ color: 'red' }}>{errors.planDiscount.message}</p>}
         <br />
