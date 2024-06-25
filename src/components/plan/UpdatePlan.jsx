@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import PlanServices from '../../services/PlanServices';
 import { toast } from 'react-toastify';
@@ -8,15 +8,12 @@ import { useParams, useNavigate } from 'react-router';
 export default function UpdatePlan(props) {
 
   const { register, handleSubmit, formState: { errors } , setValue } = useForm();
-  const [plan, setPlan] = useState([]);
   const { planId } = useParams();
   const navigate = useNavigate(); // Get navigate function for navigation
   const sendData = async (d) => {
     try {
       const data = await PlanServices.updatePlan(d); 
-      toast.success(`Plan Updated Successfully for ID : ${data.data.planId}`, {
-        autoClose: false,
-      });
+      toast.success(`Plan Updated Successfully for ID : ${data.data.planId}`);
 
       navigate(`/viewPlan`);
     } catch (error) {
@@ -29,7 +26,6 @@ export default function UpdatePlan(props) {
   const getPlan = async (planId) => {
     try {
       const response = await PlanServices.getPlanById(planId);
-      setPlan(response.data);
       // Set form values using setValue
       setValue('planId', response.data.planId);
       setValue('planName', response.data.planName);
