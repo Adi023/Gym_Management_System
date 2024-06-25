@@ -50,7 +50,7 @@ export default function UpdateUser() {
 
   return (
     <div className="signup-container ">
-    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Add New User</h2>
+    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Update User</h2>
       <form onSubmit={handleSubmit(sendData)} autoComplete="nope">
 
       <div className="form-row">
