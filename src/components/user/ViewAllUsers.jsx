@@ -119,6 +119,7 @@ export default function ViewAllUsers() {
               <th scope="col" onClick={() => handleSortBy('gender')}>Gender</th>
               <th scope="col" onClick={() => handleSortBy('bloodGroup')}>Blood Group</th>
               <th scope="col" onClick={() => handleSortBy('roleId')}>Role</th>
+              <th>Update</th>
             </tr>
           </thead>
           <tbody>
@@ -152,6 +153,7 @@ export default function ViewAllUsers() {
                 <td data-label="Gender : ">{d.gender}</td>
                 <td data-label="BloodGroup : ">{d.bloodGroup}</td>
                 <td data-label="Role : ">{d.roleId.roleName}</td>
+                <td data-label="Update : "><a href={'updateUser/'+d.userId}><i className="fas fa-edit"></i></a></td> 
               </tr>
             ))}
           </tbody>
