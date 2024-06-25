@@ -15,6 +15,7 @@ const validRoutes  = [
     '/register',
     '/viewUsers',
     '/viewSingleUser',
+    '/updateUser/:userId',
     '/login',
     '/dashboard',
     '/attendance',
