@@ -60,6 +60,7 @@ import ErrorPage from './ErrorPage';
 import ErrorBoundary from '../ErrorBoundary'
 import AttendanceByUserId from './attendance/AttendanceByUserId';
 import ViewMembershipById from './membership/ViewMembershipById';
+import UpdateUser from './user/UpdateUser';
 
 
 export default function AllRoutes() {
@@ -103,6 +104,7 @@ export default function AllRoutes() {
                 <Route path='/viewUsers' element={<RequireAuth component={ViewAllUsers} requiredRoles={['admin']} />}  />
                 <Route path='/viewSingleUser' element={<RequireAuth component={ViewSingleUser} requiredRoles={['admin','user']} />}  />
                 <Route path='/dashboard' element={<RequireAuth component={Dashboard} requiredRoles={['admin','user']} />}  />
+                <Route exact path='/updateUser/:userId' element={<RequireAuth component={UpdateUser} requiredRoles={['admin','user']} />}  />
 
                 {/* Attendance Routes */}
                 <Route path='attendance' element={<RequireAuth component={AttendanceHome} requiredRoles={['admin']} />}  />
