@@ -29,5 +29,10 @@ class UserServices{
     getUserById(userId){
         return httpCommon.get("/user/"+userId)
     }
+
+    
+    updateUser(d){
+        return httpCommon.put("/user/{userId}",d)
+    }
 }const myInstance = new UserServices();
 export default myInstance;
