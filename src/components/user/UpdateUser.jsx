@@ -118,9 +118,6 @@ export default function UpdateUser() {
         <label></label>
         <input type="submit" value={"Register"} placeholder={"Register"} />
         <br/>
-        <label></label>
-        <input type="reset" value={"Reset"} placeholder={"Reset"} />
-
         </div>
       </form>
 
