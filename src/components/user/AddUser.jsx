@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import UserServices from '../../services/UserServices'
+import UserServices from '../../services/UserServices';
+import CityServices from '../../services/CityServices';
 
 export default function AddUser() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -12,6 +13,7 @@ export default function AddUser() {
     reset();
   }
 
+  const [cityData,setCity]=useState([]);
   const [minDate, setMinDate] = useState('');
   const [password, setPassword] = useState('');
   // const [confirmPassword, setConfirmPassword] = useState('');
@@ -42,6 +44,16 @@ export default function AddUser() {
     setPasswordsMatch(e.target.value === password);
   };
 
+  const fetchCity = async () => {
+    try {
+      const responseData = await CityServices.viewCity();
+      // console.log(responseData.data+"City data");
+      setCity(responseData.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
     const today = new Date();
     const year = today.getFullYear();
@@ -58,7 +70,11 @@ export default function AddUser() {
 
     const formattedDate = `${year}-${month}-${day}`;
     setMinDate(formattedDate);
-  }, []);
+
+    //for fetching cities to add in city dropdown
+    fetchCity();
+   
+    }, []);
 
   return (
     <div className="signup-container ">
@@ -125,10 +141,11 @@ export default function AddUser() {
         <br />
 
         <label>City</label>
-        <select {...register('city_Id', { required: 'City Is Required' })}>
-          <option value="">Select City</option>
-          <option value="1">MUMBAI</option>
-          <option value="2">NOIDA</option>
+        <select>
+        <option value="">Select City</option>
+          {cityData.map(city => (
+            <option key={city.cityId} value={city.cityId}>{city.cityName}</option> 
+          ))}
         </select>
         {errors.city_Id && <p style={{ color: 'red' }}>{errors.city_Id.message}</p>}
         <br />
