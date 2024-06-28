@@ -8,7 +8,7 @@ export default function UpdateUser() {
 
   const { register, handleSubmit, formState: { errors } , setValue } = useForm();
   const { userId } = useParams();
-  const navigate = useNavigate(); // Get navigate function for navigation
+  const navigate = useNavigate();
   const sendData = async (d) => {
     try {
       const data = await UserServices.updateUser(d); 
@@ -25,7 +25,6 @@ export default function UpdateUser() {
   const getUser = async (userId) => {
     try {
       const response = await UserServices.getUserById(userId);
-      // Set form values using setValue
       setValue('userId', response.data.userId);
       setValue('name', response.data.name);
       setValue('email', response.data.email);
