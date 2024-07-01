@@ -37,12 +37,13 @@ const validRoutes  = [
     '/viewActivities',
     '/viewActivityById',
     '/updateActivity',
+    '/scheduleActivity',
+    '/participation',
     '/equpmentsDetails',
     '/addEquipments',
     '/UpdateEquipmentsInfo',
     '/addDiet',
     '/viewDietPlans',
     '/viewDietById'
-
   ];
   export default validRoutes;

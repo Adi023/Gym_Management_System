@@ -61,6 +61,8 @@ import ErrorBoundary from '../ErrorBoundary'
 import AttendanceByUserId from './attendance/AttendanceByUserId';
 import ViewMembershipById from './membership/ViewMembershipById';
 import UpdateUser from './user/UpdateUser';
+import ScheduleActivity from './activities/ScheduleActivity';
+import Participation from './activities/Participation';
 
 
 export default function AllRoutes() {
@@ -132,7 +134,10 @@ export default function AllRoutes() {
               <Route path="/viewActivities" element={<RequireAuth component={AllActivities} requiredRoles={['admin','user']} />}/>
               <Route path="/viewActivityById" element={<RequireAuth component={ViewActivityById} requiredRoles={['admin','user']} />}/>
               <Route path="/updateActivity" element={<RequireAuth component={UpdateActivity} requiredRoles={['admin']} />}/>
-                
+              
+              <Route path="/scheduleActivity" element={<RequireAuth component={ScheduleActivity} requiredRoles={['admin']} />}/>
+              <Route path="/participation" element={<RequireAuth component={Participation} requiredRoles={['admin','user']} />}/>
+              
               {/* Diet Route */}
               <Route path="/addDiet" element={<RequireAuth component={AddDiet} requiredRoles={['admin']} />}/>
               <Route path="/viewDietPlans" element={<RequireAuth component={ViewDietPlans} requiredRoles={['admin']} />}/>
