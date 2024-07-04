@@ -5,6 +5,7 @@ import moment from 'moment';
 import PaginationBar from '../PaginationBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faInfoCircle} from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
 
 export default function MarkAttendance() {
 
@@ -12,6 +13,7 @@ export default function MarkAttendance() {
   const [sortBy, setSortBy] = useState('attendanceId');
   const [sortDir, setSortDir] = useState('desc');
   const { register, handleSubmit, setValue } = useForm();
+  const [currentPage, setCurrentPage] = useState(0);
   const [dataAttendance, setAttendanceData] = useState({
     content: [],
     totalPages: '',
@@ -26,13 +28,15 @@ export default function MarkAttendance() {
     console.log(d)
     try {
       if (!d.present) {
-        alert("Attendance status needed Present to mark attendance for this user.");
+        toast.error(`Attendance status needed Absent to mark attendance for this user.`);
+        // alert("Attendance status needed Present to mark attendance for this user.");
       } else {
         // Update attendance for the user with the given userId
         await AttendanceServices.updateAttendance(d.userId, d);
         // alert("Attendance added successfully.");
         // Refresh attendance data
         fetchData();
+        toast.success(`Attendance added Successfully For ID: ${d.userId}`);
       }
     } catch (error) {
       console.error('Error adding attendance:', error);
@@ -48,12 +52,12 @@ export default function MarkAttendance() {
   // console.log(formattedDate); // Output: 2024-04-27
 
   useEffect(() => {
-    fetchData();
+    fetchData(); 
   }, []);
 
   const fetchData = async () => {
     try {
-      const attendanceData = await AttendanceServices.viewAttendaceByAttendanceDate(formattedDate, 0, 5, "attendanceId", "desc");
+      const attendanceData = await AttendanceServices.viewAttendaceByAttendanceDate(formattedDate, currentPage, 5, "attendanceId", "desc");
       console.log(attendanceData);
       setAttendanceData(attendanceData.data);
     } catch (error) {
@@ -63,9 +67,8 @@ export default function MarkAttendance() {
 
   const handlePageChange = async (pageNumber = 0) => {
     try {
-      // console.log(pageSize + " Pagesize")
+      setCurrentPage(pageNumber);
       const responseData = await AttendanceServices.viewAttendaceByAttendanceDate(formattedDate, pageNumber, pageSize, sortBy, sortDir);
-      console.log(responseData);
       setAttendanceData(responseData.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -73,7 +76,7 @@ export default function MarkAttendance() {
   };
 
   const handleSortChange = (e) => {
-    setSortDir(e); // Update the sorting direction
+    setSortDir(e);
     handlePageChange();
   }
 
