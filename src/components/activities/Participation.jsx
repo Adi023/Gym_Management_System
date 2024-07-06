@@ -45,7 +45,7 @@ export default function Participation() {
         <br />
 
         {/* <label>Activity isActive</label> */}
-        <input type="hidden" {...register('isAttended', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"}  defaultValue={false}/>
+        <input type="hidden" defaultValue={false} {...register('isAttended', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"}  />
         {errors.isAttended && <p style={{ color: 'red' }}>{errors.isAttended.message}</p>}
 
         <label></label>
