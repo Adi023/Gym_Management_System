@@ -41,7 +41,7 @@ export default function ViewMembershipById() {
           <label htmlFor="searchInput" className="col-auto">Search:</label>
           <input type="text" id="searchInput" className="col col-auto  py-0 pl-1"
             style={{ width: '280px', marginRight: '15px' }}
-            placeholder="Attendance Date or Attendance Id" onChange={event => { setSearchTerm(event.target.value) }} />
+            placeholder="Membership Id or Name" onChange={event => { setSearchTerm(event.target.value) }} />
         </div>
       </div>
       <br />
