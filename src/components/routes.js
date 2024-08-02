@@ -44,6 +44,7 @@ const validRoutes  = [
     '/UpdateEquipmentsInfo',
     '/addDiet',
     '/viewDietPlans',
-    '/viewDietById'
+    '/viewDietById',
+    '/profile'
   ];
   export default validRoutes;

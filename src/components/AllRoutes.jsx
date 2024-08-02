@@ -63,6 +63,7 @@ import ViewMembershipById from './membership/ViewMembershipById';
 import UpdateUser from './user/UpdateUser';
 import ScheduleActivity from './activities/ScheduleActivity';
 import Participation from './activities/Participation';
+import ProfilePage from './user/ProfilePage';
 
 
 export default function AllRoutes() {
@@ -107,7 +108,7 @@ export default function AllRoutes() {
                 <Route path='/viewSingleUser' element={<RequireAuth component={ViewSingleUser} requiredRoles={['admin','user']} />}  />
                 <Route path='/dashboard' element={<RequireAuth component={Dashboard} requiredRoles={['admin','user']} />}  />
                 <Route exact path='/updateUser/:userId' element={<RequireAuth component={UpdateUser} requiredRoles={['admin','user']} />}  />
-
+                <Route path="/profile" element={< RequireAuth component={ProfilePage} requiredRoles={['admin','user']}/>}/>
                 {/* Attendance Routes */}
                 <Route path='attendance' element={<RequireAuth component={AttendanceHome} requiredRoles={['admin']} />}  />
                 <Route path='weeklyAttendance' element={<RequireAuth component={WeeklyAttendance} requiredRoles={['admin']} />}  />
