@@ -238,7 +238,8 @@ export default function SideBar() {
 
                     {/* User Fields */}
                     <li>
-                        <Link to="/viewSingleUser" className="nav-link px-0 align-middle">
+                        {/* <Link to="/viewSingleUser" className="nav-link px-0 align-middle"> */}
+                        <Link to="/profile" className="nav-link px-0 align-middle">
                             <i className="fs-4 bi bi-person custom-icon"></i>
                             <span className="custom-icon ms-1 d-none d-sm-inline">Profile</span>
                         </Link>
