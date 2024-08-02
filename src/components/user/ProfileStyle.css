@@ -1,6 +1,4 @@
-body {
-    background-color: #000000
-}
+
 
 .padding {
     padding: 3rem !important;
@@ -95,3 +93,28 @@ p {
     margin-top: 0;
     margin-bottom: 1rem
 }
+
+
+.group 			  { 
+    position:relative; 
+    margin-bottom:45px; 
+  }
+  input 				{
+    font-size:18px;
+    padding:10px 10px 0px 20px;
+    display:block;
+    width:auto;
+    border:none;
+    border-bottom:1px solid #757575;
+  }
+  input:focus 		{ outline:none; }
+  
+  label 				 {
+    top:-25px;
+    font-size:14px;
+    color:#5264AE;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+  }

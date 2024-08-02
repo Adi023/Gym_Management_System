@@ -39,34 +39,65 @@ export default function ProfilePage() {
                         <div className="pro-img">
                             <img src={profile} alt="user" />
                         </div>
+                        <form>
+                            <h3 className="m-b-0">{data.name ? data.name : 'N/A'}</h3>
+                            <p>{data.active ? "Active" : 'N/A'} </p>
+                            <div className="row text-center m-t-20">
 
-                        <h3 className="m-b-0">{data.name ? data.name : 'N/A'}</h3>
-                        <p>{data.active ? "Active" : 'N/A'} </p>
-                        <div className="row text-center m-t-20">
-                            <div className="col-lg-4 col-md-4 m-t-20">
-                                <h3 className="m-b-0 font-light">
-                                    <small>Gender:</small> {data.gender ? data.gender : 'N/A'}<br />
-                                    <small>Blood Group:</small> {data.bloodGroup ? data.bloodGroup : 'N/A'}<br />
-                                    <small>DOB:</small> {data.dob ? data.dob : 'N/A'}<br />
-                                </h3>
+                                <div className="col-lg-4 col-md-4 m-t-20">
+                                    <h3 className="m-b-0 font-light">
+                                        <div class="group">
+                                            <input type="text" value={data.gender ? data.gender : 'N/A'} required />
+                                            <label>Gender :</label>
+                                        </div>
+                                        <div class="group">
+                                            <input type="text" value={data.bloodGroup ? data.bloodGroup : 'N/A'} required />
+                                            <label>Blood Group :</label>
+                                        </div>
+                                        <div class="group">
+                                            <input type="text" value={data.dob ? data.dob : 'N/A'} required />
+                                            <label>DOB :</label>
+                                        </div>
+                                    </h3>
+                                </div>
+                                <div className="col-lg-4 col-md-4 m-t-20">
+                                    <h3 className="m-b-0 font-light">
+                                        <div class="group">
+                                            <input type="text" value={data.email ? data.email : 'N/A'} required />
+                                            <label>Email :</label>
+                                        </div>
+                                        <div class="group">
+                                            <input type="text" value={data.mobile ? data.mobile : 'N/A'} required />
+                                            <label>Mobile :</label>
+                                        </div>
+                                        <div class="group">
+                                            <input type="text" value={data.address ? data.address : 'N/A'} required />
+                                            <label>Address :</label>
+                                        </div>
+                                    </h3>
+                                </div>
+                                 <div className="col-lg-4 col-md-4 m-t-20">
+                                    <h3 className="m-b-0 font-light">
+                                        <div class="group">
+                                            <input type="text" value={data.cityId?.cityName ? data.cityId?.cityName : 'N/A'} required />
+                                            <label>City :</label>
+                                        </div>
+                                        <div class="group">
+                                            <input type="text" value={data.cityId?.stateId?.stateName ? data.cityId?.stateId?.stateName : 'N/A'} required />
+                                            <label>State :</label>
+                                        </div>
+                                        <div class="group">
+                                            <input type="text" value={data.dateOfJoining ? data.dateOfJoining : 'N/A'} required />
+                                            <label>Date of Joining :</label>
+                                        </div>
+                                       
+                                    </h3>
+                                </div>
+                               
+
                             </div>
-                            <div className="col-lg-4 col-md-4 m-t-20">
-                                <h3 className="m-b-0 font-light">
-                                    <small> Email:</small> {data.email ? data.email : 'N/A'}<br />
-                                    <small> Mobile:</small> {data.mobile ? data.mobile : 'N/A'}<br />
-                                    <small> Address:</small> {data.address ? data.address : 'N/A'}<br />
-                                </h3>
-                            </div>
-                            <div className="col-lg-4 col-md-4 m-t-20">
-                                <h3 className="m-b-0 font-light">
-                                    <small> City:</small> {data.cityId?.cityName ? data.cityId?.cityName : 'N/A'}<br />
-                                    <small> State:</small> {data.cityId?.stateId?.stateName ? data.cityId?.stateId?.stateName : 'N/A'}<br />
-                                    <small> Country:</small> {data.cityId?.countryId?.countryName}<br />
-                                    <small> Date of Joining: </small> {data.dateOfJoining ? data.dateOfJoining : 'N/A'}<br />
-                                    <small> Activity Status: </small> {data.active ? "Active" : 'N/A'}<br />
-                                </h3>
-                            </div>
-                        </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
