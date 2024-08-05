@@ -3,21 +3,36 @@ import { useForm } from 'react-hook-form';
 import UserServices from '../../services/UserServices';
 import { toast } from 'react-toastify';
 import { useParams, useNavigate } from 'react-router';
+import { useSelector } from 'react-redux';
 
 export default function UpdateUser() {
 
   const { register, handleSubmit, formState: { errors } , setValue } = useForm();
   const { userId } = useParams();
   const navigate = useNavigate();
+  const role = useSelector(state => state.role);
+
   const sendData = async (d) => {
     try {
       const data = await UserServices.updateUser(d); 
       toast.success(`User Updated Successfully for ID : ${data.data.userId}`);
 
-      navigate(`/viewUsers`);
+      if (role==='admin') {
+        navigate(`/viewUsers`);
+      } else {
+        navigate(`/profile`);
+      }
+     
     } catch (error) {
       console.error("Error Updating User:", error);
       toast.error("Failed to Update User");
+    }
+  }
+  const cancelUpdate = ()=>{
+    if (role==='admin') {
+      navigate(`/viewUsers`);
+    } else {
+      navigate(`/profile`);
     }
   }
 
@@ -115,8 +130,10 @@ export default function UpdateUser() {
         <br />
 
         <label></label>
-        <input type="submit" value={"Update"} placeholder={"Update"} />
+        <input type="submit" value={"Update"} class="btn btn-success"  />
         <br/>
+        <label></label>
+        <input type='button' value={"Cancle"} class="btn btn-danger" onClick={cancelUpdate}/>
         </div>
       </form>
 
