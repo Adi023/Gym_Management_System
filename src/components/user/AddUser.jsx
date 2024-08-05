@@ -7,6 +7,7 @@ export default function AddUser() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const sendData = (d) => {
+    console.log(d);
     UserServices.addUser(d);
     console.log(d);
     alert("User Added Successfully")
@@ -141,7 +142,7 @@ export default function AddUser() {
         <br />
 
         <label>City</label>
-        <select>
+        <select  {...register('city_Id', { required: 'city is required' })}>
         <option value="">Select City</option>
           {cityData.map(city => (
             <option key={city.cityId} value={city.cityId}>{city.cityName}</option> 
