@@ -169,23 +169,6 @@ export default function AddUser() {
         {errors.active && <p style={{ color: 'red' }}>{errors.active.message}</p>}
         {/* <br /> */}
 
-        {/* <label>Gender</label>
-        <input type="radio" value="Male"
-          style={{ width: 'auto',marginTop:"8px",marginBottom:"8px" }}
-          {...register('gender', { required: 'Gender is required' })} />
-        <label >Male</label>
-
-        <input type="radio" value="Female"
-          style={{ width: 'auto',marginTop:"8px",marginBottom:"8px" }}
-          {...register('gender', { required: 'Gender is required' })} />
-        <label >Female</label>
-
-        <input type="radio" value="Other"
-          style={{ width: 'auto',marginTop:"8px"}}
-          {...register('gender', { required: 'Gender is required' })} />
-        <label>Other</label>
-        {errors.gender && <p style={{ color: 'red' }}>{errors.gender.message}</p>}
-        <br /><br/> */}
         <label>Gender</label>
         <select  {...register('gender', { required: 'Gender is required' })} >
           <option value="">Select Gender</option>
