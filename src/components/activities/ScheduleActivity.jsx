@@ -24,19 +24,19 @@ export default function ScheduleActivity() {
       <form onSubmit={handleSubmit(sendData)}>
       <div className="form-row">
 
-        {/* <label htmlFor="scheduleId">Schedule Id</label>
+        <label htmlFor="scheduleId">Schedule Id</label>
         <input type="text"  {...register('id', { required: 'Schedule Id Is Required' })} placeholder={"Schedule Schedule Id"} />
         {errors.id && <p style={{ color: 'red' }}>{errors.id.message}</p>}
-        <br /> */}
+        <br />
       
         <label htmlFor="activityName">Activity Name</label>
-        <input type="number"  {...register('activity', { required: 'Activity Name Is Required' })} placeholder={"Activity Name"} />
-        {errors.activity && <p style={{ color: 'red' }}>{errors.activity.message}</p>}
+        <input type="number"  {...register('activityId', { required: 'Activity Name Is Required' })} placeholder={"Activity Name"} />
+        {errors.activity && <p style={{ color: 'red' }}>{errors.activityId.message}</p>}
         <br />
     
         <label htmlFor="Activity trainer">Trainer</label>
-        <input type="text"  {...register('trainer', { required: 'Activity trainer Is Required' })} placeholder={"Activity trainer"} />
-        {errors.trainer && <p style={{ color: 'red' }}>{errors.trainer.message}</p>}
+        <input type="text"  {...register('userId', { required: 'Activity trainer Is Required' })} placeholder={"Activity trainer"} />
+        {errors.trainer && <p style={{ color: 'red' }}>{errors.userId.message}</p>}
         <br />
 
         <label>Details</label>
