@@ -24,10 +24,10 @@ export default function Participation() {
       <form onSubmit={handleSubmit(sendData)}>
       <div className="form-row">
 
-        <label htmlFor="activityId">Participation Id</label>
+        {/* <label htmlFor="activityId">Participation Id</label>
         <input type="text"  {...register('id', { required: 'Participation Id Is Required' })} placeholder={"Participation Id"} />
         {errors.id && <p style={{ color: 'red' }}>{errors.id.message}</p>}
-        <br />
+        <br /> */}
       
         <label htmlFor="activityName">User Id</label>
         <input type="number"  {...register('user', { required: 'User Id Is Required' })} placeholder={"User Id"} />
