@@ -45,7 +45,7 @@ export default function UpdatePlan(props) {
  
   return (
     <div className="signup-container">
-    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Add New Plan</h2>
+    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Update Plan</h2>
       <form onSubmit={handleSubmit(sendData)}>
       <div className="form-row">
 
