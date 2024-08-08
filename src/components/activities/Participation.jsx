@@ -24,10 +24,10 @@ export default function Participation() {
       <form onSubmit={handleSubmit(sendData)}>
       <div className="form-row">
 
-        <label htmlFor="activityId">Participation Id</label>
+        {/* <label htmlFor="activityId">Participation Id</label>
         <input type="text"  {...register('id', { required: 'Participation Id Is Required' })} placeholder={"Participation Id"} />
         {errors.id && <p style={{ color: 'red' }}>{errors.id.message}</p>}
-        <br />
+        <br /> */}
       
         <label htmlFor="userId">User Id</label>
         <input type="text"  {...register('userId', { required: 'User Id Is Required' })} placeholder={"User Id"} />
@@ -45,8 +45,8 @@ export default function Participation() {
         <br />
 
         {/* <label>Activity isActive</label> */}
-        <input type="hidden" defaultValue={false} {...register('isAttended', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"}  />
-        {errors.isAttended && <p style={{ color: 'red' }}>{errors.isAttended.message}</p>}
+        <input type="hidden" defaultValue={false} {...register('attended', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"}  />
+        {errors.attended && <p style={{ color: 'red' }}>{errors.attended.message}</p>}
 
         <label></label>
         <input type="submit" value={"Participate in Activity"}  />
