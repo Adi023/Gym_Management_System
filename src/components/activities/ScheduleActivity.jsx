@@ -24,10 +24,10 @@ export default function ScheduleActivity() {
       <form onSubmit={handleSubmit(sendData)}>
       <div className="form-row">
 
-        <label htmlFor="scheduleId">Schedule Id</label>
+        {/* <label htmlFor="scheduleId">Schedule Id</label>
         <input type="text"  {...register('id', { required: 'Schedule Id Is Required' })} placeholder={"Schedule Schedule Id"} />
         {errors.id && <p style={{ color: 'red' }}>{errors.id.message}</p>}
-        <br />
+        <br /> */}
       
         <label htmlFor="activityName">Activity Name</label>
         <input type="number"  {...register('activityId', { required: 'Activity Name Is Required' })} placeholder={"Activity Name"} />
@@ -50,13 +50,13 @@ export default function ScheduleActivity() {
         <br />
 
         <label>Activity duration</label>
-        <input type="number" {...register('durationMinutes', { required: 'duration Is Required' })} placeholder={"Activity duration"} />
+        <input type="number" {...register('durationMinutes', { required: 'duration Is Required' })} placeholder={"Activity duration in Minutes"} />
         {errors.durationMinutes && <p style={{ color: 'red' }}>{errors.durationMinutes.message}</p>}
         <br />
 
-        {/* <label>Activity isActive</label> */}
-        <input type="hidden" {...register('isActive', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"}  defaultValue={true}/>
-        {errors.isActive && <p style={{ color: 'red' }}>{errors.isActive.message}</p>}
+        {/* <label>Activity active</label> */}
+        <input type="hidden" {...register('active', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"}  defaultValue={true}/>
+        {errors.active && <p style={{ color: 'red' }}>{errors.active.message}</p>}
 
         <label></label>
         <input type="submit" value={"Schedule Activity"}  />
