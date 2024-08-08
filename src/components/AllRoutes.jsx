@@ -64,6 +64,8 @@ import UpdateUser from './user/UpdateUser';
 import ScheduleActivity from './activities/ScheduleActivity';
 import Participation from './activities/Participation';
 import ProfilePage from './user/ProfilePage';
+import ViewSchedule from './activities/ViewSchedule';
+import ViewParticipation from './activities/ViewParticipation';
 
 
 export default function AllRoutes() {
@@ -137,7 +139,10 @@ export default function AllRoutes() {
               <Route path="/updateActivity" element={<RequireAuth component={UpdateActivity} requiredRoles={['admin']} />}/>
               
               <Route path="/scheduleActivity" element={<RequireAuth component={ScheduleActivity} requiredRoles={['admin']} />}/>
+              <Route path="/viewScheduleActivity" element={<RequireAuth component={ViewSchedule} requiredRoles={['admin']} />}/>
+
               <Route path="/participation" element={<RequireAuth component={Participation} requiredRoles={['admin','user']} />}/>
+              <Route path="/viewParticipation" element={<RequireAuth component={ViewParticipation} requiredRoles={['admin','user']} />}/>
               
               {/* Diet Route */}
               <Route path="/addDiet" element={<RequireAuth component={AddDiet} requiredRoles={['admin']} />}/>
