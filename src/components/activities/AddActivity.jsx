@@ -9,6 +9,7 @@ export default function AddActivity() {
 
   const sendData = async (d) => {
     try {
+      console.log(d)
       const data = await ActivityServices.addActivity(d);
       toast.success(`Activity Added Successfully, ID: ${data.data.activityId}`, {
         autoClose: false,
@@ -46,9 +47,9 @@ export default function AddActivity() {
         {errors.activityCreatedBy && <p style={{ color: 'red' }}>{errors.activityCreatedBy.message}</p>}
         <br />
 
-        {/* <label>Activity isActive</label> */}
-        <input type="hidden" {...register('isActive', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"}  defaultValue={true}/>
-        {errors.isActive && <p style={{ color: 'red' }}>{errors.isActive.message}</p>}
+        {/* <label>Activity active</label> */}
+        <input type="hidden" {...register('active', { required: 'Activity Restrictions Is Required' })} placeholder={"Activity is Active"}  defaultValue={true}/>
+        {errors.active && <p style={{ color: 'red' }}>{errors.active.message}</p>}
 
         <label></label>
         <input type="submit" value={"Add Activity"}  />

@@ -132,7 +132,7 @@ export default function AllActivities() {
               <td data-label="Name : ">{d.activityName}</td>
               <td data-label="Details : ">{d.activityDetails}</td>
               <td data-label=" Created By : ">{d.activityCreatedBy}</td>
-             <td data-label="Status : ">{d.isActive ? 'Active' : 'Inactive'}</td>
+             <td data-label="Status : ">{d.active ? 'Active' : 'Inactive'}</td>
             </tr>
           ))}
         </tbody>
