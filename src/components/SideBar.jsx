@@ -182,6 +182,11 @@ export default function SideBar() {
                                     <span className=" d-none d-sm-inline"> View</span></Link>
                             </li>
                             <li className="w-100">
+                                <Link to="/viewScheduleActivity" className="nav-link px-0 text-secondary text-hover-white">
+                                <i className="bi bi-list-nested"></i>
+                                    <span className=" d-none d-sm-inline"> View Schedule</span></Link>
+                            </li>
+                            <li className="w-100">
                                 <Link to="/scheduleActivity" className="nav-link px-0 text-secondary text-hover-white">
                                 <i className="bi bi-list-nested"></i>
                                     <span className=" d-none d-sm-inline"> scheduleActivity</span></Link>
@@ -190,6 +195,11 @@ export default function SideBar() {
                                 <Link to="/participation" className="nav-link px-0 text-secondary text-hover-white">
                                 <i className="bi bi-list-nested"></i>
                                     <span className=" d-none d-sm-inline">Participation</span></Link>
+                            </li>
+                            <li className="w-100">
+                                <Link to="/viewParticipation" className="nav-link px-0 text-secondary text-hover-white">
+                                <i className="bi bi-list-nested"></i>
+                                    <span className=" d-none d-sm-inline">View Participation</span></Link>
                             </li>
                         </ul>
                     </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
