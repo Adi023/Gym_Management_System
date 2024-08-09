@@ -143,10 +143,10 @@ export default function ProfilePage() {
                                 <img src={profile} alt="user" />
                               
                             </div>  
-                            <a href={'updateUser/'+data.userId}><i class="bi bi-pencil-square update-button">Update Profile</i></a>
+                            <a href={'updateUser/'+data.userId}><i className="bi bi-pencil-square update-button">Update Profile</i></a>
                             
                             {/* <div className='update-button'>
-                                <i class="bi bi-pencil-square update-button"></i>
+                                <i className="bi bi-pencil-square update-button"></i>
                             </div> */}
                             <form>
                                 <h3 className="m-b-0">{data.name ? data.name : 'N/A'}</h3>
