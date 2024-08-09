@@ -153,7 +153,7 @@ export default function ViewAllUsers() {
                 <td data-label="Gender : ">{d.gender}</td>
                 <td data-label="BloodGroup : ">{d.bloodGroup}</td>
                 <td data-label="Role : ">{d.roleId.roleName}</td>
-                <td data-label="Update : "><a href={'updateUser/'+d.userId}><i className="fas fa-edit"></i></a></td> 
+                <td data-label="Update : "><a href={'updateUser/'+d.userId}><i className="fas fa-edit fa-lg" style={{marginLeft:'25%'}}></i></a></td> 
               </tr>
             ))}
           </tbody>
