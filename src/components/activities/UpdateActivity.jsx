@@ -81,10 +81,10 @@ export default function UpdateActivity() {
           )}
 
         <label></label>
-        <input type="submit" value={"Update Activity"}  class="btn btn-success"/>
+        <input type="submit" value={"Update Activity"}  className="btn btn-success"/>
         <br/>
         <label></label>
-        <input type="button" value={"Cancle Update"} class="btn btn-danger" onClick={cancleUpdate}/>
+        <input type="button" value={"Cancle Update"} className="btn btn-danger" onClick={cancleUpdate}/>
         </div>
       </form>
     </div>
