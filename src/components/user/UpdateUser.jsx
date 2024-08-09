@@ -31,9 +31,10 @@ export default function UpdateUser() {
   const cancelUpdate = ()=>{
     if (role==='admin') {
       navigate(`/viewUsers`);
-    } else {
+    } else if(role==='user') {
       navigate(`/profile`);
     }
+    toast.info("Activity updation canceled")
   }
 
   console.log(userId)
@@ -58,6 +59,7 @@ export default function UpdateUser() {
     }
   };
 
+
   useEffect(() => {
    getUser(userId);
   },[]);
@@ -79,6 +81,7 @@ export default function UpdateUser() {
         placeholder={"Password"} 
         autoComplete="new-password"
         />
+         {errors.password && <p style={{ color: 'red' }}>{errors.password.message}</p>}
         <br />
 
         <label>Mobile</label>
@@ -109,10 +112,18 @@ export default function UpdateUser() {
         {errors.dob && <p style={{ color: 'red' }}>{errors.dob.message}</p>}
         <br />
 
-        {/* <label>Active</label> */}
-        <input type="hidden" {...register('active', { required: 'active is required' })} placeholder={"Active"} />
+        {role === 'admin' && (
+            <>
+        <label>Active</label>
+        <select {...register('active', { required: 'active is required' })} placeholder={"Active"} >
+          <option value="">Select Status</option>
+          <option value='true'>Active</option>
+          <option value='false'>Inactive</option>
+          </select>
         {errors.active && <p style={{ color: 'red' }}>{errors.active.message}</p>}
-        {/* <br /> */}
+        <br />
+        </>
+        )}
 
         <label>Blood Group</label>
         <select {...register('bloodGroup', { required: 'Blood Group is required' })}>
@@ -130,10 +141,10 @@ export default function UpdateUser() {
         <br />
 
         <label></label>
-        <input type="submit" value={"Update"} class="btn btn-success"  />
+        <input type="submit" value={"Update"} className="btn btn-success"  />
         <br/>
         <label></label>
-        <input type='button' value={"Cancle"} class="btn btn-danger" onClick={cancelUpdate}/>
+        <input type='button' value={"Cancle"} className="btn btn-danger" onClick={cancelUpdate}/>
         </div>
       </form>
 
