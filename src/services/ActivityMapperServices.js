@@ -14,12 +14,12 @@ class ActivityMapperServices{
         return httpCommon.get("/activityMapper/byMapId/"+id);
     }
 
-    viewActivityMapperByUserId(userId){
-        return httpCommon.get("/actvityMapper/userById/"+userId);
+    viewActivityMapperByUserId(pageNumber,pageSize,sortBy,sortDir,userId){
+        return httpCommon.get(`/activityMapper/userById/${pageNumber}/${pageSize}/${sortBy}/${sortDir}/${userId}`);
     }
 
     viewActivityMapperByScheduleId(scheduleId){
-        return httpCommon.get("/actvityMapper/scheduleActivity/"+scheduleId);
+        return httpCommon.get("/activityMapper/scheduleActivity/"+scheduleId);
     }
 
     updateActivityMapperDetails(d){
