@@ -109,6 +109,7 @@ export default function AllActivities() {
             <th scope="col" onClick={() => handleSortBy('activityDetails')}>Details</th>
             <th scope="col" onClick={() => handleSortBy('activityCreatedBy')}>Created By</th>
            <th scope="col" onClick={() => handleSortBy('active')}>Status</th>
+           <th scope="col" >Update</th>
           </tr>
         </thead>
         <tbody>
@@ -133,6 +134,7 @@ export default function AllActivities() {
               <td data-label="Details : ">{d.activityDetails}</td>
               <td data-label=" Created By : ">{d.activityCreatedBy}</td>
              <td data-label="Status : ">{d.active ? 'Active' : 'Inactive'}</td>
+             <td data-label="Update : "><a href={'updateActivity/'+d.activityId}><i className="fas fa-edit fa-lg" style={{marginLeft:'20%'}}></i></a></td>
             </tr>
           ))}
         </tbody>
