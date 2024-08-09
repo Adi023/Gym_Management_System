@@ -2,16 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import UserServices from '../../services/UserServices';
 import CityServices from '../../services/CityServices';
+import { toast } from 'react-toastify';
 
 export default function AddUser() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-  const sendData = (d) => {
+  const sendData = async (d) => {
+    try{
+      const data = await UserServices.addUser(d);
+      toast.success(`User Added Successfully, ID : ${data.data.userId}`);
     console.log(d);
-    UserServices.addUser(d);
-    console.log(d);
-    alert("User Added Successfully")
     reset();
+  } catch (error) {
+    console.error("Error adding User : ", error);
+    toast.error("Failed to add User");
+  }
   }
 
   const [cityData,setCity]=useState([]);

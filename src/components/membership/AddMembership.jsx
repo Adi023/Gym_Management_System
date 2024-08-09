@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import MembershipServices from '../../services/MembershipServices'
 import PlanServices from '../../services/PlanServices'
+import { toast } from 'react-toastify';
 
 
 export default function AddMembership() {
@@ -48,10 +49,16 @@ export default function AddMembership() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const sendData = (d) => {
-    MembershipServices.addMembership(d);
-    console.log(d);
-    alert("User Added Successfully")
-    reset();
+    try{
+      MembershipServices.addMembership(d);
+      console.log(d);
+      toast.success("Membership Added Successfully")
+      reset();
+    }
+   catch (error) {
+    console.error("Error adding Membership : ", error);
+    toast.error("Failed to add Membership ");
+  }
   }
 
   return (

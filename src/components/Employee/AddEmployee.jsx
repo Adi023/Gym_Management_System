@@ -1,15 +1,21 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import EmployeeServices from '../../services/EmployeeServices'
+import { toast } from 'react-toastify';
 
 export default function AddEmployee() {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const sendData = (d) => {
-      EmployeeServices.addEmployee(d);
+    const sendData = async (d) => {
+     try{ const data = await EmployeeServices.addEmployee(d);
+        toast.success(`Employee Added Successfully, ID : ${data.data.empId}`);
       console.log(d);
-      alert("User Added Successfully")
+      alert("Employee Added Successfully")
       reset();
+       } catch (error) {
+    console.error("Error adding Employee : ", error);
+    toast.error("Failed to add Employee");
+  }
     }
   return (
     <div className="signup-container">
