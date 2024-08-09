@@ -66,6 +66,7 @@ import Participation from './activities/Participation';
 import ProfilePage from './user/ProfilePage';
 import ViewSchedule from './activities/ViewSchedule';
 import ViewParticipation from './activities/ViewParticipation';
+import ViewParticipationById from './activities/ViewParticipationById';
 
 
 export default function AllRoutes() {
@@ -96,7 +97,7 @@ export default function AllRoutes() {
             {/* Error */}
             <Route path='/ErrorBoundary' element={<ErrorBoundary />}></Route>
             <Route path='/ErrorPage' element={<ErrorPage />}></Route>
-            <Route path="/unauthorized" element={<div>Unauthorized Access!</div>} />
+            <Route path="/unauthorized" element={<UnAuthenticatedUrl/>} />
 
             {/* Only for AUthenticated and autherized users */}
             {isAuthenticated ? (
@@ -136,13 +137,14 @@ export default function AllRoutes() {
               <Route path="/addActivity" element={<RequireAuth component={AddActivity} requiredRoles={['admin']} />}/>
               <Route path="/viewActivities" element={<RequireAuth component={AllActivities} requiredRoles={['admin','user']} />}/>
               <Route path="/viewActivityById" element={<RequireAuth component={ViewActivityById} requiredRoles={['admin','user']} />}/>
-              <Route path="/updateActivity" element={<RequireAuth component={UpdateActivity} requiredRoles={['admin']} />}/>
+              <Route path="/updateActivity/:activityId" element={<RequireAuth component={UpdateActivity} requiredRoles={['admin']} />}/>
               
               <Route path="/scheduleActivity" element={<RequireAuth component={ScheduleActivity} requiredRoles={['admin']} />}/>
               <Route path="/viewScheduleActivity" element={<RequireAuth component={ViewSchedule} requiredRoles={['admin']} />}/>
 
               <Route path="/participation" element={<RequireAuth component={Participation} requiredRoles={['admin','user']} />}/>
               <Route path="/viewParticipation" element={<RequireAuth component={ViewParticipation} requiredRoles={['admin','user']} />}/>
+              <Route path="/viewParticipationById" element={<RequireAuth component={ViewParticipationById} requiredRoles={['admin','user']} />}/>
               
               {/* Diet Route */}
               <Route path="/addDiet" element={<RequireAuth component={AddDiet} requiredRoles={['admin']} />}/>
