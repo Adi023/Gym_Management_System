@@ -271,6 +271,14 @@ export default function SideBar() {
                         </Link>
                     </li>
                     <hr style={{ margin: '0px', color: 'white', width: '100%' }} />
+
+                    <li>
+                        <Link to="/viewParticipationById" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi-person-lines-fill custom-icon"></i>
+                            <span className="custom-icon ms-1 d-none d-sm-inline">Activity</span>
+                        </Link>
+                    </li>
+                    <hr style={{ margin: '0px', color: 'white', width: '100%' }} />
                 </>
             );
             break;
