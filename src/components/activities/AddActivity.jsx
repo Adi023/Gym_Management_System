@@ -27,10 +27,10 @@ export default function AddActivity() {
       <form onSubmit={handleSubmit(sendData)}>
       <div className="form-row">
 
-        <label htmlFor="activityId">Activity Id</label>
+        {/* <label htmlFor="activityId">Activity Id</label>
         <input type="text"  {...register('activityId', { required: 'Activity Id Is Required' })} placeholder={"Activity Id"} />
         {errors.activityId && <p style={{ color: 'red' }}>{errors.activityId.message}</p>}
-        <br />
+        <br /> */}
       
         <label htmlFor="activityName">Activity Name</label>
         <input type="text"  {...register('activityName', { required: 'Activity Name Is Required' })} placeholder={"Activity Name"} />
