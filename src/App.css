@@ -111,11 +111,28 @@ body,html {
   @media (max-width: 576px) {
     width: auto;
     @media (max-width: 575px) {
-      width: 70px;
+      width: 50px;
     }
   }
 }
 
+.nav-link .custom-icon {
+  position: relative;
+}
+
+.nav-link .custom-icon:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 100%; /* Adjust according to your design */
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  background-color: black;
+  color: rgb(153, 225, 20);
+  padding: 2px 5px;
+  border-radius: 3px;
+  z-index: 10;
+}
 
 .signup-container {
   margin: 2% auto 50px auto;
