@@ -20,7 +20,7 @@ export default function Participation() {
 
   return (
     <div className="signup-container">
-    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Schedule Activity</h2>
+    <h2 style={{ marginLeft: '25%', position: 'relative' }}>Participation</h2>
       <form onSubmit={handleSubmit(sendData)}>
       <div className="form-row">
 
