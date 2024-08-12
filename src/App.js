@@ -92,7 +92,7 @@ function App() {
         {invalidUrl ? (
           <InvalidUrlPage />
         ) : (
-          <div className="d-flex">
+          <div className="d-flex sideSc">
             <div className="sidebar">
               <SideBar />
             </div>
