@@ -40,20 +40,20 @@ export default function SideBar() {
 
 
                     <li className="nav-item">
-                        <Link to="dashboard" className="nav-link align-middle px-0">
+                        <Link to="dashboard" className="nav-link align-middle px-0 py-1" >
                             <i className="fs-4 bi-house custom-icon " title="Home"></i> <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Home</span>
                         </Link>
                     </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
                     {/* User Fields */}
                     <li>
-                        <Link to="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                        <Link to="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 py-1  align-middle">
                             <i className="fs-4 bi bi-people custom-icon" title="Users"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Users</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li className="w-100">
-                                <Link to="/register" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/register" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className=" bi bi-person-add  custom-icon" title="Add Users"></i>
                                     {/* <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Add</span> */}
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}>Add</span>
@@ -61,7 +61,7 @@ export default function SideBar() {
 
                             </li>
                             <li className="w-100">
-                                <Link to="/viewUsers" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/viewUsers" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="fa-solid fa-list  custom-icon" title="View Users"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> View</span>
                                 </Link>
@@ -71,18 +71,18 @@ export default function SideBar() {
 
                     {/* Employee Field */}
                     <li>
-                        <Link to="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 align-middle ">
+                        <Link to="#submenu2" data-bs-toggle="collapse" className="nav-link px-0 py-1  align-middle ">
                             <i className="fs-4 bi bi-people-fill custom-icon" title="Staff"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Staff</span>
                         </Link>
                         <ul className="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li className="w-100">
-                                <Link to="/addEmployee" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/addEmployee" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-person-fill-add custom-icon" title="Add Staff"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Add</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/viewEmployee" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/viewEmployee" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className=" bi bi-person-lines-fill  custom-icon" title="View Staff"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}>View</span> </Link>
                             </li>
@@ -91,18 +91,18 @@ export default function SideBar() {
 
                     {/* Attendance Fields */}
                     <li>
-                        <Link to="#submenu3" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                        <Link to="#submenu3" data-bs-toggle="collapse" className="nav-link px-0 py-1  align-middle">
                             <i className="fs-4 bi-table custom-icon custom-icon" title="Attendance"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Attendance</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li className="w-100">
-                                <Link to="/markAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/markAttendance" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="fas fa-calendar-check custom-icon" title="Mark Attendance"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Mark</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/viewAttendance" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/viewAttendance" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="fas fa-clipboard-list custom-icon" title="View Attendance"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> View</span></Link>
                             </li>
@@ -111,23 +111,23 @@ export default function SideBar() {
 
                     {/* Plans Fields */}
                     <li >
-                        <Link to="#submenu4" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                        <Link to="#submenu4" data-bs-toggle="collapse" className="nav-link px-0 py-1  align-middle">
                             <i className="fs-4  bi-grid custom-icon" title="Plans"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Plans</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1 custom-icon" id="submenu4" data-bs-parent="#menu">
                             <li className="w-100">
-                                <Link to="/addPlan" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/addPlan" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="fas fa-plus-circle custom-icon"title="Add Plans"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Add</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/viewPlan" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/viewPlan" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="far fa-eye custom-icon"title="View Plans"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> View</span></Link>
                             </li>
                             {/* <li className="w-100">
-                                <Link to="/updatePlan" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/updatePlan" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="fas fa-edit" title="Update Plans"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Update</span></Link>
                             </li> */}
@@ -136,18 +136,18 @@ export default function SideBar() {
 
                     {/* Membership Fields */}
                     <li>
-                        <Link to="#submenu5" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                        <Link to="#submenu5" data-bs-toggle="collapse" className="nav-link px-0 py-1  align-middle">
                             <i className="bi bi-shield-fill-check fs-4 custom-icon"title="Membership"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Membership</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
                             <li className="w-100">
-                                <Link to="/addMembership" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/addMembership" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-shield-plus custom-icon" title="Add Membership"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Add</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/viewMemberships" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/viewMemberships" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-shield-exclamation custom-icon" title="View Membership"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> View</span></Link>
                             </li>
@@ -155,19 +155,19 @@ export default function SideBar() {
                     </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
                     {/* Equipment Fields */}
                     <li>
-                        <Link to="#submenu6" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                        <Link to="#submenu6" data-bs-toggle="collapse" className="nav-link px-0 py-1  align-middle">
                             {/* <i className="bi bi-shield-fill-check fs-4 custom-icon"title=""></i> */}
                             <i className="bi bi-gear-wide-connected fs-4 custom-icon"title="Equipments"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Equipments</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1" id="submenu6" data-bs-parent="#menu">
                             <li className="w-100">
-                                <Link to="/addEquipments" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/addEquipments" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-patch-plus custom-icon"title="Add Equipments"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Add</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/equpmentsDetails" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/equpmentsDetails" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-patch-exclamation custom-icon"title="View Equipments"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> View</span></Link>
                             </li>
@@ -176,39 +176,39 @@ export default function SideBar() {
 
                     {/* Activity Fields */}
                     <li>
-                        <Link to="#submenu7" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                        <Link to="#submenu7" data-bs-toggle="collapse" className="nav-link px-0 py-1  align-middle">
                             {/* <i className="bi bi-shield-fill-check fs-4 custom-icon"title=""></i> */}
                             <i className="bi bi-activity fs-4 custom-icon"title="Activity"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Activity</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1" id="submenu7" data-bs-parent="#menu">
                             <li className="w-100">
-                                <Link to="/addActivity" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/addActivity" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-plus-lg custom-icon"title="Add Activity"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Add</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/viewActivities" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/viewActivities" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-list-nested custom-icon"title="View Activity"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> View</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/viewScheduleActivity" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/viewScheduleActivity" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-list-nested custom-icon"title="View Activity Schedule"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> View Schedule</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/scheduleActivity" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/scheduleActivity" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-list-nested custom-icon"title="Schedule Activity"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Schedule</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/participation" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/participation" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-list-nested custom-icon"title="Activity Participation"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}>Participation</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/viewParticipation" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/viewParticipation" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-list-nested custom-icon"title="View Participation"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}>View Participation</span></Link>
                             </li>
@@ -217,19 +217,19 @@ export default function SideBar() {
 
                     {/* Diet Fields */}
                     <li>
-                        <Link to="#submenu8" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
+                        <Link to="#submenu8" data-bs-toggle="collapse" className="nav-link px-0 py-1  align-middle">
                             {/* <i className="bi bi-shield-fill-check fs-4 custom-icon"title=""></i> */}
                             <i className="bi bi-gear-wide-connected fs-4 custom-icon"title="Diet"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Diet</span>
                         </Link>
                         <ul className="collapse  nav flex-column ms-1" id="submenu8" data-bs-parent="#menu">
                             <li className="w-100">
-                                <Link to="/addDiet" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/addDiet" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-patch-plus custom-icon" title="Add Diet"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> Add</span></Link>
                             </li>
                             <li className="w-100">
-                                <Link to="/viewDietPlans" className="nav-link px-0 text-secondary text-hover-white">
+                                <Link to="/viewDietPlans" className="nav-link px-0 py-1  text-secondary text-hover-white">
                                     <i className="bi bi-patch-exclamation custom-icon" title="View Diet"></i>
                                     <span className={isCollapsed ? 'd-none' : 'd-none d-sm-inline'}> View</span></Link>
                             </li>
@@ -237,7 +237,7 @@ export default function SideBar() {
                     </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
                     <li>
-                        <Link to="/imageUploader" className="nav-link px-0 align-middle">
+                        <Link to="/imageUploader" className="nav-link px-0 py-1  align-middle">
                             <i className="fs-4 bi-people custom-icon" title="Image Test"></i> <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Image Test</span>
                         </Link>
                     </li><hr style={{ margin: '0px', color: 'white', width: '100%' }} />
@@ -250,7 +250,7 @@ export default function SideBar() {
                 <>
 
                     <li className="nav-item">
-                        <Link to="dashboard" className="nav-link align-middle px-0">
+                        <Link to="dashboard" className="nav-link align-middle px-0 py-1" >
                             <i className="fs-4 bi-house custom-icon " title="Home"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Home</span>
                         </Link>
@@ -259,8 +259,8 @@ export default function SideBar() {
 
                     {/* User Fields */}
                     <li>
-                        {/* <Link to="/viewSingleUser" className="nav-link px-0 align-middle"> */}
-                        <Link to="/profile" className="nav-link px-0 align-middle">
+                        {/* <Link to="/viewSingleUser" className="nav-link px-0 py-1  align-middle"> */}
+                        <Link to="/profile" className="nav-link px-0 py-1  align-middle">
                             <i className="fs-4 bi bi-person custom-icon" title="Profile"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Profile</span>
                         </Link>
@@ -268,7 +268,7 @@ export default function SideBar() {
                     <hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
                     <li>
-                        <Link to="/viewMembershipById" className="nav-link px-0 align-middle">
+                        <Link to="/viewMembershipById" className="nav-link px-0 py-1  align-middle">
                             <i className="fs-4 bi bi-shield-check custom-icon" title="Membership"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Membership</span>
                         </Link>
@@ -276,7 +276,7 @@ export default function SideBar() {
                     <hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
                     <li>
-                        <Link to="/attendanceByUserId" className="nav-link px-0 align-middle">
+                        <Link to="/attendanceByUserId" className="nav-link px-0 py-1  align-middle">
                             <i className="fs-4 bi-person-lines-fill custom-icon" title="Attendance"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Attendance</span>
                         </Link>
@@ -284,7 +284,7 @@ export default function SideBar() {
                     <hr style={{ margin: '0px', color: 'white', width: '100%' }} />
 
                     <li>
-                        <Link to="/viewParticipationById" className="nav-link px-0 align-middle">
+                        <Link to="/viewParticipationById" className="nav-link px-0 py-1  align-middle">
                             <i className="fs-4 bi-person-lines-fill custom-icon" title="Activity"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Activity</span>
                         </Link>
@@ -316,7 +316,7 @@ export default function SideBar() {
     }
 
     return (
-        <>
+        < >
 
             <div >
                 <ConfirmationModal
@@ -328,16 +328,16 @@ export default function SideBar() {
                 <div className="container-fluid">
                     <div className="row flex-nowrap">
                         <div
-                            className={`${!isCollapsed ? 'sidewidth' : ''} px-0 bg-black`}
+                            className={`${!isCollapsed ? 'sidewidth' : ''} px-0 py-1  bg-black`}
                             style={isCollapsed ? { width: '50px' } : {}}
                         >
                             {/* <span className={`"custom-icon  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'} mx-1"`}>{reduxRole}</span> */}
-                            <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                            <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-1 text-white min-vh-100">
                                
                                     {isCollapsed ? <i className="custom-icon fs-4 bi bi-list" onClick={toggleSidebar} title="Open"></i> 
                                     : <i className="custom-icon fs-4 bi bi-caret-left-square-fill " onClick={toggleSidebar} title="Collapse"></i>}
                                 
-                                <Link to="/" className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                                <Link to="/" className="d-flex align-items-center pb-1 mb-md-0 me-md-auto text-white text-decoration-none">
                                     <i className="custom-icon fs-4 bi bi-command" title="Menu"></i>
                                     <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}> Menu</span>
                                 </Link>
