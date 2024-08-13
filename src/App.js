@@ -97,9 +97,9 @@ function App() {
               <SideBar />
             </div>
             <div className="content">
-              <nav className="navbar navbar-expand-sm bg-black navbar-dark mr-3 justify-content-end">
+              {/* <nav className="navbar navbar-expand-sm bg-black navbar-dark mr-3 justify-content-end">
                 <button onClick={handleResetRole} className="btn btn-success ml-auto mr-3">SIGN OUT</button>
-              </nav>
+              </nav> */}
               <ErrorBoundary>
                 <AxiosErrorHandler>
                   <AllRoutes />
