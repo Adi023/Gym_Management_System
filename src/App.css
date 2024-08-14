@@ -350,6 +350,6 @@ body,html {
   color: rgb(0, 0, 0);
   font-size: 10vw; /* Responsive font size */
   font-weight: bold;
- 
+ border-radius: 4px;
   mix-blend-mode: screen; /* This makes the cutout text possible */
 }
