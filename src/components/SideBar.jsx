@@ -285,7 +285,7 @@ export default function SideBar() {
 
                     <li>
                         <Link to="/viewParticipationById" className="nav-link px-0 py-1  align-middle">
-                            <i className="fs-4 bi-person-lines-fill custom-icon" title="Activity"></i>
+                            <i className="fs-4 bi-activity custom-icon" title="Activity"></i>
                             <span className={`custom-icon ms-1  ${isCollapsed ? 'd-none' : 'd-none d-sm-inline'}`}>Activity</span>
                         </Link>
                     </li>
