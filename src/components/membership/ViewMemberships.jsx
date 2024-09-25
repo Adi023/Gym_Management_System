@@ -17,8 +17,11 @@ export default function ViewMemberships() {
     pageNumber: 0
   });
 
+
+
   useEffect(() => {
     fetchData();
+    console.log(TodaysDate.getDate().toString()+" Todays date")
     // toast.success("Succses")
   }, []);
 
@@ -118,7 +121,7 @@ export default function ViewMemberships() {
             </tr>
           </thead>
           <tbody>
-            {postContent.content.filter((d) => {
+            {postContent.content.filter((d) => {console.log(d.membershipEndDate.toString()+ "  "+TodaysDate.getDate().toString())
               if (searchTerm === "") {
                 return d;
               }
@@ -128,7 +131,8 @@ export default function ViewMemberships() {
               else if (d.planName.toLowerCase().includes(String(searchTerm).toLowerCase())) {
                 return d;
               }
-            }).map((d) => (
+            }).map((d) =>  (
+              
               <tr key={d.membershipId}>
                 <td data-label="Id : ">{d.membershipId}</td>
                 <td data-label="User Name  : ">{d.user?.name}</td>
@@ -136,7 +140,7 @@ export default function ViewMemberships() {
                 <td data-label="Start Date : ">{d.membershipStartDate}</td>
                 <td data-label="End Date : ">{d.membershipEndDate}</td>
                 <td data-label="Added Date : ">{new Date(d.ts).toLocaleDateString()}</td>
-                <td data-label="Status : ">{(d.membershipEndDate < TodaysDate.getDate()) ?
+                <td data-label="Status : ">{(d.membershipEndDate.toString() < TodaysDate.getDate().toString()) ?
                   <h6 style={{ color: "Red" }}>Expired</h6> : <h6 style={{ color: "green" }}>Active</h6>}</td>
               </tr>
             ))}
